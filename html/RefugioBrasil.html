@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/330b105a07.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <link href="../css/menulateral.css" rel="stylesheet" type="text/css" />
+    <link href="../css/geral.css" rel="stylesheet" type="text/css" />
+    <link href="../css/card-info.css" rel="stylesheet" type="text/css" />
+    <link href="../css/imageButton.css" rel="stylesheet" type="text/css" />
+    <link href="../css/checkBox.css" rel="stylesheet" type="text/css" />
+    
+    <title>Refugio Brasil</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="slide-menu">
+      <ul>
+        <li><img class="mx-auto d-block img-fluid" src="../img/logo.png"></li>
+        <li class="Refugiados"><i class="fas fa-user-plus"></i>Novo Refugiado</li>
+        <li class="Refugiados"><i class="fas fa-users"></i>Lista de Refugiados</li>
+        <li class="Atendimentos"><i class="fas fa-hands-helping"></i>Atendimentos</li>
+        <li class="Relatorios"><i class="fas fa-chart-pie"></i></i>Relatórios</li>
+        <li class="logout"><i class="fas fa-sign-out-alt"></i>Sair</li>
+      </ul>
+    </nav>
+    <!-- Content panel -->
+    <div id="content">
+      <nav class="navbar navbar-expand-sm bg-green">
+        <div class="navbar-brand menu-trigger d-flex">
+          <i class="fas fa-bars" style="max-width: 75%; max-height: 75%;margin: auto;"></i>
+        </div>
+        <a class="ml-auto text-light" href="#">
+          Refugio Brasil
+        </a>
+      </nav>
+      <div class="content m-5">
+        <div class="line-green">
+          <h3 id="title">Cadastro de Refugiado</h3>
+        </div>
+        <div id="containerRobot" class='row mt-3'>
+          <div class="col-3 col-sm-3 col-md-2 col-lg-1 col-xlg-1 ">
+            <img class="mx-auto d-block img-fluid" src="../img/robot.png" style="max-height: 80px;">
+          </div>
+          <div class="col-7 col-sm-7 col-md-10 col-lg-8 col-xlg-10">
+            <div class="round talk-bubble tri-right left-top">
+              <div class="talktext">
+                <p id="dialogoRobot">Olá! antes de iniciar o cadastro verifique se esse usuário já foi cadastrado buscando seu n° de documento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id='documentos'>
+          <div id="documentosMinimo" class="form-row mt-3">
+            <div class="form-group col-lg-6">
+              <label for="txtprotocolo" >Protocolo</label>
+              <input type="text" class="form-control" id="txtprotocolo" placeholder="xxxx-xx">
+              <div class="invalid-feedback">
+              </div>
+              <div class="valid-feedback">
+                okay!
+              </div>
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="txtrne">RNE/RNM</label>
+              <input type="text" class="form-control" id="txtrne" placeholder="xxxx-xx">
+            </div>
+          </div>
+          <div id="documentosAdd" class="form-row d-none">
+            <div class="form-group col-lg-6">
+              <label for="seldoc">Tipo Documento</label>
+              <select class="form-control" id="seldoc">
+                <option disabled="disabled" selected="selected">selecione...</option>
+                <option val="CPF">CPF</option>
+                <option val="CNH">CNH</option>
+                <option val="RG">RG</option>
+                <option val="PASSAPORTE">Passaporte</option>
+                <option val="PIS">PIS</option>
+                <option val="CARTEIRADETRABALHO">Carteira de Trabalho</option>
+                <option>outro</option>
+              </select>
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="txtnumerodoc"> Número</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="txtnumerodoc" placeholder="xxx.xxx.xxx-xx">
+                <div class="input-group-append">
+                  <button class="btn btn-success" type="button" onclick="adicionarDoc()"><i class="fas fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+            <div id="novosDocumentos" class="form-group card-columns">
+            </div>
+          </div>
+        </div>
+
+        <div id="identificacao" class="d-none">
+          <div class="form-row mt-3">
+            <div class="form-group col-lg-12">
+              <div class="wrapper">
+                <button class="no-image" id="img-result"></button>
+              </div>
+              <div class="upload-result">
+                <button class="hide-button">fechar</button>
+                <pre class="upload-result__content">
+                </pre>
+              </div>
+            </div>
+            
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <label for="txtnome">Nome*</label>
+              <input type="text" class="form-control" id="txtnome" placeholder="Maria José">
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="selsexo">Sexo*</label>
+              <select class="form-control" id="selsexo">
+                <option disabled="disabled" selected="selected">selecione...</option>
+                <option>Feminino</option>
+                <option>Masculino</option>
+                <option>Não binário</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <label for="txtdataNascimento">Data de Nascimento*</label>
+              <input type="date" class="form-control" id="txtdataNascimento" aria-describedby="campo para data de nascimento" >
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="txtdataNascimento">Data de Chegada*</label>
+              <input type="date" class="form-control" id="txtdataNascimento" aria-describedby="campo para data de nascimento" >
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-12">
+              <label for="txtnome">Email</label>
+              <input type="text" class="form-control" id="txtnome" placeholder="Maria José">
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="txtestadocivil">Estado Civil*</label>
+              <input type="date" class="form-control" id="txtestadocivil" aria-describedby="" >
+            </div>
+          </div>
+          <div class="form-row">   
+            <div class="form-group col-lg-12">
+              <input type="checkbox" id="cpp"/>
+              <label for="cpp" style="display: inline;">CPP</label>
+            </div>
+          </div>
+        </div>
+
+        <div id="endereco" class="d-none">
+          <div class="form-row mt-3">
+            <div class="form-group col-lg-6">
+              <label for="seltipoendereco">Tipo de moradia</label>
+              <select class="form-control" id="seltipoendereco">
+                <option disabled="disabled" selected="selected"></option>
+                <option selected="selected" disabled="disabled">Selecione...</option>
+                <option>Própria</option>
+                <option>Alugada</option>
+                <option>Auxílio</option>
+                <option>outro</option>
+              </select>
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="txtcep">CEP</label>
+              <input type="text" class="form-control" id="txtcep" placeholder="XXXXX-XXX">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <label for="txtestado">Estado</label>
+              <input type="text" class="form-control" id="txtestado" placeholder="São Paulo">
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="txtcidade">Cidade</label>
+              <input type="text" class="form-control" id="txtcidade" placeholder="Poá">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <label for="txtlogradouro">Logradouro</label>
+              <input type="text" class="form-control" id="txtlogradouro" placeholder="Rua Tulipas">
+            </div>
+            <div class="form-group col-lg-2">
+              <label for="txtnumero">Número</label>
+              <input type="number" class="form-control" id="txtnumero" placeholder="234">
+            </div>
+            <div class="form-group col-lg-4">
+              <label for="txtcomplemento">Complemento</label>
+              <input type="text" class="form-control" id="txtcomplemento" placeholder="bloco 3">
+            </div>
+          </div>
+        </div>
+
+        <div id="experiencia" class="d-none">
+          <div class="form-row mt-3">
+            <div class="form-group col-lg-6">
+              <label for="sellingua">Línguas*</label>
+              <select class="form-control" id="sellingua" data-live-search="true">
+                <option selected="selected" disabled="disabled">Selecione...</option>
+                <option val="PORTUGUES">Português</option>
+                <option val="ARABE">Árabe</option>
+                <option VAL="INGLES">Inglês</option>
+                <option val="ESPANHOL">Espahol</option>
+                <option val="FRANCES">Francês</option>
+              </select>
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="selnivel">Nivel*</label>
+              <div class="input-group">
+                <select class="form-control" id="selnivel">
+                  <option selected="selected" disabled="disabled">Selecione...</option>
+                  <option val="BASICO">Básico</option>
+                  <option val="INTERMEDIARIO">Intermediario</option>
+                  <option val="AVANCADO">Avançado</option>
+                  <option val="AVANCADO">Fluente</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-success" type="button" onclick="adicionarLingua()"><i class="fas fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+            <div id="linguas" class="form-group card-deck">
+
+            </div>
+            <div class="form-group col-lg-12  ">
+              <button id="btnformacao" type="button" class="btn bg-blue" data-toggle="modal" data-target="#exampleModal">Formação Acadêmica <i class="fas fa-plus"></i></button>
+            </div>
+            <div class="form-group col-lg-12  ">
+              <button id="btnprofissional" type="button" class="btn bg-blue" data-toggle="modal" data-target="#formacaoModal">Experiência Profissional <i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+          <!-- formacao academica -->
+          <!-- experiencia profissional -->
+          <!-- idioma -->
+          
+        </div>
+
+        <div id="necessidades" class="d-none mt-3">
+          <div class="form-row">   
+            <div class="form-group col-lg-12">
+              <input type="checkbox" id="Alimentos"/>
+              <label for="Alimentos" style="display: inline;">Alimentos</label>
+            </div>
+          </div>
+          <div class="form-row">   
+            <div class="form-group col-lg-12">
+              <input type="checkbox" id="moradia"/>
+              <label for="moradia" style="display: inline;">Moradia(aluguel)</label>
+            </div>
+          </div>
+          <div class="form-row">   
+            <div class="form-group col-lg-12">
+              <input type="checkbox" id="remedios"/>
+              <label for="remedios" style="display: inline;">Remédios</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <label for="txtobs">obs.</label>
+              <input type="text" class="form-control" id="txtobs" placeholder="descrição">
+            </div>
+          </div>
+        </div>
+    
+        <button type="button" class="btn bg-green float-right" onclick="consultarDocumento(this)"><i class="fas fa-search"></i>buscar</buttonF>
+        <button id="btnprox" type="button" class="btn bg-green float-right d-none" onclick="proximo()">próximo</button>
+        <button id="btnvolta" type="button" class="btn bg-green d-none" onclick="voltar()">voltar</button>
+      </div>
+    </div>
+
+    <div id='modais'>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Formação Acadêmica</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="txtcurso">Curso*</label>
+                  <input type="text" class="form-control" id="txtcurso" placeholder="Psicologia">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="txtinstituicao">Instituição*</label>
+                  <input type="text" class="form-control" id="txtinstituicao" placeholder="Psicologia">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="txtdataInicio">Data de incio*</label>
+                  <input type="date" class="form-control" id="txtdataInicio" aria-describedby="" >
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="txtdataFim">Data de fim*</label>
+                  <input type="date" class="form-control" id="txtdataFim" aria-describedby="" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <label for="selgrau">Grau Acadêmico*</label>
+                  <select class="form-control" id="selgrau">
+                    <option selected="selected" disabled="disabled">Selecione...</option>
+                    <option>fundamental</option>
+                    <option>Médio</option>
+                    <option>Superior</option>
+                    <option>Pós Graduação</option>
+                    <option>Mestrado</option>
+                    <option>Doutorado</option>
+                    <option>Pós Doutorado</option>
+                    <option>Livre Docência</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="selsituacaoAcademica">Situação acadêmica*</label>
+                  <select class="form-control" id="selsituacaoAcademica">
+                    <option selected="selected" disabled="disabled">Selecione...</option>
+                    <option>cursando</option>
+                    <option>concluído</option>
+                    <option>incompleto</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-12">
+                  <label for="selPaisFormacao">País*</label>
+                  <select class="form-control" id="selPaisFormacao">
+                    <option selected="selected" disabled="disabled">Selecione...</option>
+                    <option>Chile</option>
+                    <option>Argentina</option>
+                    <option>Colômbia</option>
+                    <option>...</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">voltar</button>
+              <button type="button" class="btn bg-blue">Adicionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="formacaoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Formação Acadêmica</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="txtcargo">Cargo*</label>
+                  <input type="text" class="form-control" id="txtcargo" placeholder="Psicologo">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="txtempresa">Empresa*</label>
+                  <input type="text" class="form-control" id="txtempresa" placeholder="Clinica Mogi">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="txtdataInicioP">Data de incio*</label>
+                  <input type="date" class="form-control" id="txtdataInicioP" aria-describedby="" >
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="txtdataFimP">Data de fim*</label>
+                  <input type="date" class="form-control" id="txtdataFimP" aria-describedby="" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-12">
+                  <label for="selPaisFormacaoP">País*</label>
+                  <select class="form-control" id="selPaisFormacaoP">
+                    <option selected="selected" disabled="disabled">Selecione...</option>
+                    <option>Chile</option>
+                    <option>Argentina</option>
+                    <option>Colômbia</option>
+                    <option>...</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">voltar</button>
+              <button type="button" class="btn bg-blue">Adicionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.cobtnproxm/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../plugin/mask/jquery.mask.min.js"></script>
+
+    <script src="../js/refugiado.js"></script>
+    <script src="../js/menulateral.js"></script>
+    <script src="../js/documento.js"></script>
+    <script src="../js/validacao.js"></script>
+    <script src="../js/uploudImage.js"></script>
+  </body>
+</html> 
