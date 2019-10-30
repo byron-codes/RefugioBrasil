@@ -33,6 +33,17 @@ a{
     background-color: #23bbc5;
     color: white;
 }
+
+.btn-blue{
+    background-color: #23bbc5;
+    color: white;
+}
+
+.btn-blue:hover{
+    background-color: #06a9b4;
+    color: white;
+}
+
 .line-green{
     border-bottom: #047235 1px solid;
 }

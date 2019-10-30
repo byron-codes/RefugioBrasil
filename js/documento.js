@@ -15,7 +15,7 @@ function consultarDocumento(e){
             $("#containerRobot").remove();
             $("#txtrne").prop("disabled", true);
             $("#txtprotocolo").prop("disabled", true);
-            $("#title").text("Cadastro de Refugiado - Identificação")
+            $("#title").text("Cadastro de Refugiado - Documentos")
         })
     }else{
         Swal.fire({

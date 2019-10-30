@@ -56,7 +56,7 @@ function adicionarLingua(){
     $("#selnivel").val("");
     $("#linguas").append(
         `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="m-3">${lingua}-${nivel}</div>
+            <div class="m-3">${lingua} - ${nivel}</div>
         </div>`
     )
 }

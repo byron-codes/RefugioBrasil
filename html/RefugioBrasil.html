@@ -17,7 +17,7 @@
     <title>Refugio Brasil</title>
   </head>
   <body>
-    <!-- Navigation -->
+    <!-- Navigation --> 
     <nav id="slide-menu">
       <ul>
         <li><img class="mx-auto d-block img-fluid" src="../img/logo.png"></li>
@@ -38,6 +38,7 @@
           Refugio Brasil
         </a>
       </nav>
+      <!-- m-3 para mobile -->
       <div class="content m-5">
         <div class="line-green">
           <h3 id="title">Cadastro de Refugiado</h3>
@@ -89,7 +90,7 @@
               <div class="input-group">
                 <input type="text" class="form-control" id="txtnumerodoc" placeholder="xxx.xxx.xxx-xx">
                 <div class="input-group-append">
-                  <button class="btn btn-success" type="button" onclick="adicionarDoc()"><i class="fas fa-plus"></i></button>
+                  <button class="btn bg-green" type="button" onclick="adicionarDoc()"><i class="fas fa-plus m-0"></i></button>
                 </div>
               </div>
             </div>
@@ -138,13 +139,20 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-lg-12">
+            <div class="form-group col-lg-6">
               <label for="txtnome">Email</label>
               <input type="text" class="form-control" id="txtnome" placeholder="Maria José">
             </div>
             <div class="form-group col-lg-6">
-              <label for="txtestadocivil">Estado Civil*</label>
-              <input type="date" class="form-control" id="txtestadocivil" aria-describedby="" >
+              <label for="selestadocivil">Estado Civil*</label>
+              <select class="form-control" id="selestadocivil">
+                <option disabled="disabled" selected="selected">selecione...</option>
+                <option>Casado</option>
+                <option>Solteiro</option>
+                <option>Viúvo</option>
+                <option>Divorciado</option>
+                <option>Separado</option>
+              </select>
             </div>
           </div>
           <div class="form-row">   
@@ -227,14 +235,17 @@
                 </div>
               </div>
             </div>
-            <div id="linguas" class="form-group card-deck">
+            <div id="linguas" class="form-group col-lg-12 card-deck">
 
             </div>
-            <div class="form-group col-lg-12  ">
-              <button id="btnformacao" type="button" class="btn bg-blue" data-toggle="modal" data-target="#exampleModal">Formação Acadêmica <i class="fas fa-plus"></i></button>
+          </div>
+          <hr>
+          <div class="form-row mt-3">
+            <div class="form-group col-lg-6">
+              <button id="btnformacao" type="button" class="btn btn-blue" data-toggle="modal" data-target="#exampleModal" style="width: 100%;">Formação Acadêmica <i class="fas fa-plus"></i></button>
             </div>
-            <div class="form-group col-lg-12  ">
-              <button id="btnprofissional" type="button" class="btn bg-blue" data-toggle="modal" data-target="#formacaoModal">Experiência Profissional <i class="fas fa-plus"></i></button>
+            <div class="form-group col-lg-6">
+              <button id="btnprofissional" type="button" class="btn btn-blue" data-toggle="modal" data-target="#formacaoModal" style="width: 100%;">Experiência Profissional <i class="fas fa-plus"></i></button>
             </div>
           </div>
           <!-- formacao academica -->
@@ -244,35 +255,40 @@
         </div>
 
         <div id="necessidades" class="d-none mt-3">
-          <div class="form-row">   
-            <div class="form-group col-lg-12">
+          <div class="form-row d-flex justify-content-center">  
+            <div class="col-md-12 mt-3 mb-3">
+              <p class="text-center">Selecione suas necessidades:</p>
+            </div> 
+            <div class="form-group col-lg-2">
               <input type="checkbox" id="Alimentos"/>
               <label for="Alimentos" style="display: inline;">Alimentos</label>
             </div>
-          </div>
-          <div class="form-row">   
-            <div class="form-group col-lg-12">
+            <div class="form-group col-lg-2">
               <input type="checkbox" id="moradia"/>
               <label for="moradia" style="display: inline;">Moradia(aluguel)</label>
-            </div>
-          </div>
-          <div class="form-row">   
-            <div class="form-group col-lg-12">
+            </div> 
+            <div class="form-group col-lg-2">
               <input type="checkbox" id="remedios"/>
               <label for="remedios" style="display: inline;">Remédios</label>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-lg-6">
-              <label for="txtobs">obs.</label>
-              <input type="text" class="form-control" id="txtobs" placeholder="descrição">
+            <div class="col-md-12 mt-3 mb-3">
+              <p class="text-center">Selecione sua situação de acolhimento:</p>
             </div>
+
           </div>
+         <div class="form-row d-flex justify-content-center">
+            <div class="mt-5 form-group col-lg-8">
+                <label for="txtobs">Obervação</label>
+                <textarea class="form-control" id="txtobs" rows="3" style="resize: none;"></textarea>
+              </div>  
+         </div>
+            
+         
         </div>
     
-        <button type="button" class="btn bg-green float-right" onclick="consultarDocumento(this)"><i class="fas fa-search"></i>buscar</buttonF>
-        <button id="btnprox" type="button" class="btn bg-green float-right d-none" onclick="proximo()">próximo</button>
-        <button id="btnvolta" type="button" class="btn bg-green d-none" onclick="voltar()">voltar</button>
+        <button type="button" class="btn btn-blue float-right" onclick="consultarDocumento(this)"><i class="fas fa-search"></i>buscar</buttonF>
+        <button id="btnprox" type="button" class="btn btn-blue float-right d-none" onclick="proximo()">próximo</button>
+        <button id="btnvolta" type="button" class="btn btn-blue d-none" onclick="voltar()">voltar</button>
       </div>
     </div>
 
