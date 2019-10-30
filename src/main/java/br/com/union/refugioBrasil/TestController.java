@@ -19,15 +19,15 @@ import br.com.union.refugioBrasil.enums.HomeType;
 public class TestController {
 
 	Map<String, ICommand<Refugee>> commands;
-	
+
 	@Autowired
 	public TestController(Map<String, ICommand<Refugee>> commands) {
-		this.commands = commands; 
+		this.commands = commands;
 	}
 
 	@RequestMapping("/refugee")
 	public void testRefugee() {
-		
+
 		Refugee refugee = new Refugee();
 		Address a = new Address();
 		a.setCep("000000");
@@ -45,7 +45,7 @@ public class TestController {
 		refugee.setHash(UUID.randomUUID());
 		refugee.setAddress(a);
 		commands.get("saveCommand").execute(refugee);
-		
+
 	}
 
 }
