@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public class NamedEntity extends DomainEntity {
+public abstract class NamedEntity extends DomainEntity {
 
 	@Column(name = "name", length = 100)
 	private String nome;

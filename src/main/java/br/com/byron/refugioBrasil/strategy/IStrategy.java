@@ -2,11 +2,11 @@ package br.com.byron.refugioBrasil.strategy;
 
 import org.springframework.stereotype.Component;
 
-import br.com.byron.refugioBrasil.domain.DomainEntity;
+import br.com.byron.refugioBrasil.domain.IDomain;
 
 @Component
-public interface IStrategy<Entity extends DomainEntity> {
+public interface IStrategy {
 	
-	public String execute(Entity entity);
+	public String execute(IDomain entity);
 	
 }

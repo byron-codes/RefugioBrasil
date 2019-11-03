@@ -14,36 +14,40 @@ import br.com.byron.refugioBrasil.domain.DomainEntity;
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.strategy.IStrategy;
 import br.com.byron.refugioBrasil.strategy.RefugeeDocumentStrategy;
-import br.com.byron.refugioBrasil.strategy.RegisterStrategy;
-import br.com.byron.refugioBrasil.strategy.UpdateStrategy;
 
 @Service
 public class Facade<Entity extends DomainEntity> implements IFacade<Entity> {
 
 	private final Map<String, IGenericDao<Entity>> dao;
 
-	private final Map<String, List<IStrategy<Entity>>> strategy;
+	private final Map<String, List<IStrategy>> strategy;
 
 	@Autowired
 	public Facade(Map<String, IGenericDao<Entity>> dao) {
 		this.dao = dao;
-		this.strategy = new HashMap<String, List<IStrategy<Entity>>>();
-		
-		List<IStrategy<Entity>> refugee = new ArrayList<IStrategy<Entity>>(); 
-		refugee.add(new RegisterStrategy<Entity>());
-		refugee.add(new UpdateStrategy<Entity>());
-		refugee.add(new RefugeeDocumentStrategy<Entity>());
-		
+		this.strategy = new HashMap<String, List<IStrategy>>();
+
+		List<IStrategy> refugee = new ArrayList<IStrategy>();
+		refugee.add(new RefugeeDocumentStrategy());
+
 		strategy.put(Refugee.class.getSimpleName(), refugee);
 	}
 
 	@Override
 	public List<Entity> save(Entity entity) {
 		StringBuilder sb = new StringBuilder();
-		for(IStrategy<Entity> strategy : strategy.get(entity.getClass().getSimpleName())) {
-			sb.append(strategy.execute(entity));
+		for (IStrategy strategy : strategy.get(entity.getClass().getSimpleName())) {
+			String erro = strategy.execute(entity);
+			if (!erro.isEmpty()) {
+				sb.append(erro);
+				sb.append(",");
+			}
 		}
-		return Arrays.asList(dao.get(getDaoName(entity)).save(entity));
+		if (sb.length() == 0) {
+			return Arrays.asList(dao.get(getDaoName(entity)).save(entity));
+		}
+		System.out.println(sb);
+		return null;
 	}
 
 	@Override

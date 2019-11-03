@@ -6,14 +6,14 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import br.com.byron.refugioBrasil.domain.Document;
-import br.com.byron.refugioBrasil.domain.DomainEntity;
+import br.com.byron.refugioBrasil.domain.IDomain;
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.strategy.document.CpfValidator;
 import br.com.byron.refugioBrasil.strategy.document.IDocumentStrategy;
 import br.com.byron.refugioBrasil.strategy.document.RgValidator;
 
 @Service
-public class RefugeeDocumentStrategy<Entity extends DomainEntity> implements IStrategy<Entity> {
+public class RefugeeDocumentStrategy implements IStrategy {
 
 	Map<String, IDocumentStrategy> validator;
 
@@ -24,7 +24,7 @@ public class RefugeeDocumentStrategy<Entity extends DomainEntity> implements ISt
 	}
 
 	@Override
-	public String execute(Entity entity) {
+	public String execute(IDomain entity) {
 		StringBuilder sb = new StringBuilder();
 		Refugee refugee = (Refugee) entity;
 		for (Document document : refugee.getDocuments()) {

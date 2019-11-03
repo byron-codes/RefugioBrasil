@@ -19,7 +19,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public class DomainEntity {
+public abstract class DomainEntity implements IDomain {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

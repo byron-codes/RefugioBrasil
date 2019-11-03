@@ -13,6 +13,7 @@ import br.com.byron.refugioBrasil.domain.Address;
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.enums.Gender;
 import br.com.byron.refugioBrasil.enums.HomeType;
+import br.com.byron.refugioBrasil.strategy.document.CpfValidator;
 
 @Controller
 @RequestMapping("/teste")
@@ -23,6 +24,12 @@ public class TestController {
 	@Autowired
 	public TestController(Map<String, ICommand<Refugee>> commands) {
 		this.commands = commands;
+	}
+	
+	@RequestMapping("/temp")
+	public void teste() {
+		System.err.println(new CpfValidator().execute("48964432843"));
+		System.err.println(new CpfValidator().execute("489.644.328-43"));
 	}
 
 	@RequestMapping("/refugee")
