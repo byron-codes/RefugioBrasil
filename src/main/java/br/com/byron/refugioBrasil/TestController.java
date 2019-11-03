@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.byron.refugioBrasil.command.ICommand;
 import br.com.byron.refugioBrasil.domain.Address;
@@ -53,6 +54,12 @@ public class TestController {
 		refugee.setAddress(a);
 		commands.get("saveCommand").execute(refugee);
 
+	}
+	
+	@RequestMapping("/novo")
+	public ModelAndView novoRefugiado(){
+		ModelAndView mv =  new ModelAndView("/refugee/refugee");
+		return mv;
 	}
 
 }

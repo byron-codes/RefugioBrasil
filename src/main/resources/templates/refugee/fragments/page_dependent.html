@@ -1,0 +1,75 @@
+<div id="dependente" class="d-none">
+	<div class="group-box">
+		<div class="group-box-header">
+			<h5 class="title">Dependente</h5>
+		</div>
+		<div class="group-box-content">
+			<div class="form-row">
+				<div class="form-group col-lg-6">
+					<label for="txtnome">Nome*</label>
+					<input type="text" class="form-control" id="txtnome" placeholder="Maria José">
+				</div>
+				<div class="form-group col-lg-6">
+					<label for="selsexo">Parentesco*</label>
+					<select class="form-control" id="selsexo">
+						<option disabled="disabled" selected="selected">selecione...</option>
+						<option>Filho</option>
+						<option>Esposo(a)</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-lg-6">
+					<label for="txtdataNascimento">Data de Nascimento*</label>
+					<input type="date" class="form-control" id="txtdataNascimento" aria-describedby="campo para data de nascimento">
+				</div>
+				<div class="form-group col-lg-6">
+					<label for="selsexo">sexo*</label>
+					<select class="form-control" id="selsexo">
+						<option disabled="disabled" selected="selected">selecione...</option>
+						<option>feminino</option>
+						<option>masculino</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-lg-6">
+					<label for="selsexo">País*</label>
+					<select class="form-control" id="selsexo">
+						<option disabled="disabled" selected="selected">selecione...</option>
+						<option>feminino</option>
+						<option>masculino</option>
+					</select>
+				</div>
+				<div class="col-lg-6 form-group">
+					<label for="txtprotocolo">Documento</label>
+					<div class="input-group">
+						<input type="text" class="form-control" aria-label="Text input with dropdown button">
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">RNE/RNM</a>
+								<a class="dropdown-item" href="#">Protocolo</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-row mt-3">
+				<div class="form-group col-lg-6">
+					<label for="txtprotocolo">RG</label>
+					<input type="text" class="form-control" id="txtprotocolo" placeholder="xxxx-xx">
+					<div class="invalid-feedback"></div>
+					<div class="valid-feedback">okay!</div>
+				</div>
+				<div class="form-group col-lg-6">
+					<label for="txtrne">CPF</label>
+					<input type="text" class="form-control" id="txtrne" placeholder="xxxx-xx">
+				</div>
+			</div>
+			<div class="form-row">
+				<button id="btnadddependente" type="button" class="btn bg-green float-right" onclick="">adicionar</button>
+			</div>
+		</div>
+	</div>
+</div>
