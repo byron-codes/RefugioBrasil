@@ -25,6 +25,12 @@ function proximo(){
         $("#necessidades").removeClass("d-none")
         $("#title").text("Cadastro de Refugiado - Necessidades")
         
+    }else if(!$("#necessidades").hasClass("d-none")){
+
+        $("#necessidades").addClass("d-none")
+        $("#dependente").removeClass("d-none")
+        $("#title").text("Cadastro de Refugiado - Dependentes")
+        
     }
 }
 
