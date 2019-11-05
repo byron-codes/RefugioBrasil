@@ -3,11 +3,11 @@ package br.com.byron.refugioBrasil.command;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import br.com.byron.refugioBrasil.domain.DomainEntity;
 
-@Service
+@Component
 public class DeleteCommand<Entity extends DomainEntity> extends AbstractCommand<Entity> {
 
 	@Override

@@ -26,7 +26,7 @@ public class TestController {
 	public TestController(Map<String, ICommand<Refugee>> commands) {
 		this.commands = commands;
 	}
-	
+
 	@RequestMapping("/temp")
 	public void teste() {
 		System.err.println(new CpfValidator().execute("48964432843"));
@@ -34,7 +34,7 @@ public class TestController {
 	}
 
 	@RequestMapping("/refugee")
-	public void testRefugee() {
+	public ModelAndView testRefugee() {
 
 		Refugee refugee = new Refugee();
 		Address a = new Address();
@@ -53,12 +53,12 @@ public class TestController {
 		refugee.setHash(UUID.randomUUID());
 		refugee.setAddress(a);
 		commands.get("saveCommand").execute(refugee);
-
+		return null;
 	}
-	
+
 	@RequestMapping("/novo")
-	public ModelAndView novoRefugiado(){
-		ModelAndView mv =  new ModelAndView("/refugee/refugee");
+	public ModelAndView novoRefugiado() {
+		ModelAndView mv = new ModelAndView("/refugee/refugee");
 		return mv;
 	}
 

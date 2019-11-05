@@ -3,6 +3,7 @@ package br.com.byron.refugioBrasil.strategy;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import br.com.byron.refugioBrasil.domain.Document;
@@ -12,7 +13,7 @@ import br.com.byron.refugioBrasil.strategy.document.CpfValidator;
 import br.com.byron.refugioBrasil.strategy.document.IDocumentStrategy;
 import br.com.byron.refugioBrasil.strategy.document.RgValidator;
 
-@Service
+@Component
 public class RefugeeDocumentStrategy implements IStrategy {
 
 	Map<String, IDocumentStrategy> validator;

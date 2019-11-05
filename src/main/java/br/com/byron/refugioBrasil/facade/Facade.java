@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import br.com.byron.refugioBrasil.dao.IGenericDao;
@@ -15,7 +16,7 @@ import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.strategy.IStrategy;
 import br.com.byron.refugioBrasil.strategy.RefugeeDocumentStrategy;
 
-@Service
+@Component
 public class Facade<Entity extends DomainEntity> implements IFacade<Entity> {
 
 	private final Map<String, IGenericDao<Entity>> dao;
