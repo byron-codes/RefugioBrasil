@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{refugee/RefugioBrasil}">
+<html layout:decorate="~{refugee/RefugioBrasil}">
 <head>
 <title>Cadastro de Refugiado</title>
 <link th:href="@{/css/geral.css}" rel="stylesheet" type="text/css" />
@@ -55,7 +55,9 @@
 	<th:block layout:fragment="script">
 		<script th:src="@{/js/refugee/refugiado.js}"></script>
 		<script th:src="@{/js/refugee/documento.js}"></script>
+		<script th:src="@{/js/refugee/jsonGerais.js}"></script>
 		<script th:src="@{/js/validacao.js}"></script>
+		<script th:src="@{/js/util.js}"></script>
 		<script th:src="@{/js/refugee/uploudImage.js}"></script>
 	</th:block>
 

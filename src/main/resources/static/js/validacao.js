@@ -1,5 +1,5 @@
-function notnull(e){
-   if($(e).val() == null){
+function notNull(e){
+   if($(e).val() == null || $(e).val() == ""){
        if(!$(e).hasClass("is-invalid"))
             $(e).addClass("is-invalid");
         $(e).parent().find(".invalid-feedback").append(`<span class="error">Por favor preencha esse campo</span>`);
@@ -33,7 +33,7 @@ function apenasNumeros(e){
     }
 }
 
-function apenasNumerosComtracos(e){
+function apenasNumerosComTracos(e){
     if($(e).val() != null){
         var apenasNum = /^(([0-9])*(\-|\/)*)*$/;
         if(!apenasNum.test(e.val())) {
@@ -67,7 +67,7 @@ function semEspeciais(e){
 }
 
 
-function regexpersonalizado(e, regex, mensagem){
+function regexPersonalizado(e, regex, mensagem){
     if($(e).val() != null){
         var regext = regex;
         if(!regext.test(e.val())) {
