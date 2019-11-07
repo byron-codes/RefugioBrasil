@@ -32,11 +32,13 @@ public class Address extends DomainEntity {
 	@Column(name = "cep", length = 10, nullable = false)
 	private String cep;
 
+	//TODO: alterar mapeamento
 	@Column(name = "city", length = 50, nullable = false)
-	private String city;
+	private City city;
 
+	//TODO: alterar mapeamento
 	@Column(name = "state", length = 25, nullable = false)
-	private String state;
+	private State state;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "type", nullable = false)
