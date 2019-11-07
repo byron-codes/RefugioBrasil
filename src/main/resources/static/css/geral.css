@@ -69,6 +69,10 @@ a {
 	margin: 1rem;
 }
 
+.uppercase{
+	text-transform: uppercase;
+}
+
 /* .form-control:focus{
 	-webkit-box-shadow: 3px 3px 3px 3px #97dbea !important;
     box-shadow: 3px 3px 3px 3px #97dbea !important;
