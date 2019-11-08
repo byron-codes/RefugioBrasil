@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 function proximo(){
     if(!$("#documentos").hasClass("d-none")) {
-        
+    	
         $("#documentos").addClass("d-none")
         $("#identificacao").removeClass("d-none")
         $("#dialogoRobot").html("")
@@ -34,11 +34,29 @@ function proximo(){
         $("#btnvolta").removeClass("d-none")
 
     } else if(!$("#identificacao").hasClass("d-none")) {
+    	
+    	let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil"]
+    	for(i in campos) {
 
-        $("#identificacao").addClass("d-none")
-        $("#endereco").removeClass("d-none")
+    		let campo = $(validacoes[campos[i]].campo)
+    		let funcoes = validacoes[campos[i]].validacoes 
+    		
+			limpaCampo($(campo));
+		    funcoes()
+		    
+		    if(!$(campo).hasClass("is-invalid") && $(campo).val() != null && $(campo).val() != ""){
+		        $(campo).addClass("is-valid");
+		    }
+    	}
+    	
+    	if($("#identificacao").find(".is-invalid").length == 0){
+    	
+	        $("#identificacao").addClass("d-none")
+	        $("#endereco").removeClass("d-none")
+	        
+	        $("#title").text("Cadastro de Refugiado - Endereço")
         
-        $("#title").text("Cadastro de Refugiado - Endereço")
+    	}
 
     } else if(!$("#endereco").hasClass("d-none")) {
 
