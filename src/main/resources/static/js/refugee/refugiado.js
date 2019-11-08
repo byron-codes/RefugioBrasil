@@ -14,6 +14,12 @@ $(document).ready(function(){
 		})
 	}
 	
+	$("#txtdataNascimento").attr("min", getDate(-365  * 100));
+	$("#txtdataNascimento").attr("max", getDate());
+	
+	$("#txtdataChegada").attr("min", getDate(-365  * 100));
+	$("#txtdataChegada").attr("max", getDate());
+	
 })
 
 function proximo(){

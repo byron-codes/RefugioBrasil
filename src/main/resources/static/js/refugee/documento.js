@@ -90,3 +90,7 @@ function adicionarDoc(){
         </div>`
     )
 }
+
+$("#seldoc").change(function(){
+	setMaskListItem(mascaras[$(this).val()])
+})

@@ -4,17 +4,35 @@ function setMask(id, mask){
 
 function setAllMask(lista){
 	for(i in lista){
-		$(lista[i].campo).mask(lista[i].mascara, {reverse: false});
+		if(lista[i].mascara != "")
+			$(lista[i].campo).mask(lista[i].mascara, {reverse: false});
+		else
+			$(lista[i].campo).removeAttr("maxlength")
 	}
 }
 
 function setMaskListItem(item){
-	$(item.campo).mask(item.mascara, {reverse: false});
+	if(item.mascara != "")
+		$(item.campo).mask(item.mascara, {reverse: false});
+	else
+		$(item.campo).removeAttr("maxlength")
 }
 
 function limpaCampo(e){
 	$(e).removeClass('is-invalid is-valid');
     $(e).parent().find(".invalid-feedback").children().remove();
+}
+
+function getDate(plus = 0){
+	let d = new Date();
+	d.setDate(d.getDate() + plus);
+
+	let month = d.getMonth()+1;
+	let day = d.getDate();
+
+	return d.getFullYear() + '-' +
+	    (month<10 ? '0' : '') + month + '-' +
+	    (day<10 ? '0' : '') + day;
 }
 
 //MASCARA PARA CAMPO COM MULTIVALOR
