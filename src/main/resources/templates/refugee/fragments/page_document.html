@@ -2,7 +2,7 @@
 	<div id="documentosMinimo" class="form-row mt-3">
 		<div class="form-group col-lg-6">
 			<label for="txtprotocolo">Protocolo</label>
-			<input type="text" class="form-control uppercase" id="txtprotocolo" placeholder="XXXXX.XXXXXX/XXXX-XX">
+			<input type="text" value="11111111111111111" class="form-control uppercase" id="txtprotocolo" placeholder="XXXXX.XXXXXX/XXXX-XX">
 			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 			<div class="valid-feedback"></div>
 		</div>
@@ -17,7 +17,7 @@
 		<div class="form-group col-lg-6">
 			<label for="seldoc">Tipo Documento</label>
 			<select class="form-control" id="seldoc">
-				<option disabled="disabled" selected="selected">Selecione...</option>
+				<option value="0" disabled="disabled" selected="selected">Selecione...</option>
 				<option value="CPF">CPF</option>
 				<option value="CNH">CNH</option>
 				<option value="RG">RG</option>
@@ -36,6 +36,8 @@
 						<i class="fas fa-plus m-0"></i>
 					</button>
 				</div>
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 		</div>
 		<div id="novosDocumentos" class="form-group card-columns"></div>

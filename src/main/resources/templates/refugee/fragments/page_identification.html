@@ -5,7 +5,7 @@
 				<button class="no-image" id="img-result"></button>
 			</div>
 			<div class="upload-result">
-				<button class="hide-button">fechar</button>
+				<button class="hide-button">Fechar</button>
 				<pre class="upload-result__content">
                 </pre>
 			</div>
@@ -15,42 +15,54 @@
 		<div class="form-group col-lg-6">
 			<label for="txtnome">Nome*</label>
 			<input type="text" class="form-control" id="txtnome" placeholder="Maria José">
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
 		</div>
 		<div class="form-group col-lg-6">
 			<label for="selsexo">Sexo*</label>
 			<select class="form-control" id="selsexo">
-				<option disabled="disabled" selected="selected">selecione...</option>
-				<option>Feminino</option>
-				<option>Masculino</option>
-				<option>Não binário</option>
+				<option value="0" disabled="disabled" selected="selected">Selecione...</option>
+				<option value="FEMININO">Feminino</option>
+				<option value="MASCULINO">Masculino</option>
+				<option value="NAOBINARIO">Não binário</option>
 			</select>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
 		</div>
 	</div>
 	<div class="form-row">
 		<div class="form-group col-lg-6">
 			<label for="txtdataNascimento">Data de Nascimento*</label>
 			<input type="date" class="form-control" id="txtdataNascimento" aria-describedby="campo para data de nascimento">
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
 		</div>
 		<div class="form-group col-lg-6">
 			<label for="txtdataNascimento">Data de Chegada*</label>
 			<input type="date" class="form-control" id="txtdataChegada" aria-describedby="campo para data de nascimento">
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
 		</div>
 	</div>
 	<div class="form-row">
 		<div class="form-group col-lg-6">
 			<label for="txtnome">Email</label>
-			<input type="text" class="form-control" id="txtnome" placeholder="Maria José">
+			<input type="text" class="form-control" id="txtEmail" placeholder="Maria José">
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
 		</div>
 		<div class="form-group col-lg-6">
 			<label for="selestadocivil">Estado Civil*</label>
 			<select class="form-control" id="selestadocivil">
-				<option disabled="disabled" selected="selected">selecione...</option>
-				<option>Casado</option>
-				<option>Solteiro</option>
-				<option>Viúvo</option>
-				<option>Divorciado</option>
-				<option>Separado</option>
+				<option value="0" disabled="disabled" selected="selected">Selecione...</option>
+				<option value="CASADO">Casado</option>
+				<option value="SOLTEIRO">Solteiro</option>
+				<option value="VIUVO">Viúvo</option>
+				<option value="DIVORCIADO">Divorciado</option>
+				<option value="SEPARADO">Separado</option>
 			</select>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
 		</div>
 	</div>
 	<div class="form-row">

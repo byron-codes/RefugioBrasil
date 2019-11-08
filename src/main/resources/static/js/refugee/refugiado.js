@@ -8,7 +8,7 @@ $(document).ready(function(){
 		$(campo).focusout(function() {
 			limpaCampo($(this));
 		    funcoes()
-		    if(!$(this).hasClass("is-invalid")){
+		    if(!$(this).hasClass("is-invalid") && $(this).val() != null && $(this).val() != ""){
 		        $(this).addClass("is-valid");
 		    }
 		})

@@ -79,18 +79,30 @@ function consultarDocumento(e){
 }
 
 function adicionarDoc(){
-    let num = $("#txtnumerodoc").val();
-    let valueTipo = $("#seldoc").val();
-    let tipo = $("#seldoc").find(`[val=${valueTipo}]`).text();
-    $("#txtnumerodoc").val("");
-    $("#documentosAdd").val("");
-    $("#novosDocumentos").append(
-        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="m-3">${tipo} - ${num}</div>
-        </div>`
-    )
+	if($("#txtnumerodoc").val() != null && $("#txtnumerodoc").val() != "" && !$("#txtnumerodoc").hasClass("is-invalid")){
+	    let num = $("#txtnumerodoc").val();
+	    let valueTipo = $("#seldoc").val();
+	    let tipo = $("#seldoc").find(`[value=${valueTipo}]`).text();
+	    $("#txtnumerodoc").val("");
+	    $("#documentosAdd").val("");
+	    $("#novosDocumentos").append(
+	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+	            <div class="m-3">${tipo} - ${num}</div>
+	        </div>`
+	    )
+	    limpaCampo($("#txtnumerodoc"));
+	    $("#seldoc").val("0")
+	} else {
+		Swal.fire({
+			type: 'error',
+			title: 'Número de documento inválido para adição',
+			allowOutsideClick: false
+		})
+	}
 }
 
 $("#seldoc").change(function(){
+	limpaCampo($("#txtnumerodoc"))
+	$("#txtnumerodoc").val("")	
 	setMaskListItem(mascaras[$(this).val()])
 })
