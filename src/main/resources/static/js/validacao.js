@@ -34,7 +34,15 @@ function data(e){
 	if($(e).val() == null || $(e).val() == ""){
         if(!$(e).hasClass("is-invalid"))
             $(e).addClass("is-invalid");
-        $(e).parent().find(".invalid-feedback").append(`<span class="error">Insira uma data válida</span>`);
+        $(e).parent().find(".invalid-feedback").append(`<span class="error">Por favor insira uma data válida</span>`);
+    }
+}
+
+function numerosPositivos(e){
+	if($(e).val() != null && $(e).val() != "" && $(e).val() <= 0){
+        if(!$(e).hasClass("is-invalid"))
+            $(e).addClass("is-invalid");
+        $(e).parent().find(".invalid-feedback").append(`<span class="error">Por favor insira um número válido</span>`);
     }
 }
 
@@ -60,9 +68,9 @@ function apenasNumerosComTracos(e){
     }
 }
 
-function regexNome(e){
+function regexLetras(e){
 	if($(e).val() != null && $(e).val() != ""){
-        var apenasLetras = /^(([A-Za-z])*([\wÀ-ú])*(\s){0,1})*$/;
+        var apenasLetras = /^([A-Za-zÀ-ú](\s){0,1})*$/;
         if(!apenasLetras.test(e.val())) {
             if(!$(e).hasClass("is-invalid"))
                 $(e).addClass("is-invalid");

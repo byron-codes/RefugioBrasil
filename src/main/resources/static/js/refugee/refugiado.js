@@ -35,7 +35,8 @@ function proximo(){
 
     } else if(!$("#identificacao").hasClass("d-none")) {
     	
-    	let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil"]
+    	//let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil"]
+    	let campos = [];
     	for(i in campos) {
 
     		let campo = $(validacoes[campos[i]].campo)

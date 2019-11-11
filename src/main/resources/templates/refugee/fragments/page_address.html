@@ -4,63 +4,80 @@
 			<div class="form-group col-lg-6">
 				<label for="seltipoendereco">Tipo de moradia</label>
 				<select class="form-control" id="seltipoendereco">
-					<option disabled="disabled" selected="selected"></option>
-					<option selected="selected" disabled="disabled">Selecione...</option>
-					<option>Própria</option>
-					<option>Alugada</option>
-					<option>Auxílio</option>
-					<option>Outro</option>
+					<option value="0" selected="selected" disabled="disabled">Selecione...</option>
+					<option value="PROPRIA">Própria</option>
+					<option value="ALUGADA">Alugada</option>
+					<option value="AUXILIO">Auxílio</option>
+					<option value="OUTRO">Outro</option>
 				</select>
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 			<div class="form-group col-lg-6">
 				<label for="txtcep">CEP</label>
 				<input type="text" class="form-control" id="txtcep" placeholder="XXXXX-XXX">
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="form-group col-lg-6">
 				<label for="txtestado">Estado</label>
 				<input type="text" class="form-control" id="txtestado" placeholder="São Paulo">
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 			<div class="form-group col-lg-6">
 				<label for="txtcidade">Cidade</label>
 				<input type="text" class="form-control" id="txtcidade" placeholder="Poá">
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="form-group col-lg-6">
 				<label for="txtlogradouro">Logradouro</label>
 				<input type="text" class="form-control" id="txtlogradouro" placeholder="Rua Tulipas">
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 			<div class="form-group col-lg-2">
 				<label for="txtnumero">Número</label>
 				<input type="number" class="form-control" id="txtnumero" placeholder="234">
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 			<div class="form-group col-lg-4">
 				<label for="txtcomplemento">Complemento</label>
 				<input type="text" class="form-control" id="txtcomplemento" placeholder="bloco 3">
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 		</div>
 		<div class="form-row mt-3">
 			<div class="form-group col-lg-6">
-				<label for="txtcep">Número</label>
-				<input type="text" class="form-control" id="txtcep" placeholder="XXXXX-XXX">
+				<label for="selnivel">Opeadora</label>
+				<select class="form-control" id="selnivel">
+					<option selected="selected" disabled="disabled">Selecione...</option>
+					<option value="VIVO">Vivo</option>
+					<option value="TIM">Tim</option>
+					<option value="CLARO">Claro</option>
+					<option value="OI">Oi</option>
+				</select>
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 			<div class="form-group col-lg-6">
-				<label for="selnivel">Opeadora</label>
+				<label for="txtcep">Número</label>
 				<div class="input-group">
-					<select class="form-control" id="selnivel">
-						<option selected="selected" disabled="disabled">Selecione...</option>
-						<option value="VIVO">Vivo</option>
-						<option value="TIM">Tim</option>
-						<option value="CLARO">Claro</option>
-						<option value="OI">Oi</option>
-					</select>
+					<input type="text" class="form-control" id="txtcep" placeholder="XXXXX-XXX">
 					<div class="input-group-append">
 						<button class="btn btn-blue" type="button" onclick="adicionarLingua()">
 							<i class="fas fa-plus"></i>
 						</button>
 					</div>
+					<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+					<div class="valid-feedback"></div>
 				</div>
 			</div>
 		</div>
