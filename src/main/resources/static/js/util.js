@@ -4,7 +4,9 @@ function setMask(id, mask){
 
 function setAllMask(lista){
 	for(i in lista){
-		if(lista[i].mascara != "")
+		if(lista[i].mascara == "telefone")
+			setTelMask(lista[i].campo)
+		else if(lista[i].mascara != "")
 			$(lista[i].campo).mask(lista[i].mascara, {reverse: false});
 		else
 			$(lista[i].campo).removeAttr("maxlength")
@@ -12,7 +14,9 @@ function setAllMask(lista){
 }
 
 function setMaskListItem(item){
-	if(item.mascara != "")
+	if(item.mascara == "telefone")
+		setTelMask(item.campo)
+	else if(item.mascara != "")
 		$(item.campo).mask(item.mascara, {reverse: false});
 	else
 		$(item.campo).removeAttr("maxlength")
@@ -35,15 +39,16 @@ function getDate(plus = 0){
 	    (day<10 ? '0' : '') + day;
 }
 
+function setTelMask(campo) {
+	let SPMaskBehavior = function (val) {
+	return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+	},
+	spOptions = {
+		onKeyPress: function(val, e, field, options) {
+			field.mask(SPMaskBehavior.apply({}, arguments), options);
+		}
+	};
+	$(campo).mask(SPMaskBehavior, spOptions);
+}
+
 //MASCARA PARA CAMPO COM MULTIVALOR
-//var SPMaskBehavior = function (val) {
-//return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-//},
-//spOptions = {
-//	onKeyPress: function(val, e, field, options) {
-//		field.mask(SPMaskBehavior.apply({}, arguments), options);
-//	}
-//};
-//
-////ATRIBUI-SE A SEGUINTE MÁSCARA PARA O CAMPO PERTANCENTE AO TELEFONE;
-//$("#txtUsuarioTelefone").mask(SPMaskBehavior, spOptions);

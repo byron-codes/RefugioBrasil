@@ -127,22 +127,6 @@ function voltar(){
     }
 }
 
-function adicionarLingua(){
-    debugger
-    let lingua = $("#sellingua").val();
-    // let lingua = $("#selnivel").find(`[val=${valuelingua}]`).text();
-
-    let nivel = $("#selnivel").val();
-    // let nivel = $("#selnivel").find(`[val=${valueNivel}]`).text();
-    $("#sellingua").val("");
-    $("#selnivel").val("");
-    $("#linguas").append(
-        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="m-3">${lingua} - ${nivel}</div>
-        </div>`
-    )
-}
-
 
 // $(function () {
 // $('select').selectpicker();

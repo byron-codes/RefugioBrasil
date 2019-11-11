@@ -174,7 +174,25 @@ let validacoes = {
 	txtcomplemento : {
 		campo : "#txtcomplemento",
 		validacoes : function() {
-			tamanho($(validacoes.txtlogradouro.campo), 0, 100)
+			tamanho($(validacoes.txtcomplemento.campo), 0, 100)
+		}
+	},
+	selOperadora : {
+		campo : "#selOperadora",
+		validacoes : function() {
+			comboBox($(validacoes.selOperadora.campo))
+		}
+	},
+	txtNumeroTel : {
+		campo : "#txtNumeroTel",
+		validacoes : function() {
+			
+			$(validacoes.txtNumeroTel.campo).unmask()
+			
+			notNull($(validacoes.txtNumeroTel.campo))
+			tamanho($(validacoes.txtNumeroTel.campo), 10, 11)
+			
+			setMaskListItem(mascaras.txtNumeroTel)
 		}
 	}
 }
@@ -219,5 +237,9 @@ let mascaras = {
 	txtcep : {
 		campo : "#txtcep",
 		mascara : "00000-000"
+	},
+	txtNumeroTel: {
+		campo : "#txtNumeroTel",
+		mascara : "telefone"
 	}
 }

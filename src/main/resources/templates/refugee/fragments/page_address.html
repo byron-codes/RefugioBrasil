@@ -54,11 +54,11 @@
 				<div class="valid-feedback"></div>
 			</div>
 		</div>
-		<div class="form-row mt-3">
+		<div class="form-row mt-3" id="telefoneDiv">
 			<div class="form-group col-lg-6">
 				<label for="selnivel">Opeadora</label>
-				<select class="form-control" id="selnivel">
-					<option selected="selected" disabled="disabled">Selecione...</option>
+				<select class="form-control" id="selOperadora">
+					<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 					<option value="VIVO">Vivo</option>
 					<option value="TIM">Tim</option>
 					<option value="CLARO">Claro</option>
@@ -70,7 +70,7 @@
 			<div class="form-group col-lg-6">
 				<label for="txtcep">Número</label>
 				<div class="input-group">
-					<input type="text" class="form-control" id="txtcep" placeholder="XXXXX-XXX">
+					<input type="text" class="form-control" id="txtNumeroTel" placeholder="XXXXX-XXX">
 					<div class="input-group-append">
 						<button class="btn btn-blue" type="button" onclick="adicionarLingua()">
 							<i class="fas fa-plus"></i>
