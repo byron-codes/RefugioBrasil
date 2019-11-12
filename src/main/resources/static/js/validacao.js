@@ -38,6 +38,16 @@ function data(e){
     }
 }
 
+function dataInicioFim(inicio, fim){
+	if($(inicio).val() != null && $(inicio).val() != "" && $(fim).val() != null && $(fim).val() != ""){
+		if ($(fim).val() <= $(inicio).val()) {
+			if(!$(fim).hasClass("is-invalid"))
+	            $(fim).addClass("is-invalid");
+	        $(fim).parent().find(".invalid-feedback").append(`<span class="error">Por favor a data de fim deve ser depois da data início</span>`);
+		}
+	}
+}
+
 function numerosPositivos(e){
 	if($(e).val() != null && $(e).val() != "" && $(e).val() <= 0){
         if(!$(e).hasClass("is-invalid"))

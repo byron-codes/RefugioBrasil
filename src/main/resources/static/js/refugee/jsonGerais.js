@@ -177,24 +177,56 @@ let validacoes = {
 			tamanho($(validacoes.txtcomplemento.campo), 0, 100)
 		}
 	},
-	selOperadora : {
-		campo : "#selOperadora",
-		validacoes : function() {
-			comboBox($(validacoes.selOperadora.campo))
-		}
-	},
 	txtNumeroTel : {
 		campo : "#txtNumeroTel",
 		validacoes : function() {
+			if($("#selOperadora").val() != 0 && $("#selOperadora").val() != "0" && $("#selOperadora").val() != null && $("#selOperadora").val() != ""){
+				
+				$(validacoes.txtNumeroTel.campo).unmask()
 			
-			$(validacoes.txtNumeroTel.campo).unmask()
+				notNull($(validacoes.txtNumeroTel.campo))
+				tamanho($(validacoes.txtNumeroTel.campo), 10, 11)
 			
-			notNull($(validacoes.txtNumeroTel.campo))
-			tamanho($(validacoes.txtNumeroTel.campo), 10, 11)
+				setMaskListItem(mascaras.txtNumeroTel)
+				
+			}
 			
-			setMaskListItem(mascaras.txtNumeroTel)
 		}
-	}
+	},
+	txtcargo : {
+		campo : "#txtcargo",
+		validacoes : function() {
+			notNull($(validacoes.txtcargo.campo))
+			tamanho($(validacoes.txtcargo.campo), 5, 100)
+		}
+	},
+	txtempresa : {
+		campo : "#txtempresa",
+		validacoes : function() {
+			notNull($(validacoes.txtempresa.campo))
+			tamanho($(validacoes.txtempresa.campo), 5, 100)
+		}
+	},
+	txtdataInicioExperiencia : {
+		campo : "#txtdataInicioExperiencia",
+		validacoes : function() {
+			data($(validacoes.txtdataInicioExperiencia.campo))
+			dataInicioFim($(validacoes.txtdataInicioExperiencia.campo), $(validacoes.txtdataFimExperiencia.campo))
+		}
+	},
+	txtdataFimExperiencia : {
+		campo : "#txtdataFimExperiencia",
+		validacoes : function() {
+			data($(validacoes.txtdataFimExperiencia.campo), 5, 100)
+			dataInicioFim($(validacoes.txtdataInicioExperiencia.campo), $(validacoes.txtdataFimExperiencia.campo))
+		}
+	},
+	selPaisExperiencia : {
+		campo : "#selPaisExperiencia",
+		validacoes : function() {
+			comboBox($(validacoes.selPaisExperiencia.campo))
+		}
+	},
 }
 
 let mascaras = {

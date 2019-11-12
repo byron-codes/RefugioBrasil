@@ -1,55 +1,61 @@
-<div class="modal fade" id="formacaoModal" tabindex="-1" role="dialog"
-	aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalExperiencia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Formação
-					Acadêmica</h5>
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
+				<h5 class="modal-title" id="exampleModalLabel">Experiência Profissional</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="txtcargo">Cargo*</label> <input type="text"
-							class="form-control" id="txtcargo" placeholder="Psicologo">
+						<label for="txtcargo">Cargo*</label>
+						<input type="text" class="form-control" id="txtcargo" placeholder="Psicologo">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="txtempresa">Empresa*</label> <input type="text"
-							class="form-control" id="txtempresa" placeholder="Clinica Mogi">
+						<label for="txtempresa">Empresa*</label>
+						<input type="text" class="form-control" id="txtempresa" placeholder="Clinica Mogi">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="txtdataInicioP">Data de incio*</label> <input
-							type="date" class="form-control" id="txtdataInicioP"
-							aria-describedby="">
+						<label for="txtdataInicioP">Data de incio*</label>
+						<input type="date" class="form-control" id="txtdataInicioExperiencia" aria-describedby="">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 					<div class="form-group col-md-6">
-						<label for="txtdataFimP">Data de fim*</label> <input type="date"
-							class="form-control" id="txtdataFimP" aria-describedby="">
+						<label for="txtdataFimP">Data de fim*</label>
+						<input type="date" class="form-control" id="txtdataFimExperiencia" aria-describedby="">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-lg-12">
-						<label for="selPaisFormacaoP">País*</label> <select
-							class="form-control" id="selPaisFormacaoP">
-							<option selected="selected" disabled="disabled">Selecione...</option>
+						<label for="selPaisFormacaoP">País*</label>
+						<select class="form-control" id="selPaisExperiencia">
+							<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 							<option>Chile</option>
 							<option>Argentina</option>
 							<option>Colômbia</option>
 							<option>...</option>
 						</select>
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">voltar</button>
-				<button type="button" class="btn bg-blue">Adicionar</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="limpaModalExperiencia()">voltar</button>
+				<button type="button" class="btn bg-blue" onclick="adicionarExperiencia()">Adicionar</button>
 			</div>
 		</div>
 	</div>

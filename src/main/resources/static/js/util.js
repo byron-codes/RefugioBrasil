@@ -18,8 +18,10 @@ function setMaskListItem(item){
 		setTelMask(item.campo)
 	else if(item.mascara != "")
 		$(item.campo).mask(item.mascara, {reverse: false});
-	else
+	else {
+		$(item.campo).unmask();
 		$(item.campo).removeAttr("maxlength")
+	}
 }
 
 function limpaCampo(e){
@@ -41,7 +43,7 @@ function getDate(plus = 0){
 
 function setTelMask(campo) {
 	let SPMaskBehavior = function (val) {
-	return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+	return val.replace(/\D/g, '').length === 11 ? '(00) 0 0000-0000' : '(00) 0000-00009';
 	},
 	spOptions = {
 		onKeyPress: function(val, e, field, options) {

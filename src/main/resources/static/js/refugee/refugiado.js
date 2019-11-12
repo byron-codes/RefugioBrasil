@@ -61,10 +61,29 @@ function proximo(){
 
     } else if(!$("#endereco").hasClass("d-none")) {
 
-        $("#endereco").addClass("d-none")
-        $("#experiencia").removeClass("d-none")
-        
-        $("#title").text("Cadastro de Refugiado - Experiência")
+    	//let campos = ["seltipoendereco", "txtcep", "txtestado", "txtcidade", "txtlogradouro", "txtnumero", "txtcomplemento"]
+    	let campos = [];
+    	for(i in campos) {
+
+    		let campo = $(validacoes[campos[i]].campo)
+    		let funcoes = validacoes[campos[i]].validacoes 
+    		
+			limpaCampo($(campo));
+		    funcoes()
+		    
+		    if(!$(campo).hasClass("is-invalid") && $(campo).val() != null && $(campo).val() != ""){
+		        $(campo).addClass("is-valid");
+		    }
+    	}
+    	
+    	if($("#camposEndereco").find(".is-invalid").length == 0){
+    	
+	        $("#endereco").addClass("d-none")
+	        $("#experiencia").removeClass("d-none")
+	        
+	        $("#title").text("Cadastro de Refugiado - Experiência")
+	        
+    	}
 
     } else if(!$("#experiencia").hasClass("d-none")) {
 
