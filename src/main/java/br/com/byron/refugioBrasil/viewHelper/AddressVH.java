@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AddressVH {
+public class AddressVH extends GenericVH{
 	
 	private String street;
 

@@ -2,7 +2,7 @@
 	<div id="documentosMinimo" class="form-row mt-3">
 		<div class="form-group col-lg-6">
 			<label for="txtprotocolo">Protocolo</label>
-			<input type="text" class="form-control uppercase" id="txtprotocolo" placeholder="XXXXX.XXXXXX/XXXX-XX">
+			<input type="text" value="11111111111111111" class="form-control uppercase" id="txtprotocolo" placeholder="XXXXX.XXXXXX/XXXX-XX">
 			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 			<div class="valid-feedback"></div>
 		</div>
@@ -17,25 +17,29 @@
 		<div class="form-group col-lg-6">
 			<label for="seldoc">Tipo Documento</label>
 			<select class="form-control" id="seldoc">
-				<option disabled="disabled" selected="selected">selecione...</option>
+				<option value="0" disabled="disabled" selected="selected">Selecione...</option>
 				<option value="CPF">CPF</option>
 				<option value="CNH">CNH</option>
 				<option value="RG">RG</option>
 				<option value="PASSAPORTE">Passaporte</option>
 				<option value="PIS">PIS</option>
 				<option value="CARTEIRADETRABALHO">Carteira de Trabalho</option>
-				<option>outro</option>
+				<option value="OUTRO">Outro</option>
 			</select>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
 		</div>
 		<div class="form-group col-lg-6">
 			<label for="txtnumerodoc"> Número</label>
 			<div class="input-group">
-				<input type="text" class="form-control" id="txtnumerodoc" placeholder="xxx.xxx.xxx-xx">
+				<input type="text" class="form-control uppercase" id="txtnumerodoc" placeholder="xxx.xxx.xxx-xx">
 				<div class="input-group-append">
-					<button class="btn bg-green" type="button" onclick="adicionarDoc()">
+					<button class="btn bg-green" type="button" onclick="adicionarDocumento()">
 						<i class="fas fa-plus m-0"></i>
 					</button>
 				</div>
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
 			</div>
 		</div>
 		<div id="novosDocumentos" class="form-group card-columns"></div>

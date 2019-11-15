@@ -2,37 +2,42 @@
 	<div class="form-row d-flex justify-content-center">
 		<p class="font-weight-bold">Selecione as necessidades:</p>
 		<div class="form-group ml-3">
-			<input type="checkbox" id="Alimentos" />
+			<input name="necessity.food" type="checkbox" id="Alimentos" />
 			<label for="Alimentos" style="display: inline;">Alimentos</label>
 		</div>
 		<div class="form-group ml-3">
-			<input type="checkbox" id="moradia" />
+			<input name="necessity.home" type="checkbox" id="moradia" />
 			<label for="moradia" style="display: inline;">Moradia(aluguel)</label>
 		</div>
 		<div class="form-group ml-3">
-			<input type="checkbox" id="remedios" />
+			<input name="necessity.medicine" type="checkbox" id="remedios" />
 			<label for="remedios" style="display: inline;">Remédios</label>
 		</div>
 	</div>
 	<div class="form-row d-flex justify-content-center">
+		<input name="necessity.situation" type="hidden" id="situacao" value="SOCORRO">
 		<span class="font-weight-bold">Selecione a situação:</span>
 		<div class="form-group ml-3">
-			<input class="ml-3" name="situacao" type="radio" id="b" />
+			<input value="SOCORRO" checked="checked" class="ml-3" name="situacao" type="radio" id="b" />
 			<label for="b" style="display: inline;">Socorro</label>
 		</div>
 		<div class="form-group ml-3">
-			<input class="ml-3" name="situacao" type="radio" id="c" />
+			<input value="INTEGRACAO" class="ml-3" name="situacao" type="radio" id="c" />
 			<label for="c" style="display: inline;">Integração</label>
 		</div>
 		<div class="form-group ml-3">
-			<input class="ml-3" name="situacao" type="radio" id="d" />
+			<input value="CONSOLIDACAO" class="ml-3" name="situacao" type="radio" id="d" />
 			<label for="d" style="display: inline;">Consolidação</label>
 		</div>
+		<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+		<div class="valid-feedback"></div>
 	</div>
 	<div class="form-row d-flex justify-content-center">
 		<div class="col-lg-6">
 			<label for="obs">Observações:</label>
-			<textarea class="form-control" id="obs" rows="5" style="width: 100%; resize: none;"></textarea>
+			<textarea name="necessity.description" class="form-control" id="obs" rows="5" style="width: 100%; resize: none;"></textarea>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
 		</div>
 	</div>
 </div>

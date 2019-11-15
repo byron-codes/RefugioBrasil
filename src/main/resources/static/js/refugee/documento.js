@@ -78,15 +78,8 @@ function consultarDocumento(e){
 	
 }
 
-function adicionarDoc(){
-    let num = $("#txtnumerodoc").val();
-    let valueTipo = $("#seldoc").val();
-    let tipo = $("#seldoc").find(`[val=${valueTipo}]`).text();
-    $("#txtnumerodoc").val("");
-    $("#documentosAdd").val("");
-    $("#novosDocumentos").append(
-        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="m-3">${tipo} - ${num}</div>
-        </div>`
-    )
-}
+$("#seldoc").change(function(){
+	limpaCampo($("#txtnumerodoc"))
+	$("#txtnumerodoc").val("")	
+	setMaskListItem(mascaras[$(this).val()])
+})

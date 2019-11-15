@@ -1,31 +1,32 @@
 package br.com.byron.refugioBrasil;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.byron.refugioBrasil.command.ICommand;
 import br.com.byron.refugioBrasil.domain.Address;
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.enums.Gender;
 import br.com.byron.refugioBrasil.enums.HomeType;
+import br.com.byron.refugioBrasil.facade.Facade;
 import br.com.byron.refugioBrasil.strategy.document.CpfValidator;
 
 @Controller
 @RequestMapping("/refugee")
 public class TestController {
 
-	Map<String, ICommand<Refugee>> commands;
+	private final Facade<Refugee> facade;
 
 	@Autowired
-	public TestController(Map<String, ICommand<Refugee>> commands) {
-		this.commands = commands;
+	public TestController(Facade<Refugee> facade) {
+		this.facade = facade;
 	}
 
 	@RequestMapping("/temp")
@@ -53,7 +54,6 @@ public class TestController {
 		refugee.setLastUpdate(LocalDateTime.now());
 		refugee.setHash(UUID.randomUUID());
 		refugee.setAddress(a);
-		commands.get("saveCommand").execute(refugee);
 		return null;
 	}
 
@@ -61,6 +61,11 @@ public class TestController {
 	public ModelAndView novoRefugiado() {
 		ModelAndView mv = new ModelAndView("/refugee/refugee");
 		return mv;
+	}
+	
+	@PostMapping("/salvar")
+	public @ResponseBody void salvar(Refugee refugee) {
+		facade.save(refugee);
 	}
 
 }

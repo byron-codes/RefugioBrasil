@@ -1,5 +1,5 @@
 <!doctype html>
-<html  lang="pt" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,12 +16,29 @@
 <body>
 	<nav id="slide-menu">
 		<ul>
-			<li><img class="mx-auto d-block img-fluid" th:src="@{/img/logo.png}"></li>
-			<li class="Refugiados"><i class="fas fa-user-plus"></i>Novo Refugiado</li>
-			<li class="Refugiados"><i class="fas fa-users"></i>Lista de Refugiados</li>
-			<li class="Atendimentos"><i class="fas fa-hands-helping"></i>Atendimentos</li>
-			<li class="Relatorios"><i class="fas fa-chart-pie"></i>Relatórios</li>
-			<li class="logout"><i class="fas fa-sign-out-alt"></i>Sair</li>
+			<li>
+				<img class="mx-auto d-block img-fluid" th:src="@{/img/logo.png}">
+			</li>
+			<li class="Refugiados">
+				<i class="fas fa-user-plus"></i>
+				Novo Refugiado
+			</li>
+			<li class="Refugiados">
+				<i class="fas fa-users"></i>
+				Lista de Refugiados
+			</li>
+			<li class="Atendimentos">
+				<i class="fas fa-hands-helping"></i>
+				Atendimentos
+			</li>
+			<li class="Relatorios">
+				<i class="fas fa-chart-pie"></i>
+				Relatórios
+			</li>
+			<li class="logout">
+				<i class="fas fa-sign-out-alt"></i>
+				Sair
+			</li>
 		</ul>
 	</nav>
 	<div id="content">
@@ -37,16 +54,19 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<th:block layout:fragment="modais">
 	</th:block>
-	
+
 	<th:block layout:fragment="script">
 	</th:block>
-	
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 	<script th:src="@{/plugin/mask/jquery.mask.min.js}"></script>
 	<script th:src="@{/js/menulateral.js}"></script>
+	<script th:src="@{/js/util.js}"></script>
+	<script th:src="@{/js/validacao.js}"></script>
 </body>
 </html>

@@ -1,46 +1,56 @@
 <div id="experiencia" class="d-none">
-          <div class="form-row mt-3">
-            <div class="form-group col-lg-6">
-              <label for="sellingua">Línguas*</label>
-              <select class="form-control" id="sellingua" data-live-search="true">
-                <option selected="selected" disabled="disabled">Selecione...</option>
-                <option value="PORTUGUES">Português</option>
-                <option value="ARABE">Árabe</option>
-                <option value="INGLES">Inglês</option>
-                <option value="ESPANHOL">Espahol</option>
-                <option value="FRANCES">Francês</option>
-              </select>
-            </div>
-            <div class="form-group col-lg-6">
-              <label for="selnivel">Nivel*</label>
-              <div class="input-group">
-                <select class="form-control" id="selnivel">
-                  <option selected="selected" disabled="disabled">Selecione...</option>
-                  <option value="BASICO">Básico</option>
-                  <option value="INTERMEDIARIO">Intermediario</option>
-                  <option value="AVANCADO">Avançado</option>
-                  <option value="AVANCADO">Fluente</option>
-                </select>
-                <div class="input-group-append">
-                  <button class="btn btn-blue" type="button" onclick="adicionarLingua()"><i class="fas fa-plus"></i></button>
-                </div>
-              </div>
-            </div>
-            <div id="linguas" class="form-group col-lg-12 card-deck">
+	<div class="form-row mt-3" id="linguaDiv">
+		<div class="form-group col-lg-6">
+			<label for="sellingua">Línguas*</label>
+			<select class="form-control" id="sellingua" data-live-search="true">
+				<option value="0" selected="selected" disabled="disabled">Selecione...</option>
+				<option value="PORTUGUES">Português</option>
+				<option value="ARABE">�rabe</option>
+				<option value="INGLES">Inglês</option>
+				<option value="ESPANHOL">Espahol</option>
+				<option value="FRANCES">Francês</option>
+			</select>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+		<div class="form-group col-lg-6">
+			<label for="selnivel">Nivel*</label>
+			<div class="input-group">
+				<select class="form-control" id="selnivel">
+					<option value="0" selected="selected" disabled="disabled">Selecione...</option>
+					<option value="BASICO">Básico</option>
+					<option value="INTERMEDIARIO">Intermediario</option>
+					<option value="AVANCADO">Avançado</option>
+					<option value="FLUENTE">Fluente</option>
+				</select>
+				<div class="input-group-append">
+					<button class="btn btn-blue" type="button" onclick="adicionarLingua()">
+						<i class="fas fa-plus"></i>
+					</button>
+				</div>
+				<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+				<div class="valid-feedback"></div>
+			</div>
+		</div>
+		<div id="linguas" class="form-group col-lg-12 card-deck"></div>
+	</div>
+	<hr>
+	<div class="form-row mt-3">
+		<div class="form-group col-lg-6">
+			<button id="btnformacao" type="button" class="btn btn-blue" data-toggle="modal" data-target="#modalFormacao" style="width: 100%;">
+				Formação Acadêmica
+				<i class="fas fa-plus"></i>
+			</button>
+		</div>
+		<div class="form-group col-lg-6">
+			<button id="btnprofissional" type="button" class="btn btn-blue" data-toggle="modal" data-target="#modalExperiencia" style="width: 100%;">
+				Experiência Profissional
+				<i class="fas fa-plus"></i>
+			</button>
+		</div>
+	</div>
+	<!-- formacao academica -->
+	<!-- experiencia profissional -->
+	<!-- idioma -->
 
-            </div>
-          </div>
-          <hr>
-          <div class="form-row mt-3">
-            <div class="form-group col-lg-6">
-              <button id="btnformacao" type="button" class="btn btn-blue" data-toggle="modal" data-target="#exampleModal" style="width: 100%;">Formação Acadêmica <i class="fas fa-plus"></i></button>
-            </div>
-            <div class="form-group col-lg-6">
-              <button id="btnprofissional" type="button" class="btn btn-blue" data-toggle="modal" data-target="#formacaoModal" style="width: 100%;">Experiência Profissional <i class="fas fa-plus"></i></button>
-            </div>
-          </div>
-          <!-- formacao academica -->
-          <!-- experiencia profissional -->
-          <!-- idioma -->
-          
-        </div>
+</div>

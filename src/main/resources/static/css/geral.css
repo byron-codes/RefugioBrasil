@@ -73,6 +73,10 @@ a {
 	text-transform: uppercase;
 }
 
+select{
+    background-position: center right calc(1em + .1875rem) !important;
+}
+
 /* .form-control:focus{
 	-webkit-box-shadow: 3px 3px 3px 3px #97dbea !important;
     box-shadow: 3px 3px 3px 3px #97dbea !important;

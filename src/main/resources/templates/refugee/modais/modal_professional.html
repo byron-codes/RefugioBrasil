@@ -1,46 +1,48 @@
-<!-- TODO: TROCAR ID DESSA MODAL -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-	aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalFormacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Formação
-					Acadêmica</h5>
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
+				<h5 class="modal-title" id="exampleModalLabel">Formação Acadêmica</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="txtcurso">Curso*</label> <input type="text"
-							class="form-control" id="txtcurso" placeholder="Psicologia">
+						<label for="txtcurso">Curso*</label>
+						<input type="text" class="form-control" id="txtcurso" placeholder="Psicologia">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="txtinstituicao">Instituição*</label> <input
-							type="text" class="form-control" id="txtinstituicao"
-							placeholder="Psicologia">
+						<label for="txtinstituicao">Instituição*</label>
+						<input type="text" class="form-control" id="txtinstituicao" placeholder="Psicologia">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="txtdataInicio">Data de incio*</label> <input
-							type="date" class="form-control" id="txtdataInicio"
-							aria-describedby="">
+						<label for="txtdataInicioFormacao">Data de incio*</label>
+						<input type="date" class="form-control" id="txtdataInicioFormacao" aria-describedby="">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 					<div class="form-group col-md-6">
-						<label for="txtdataFim">Data de fim*</label> <input type="date"
-							class="form-control" id="txtdataFim" aria-describedby="">
+						<label for="txtdataFimFormacao">Data de fim*</label>
+						<input type="date" class="form-control" id="txtdataFimFormacao" aria-describedby="">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-lg-6">
-						<label for="selgrau">Grau Acadêmico*</label> <select
-							class="form-control" id="selgrau">
-							<option selected="selected" disabled="disabled">Selecione...</option>
+						<label for="selgrau">Grau Acadêmico*</label>
+						<select class="form-control" id="selgrauAcademico">
+							<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 							<option>fundamental</option>
 							<option>Médio</option>
 							<option>Superior</option>
@@ -50,31 +52,37 @@
 							<option>Pós Doutorado</option>
 							<option>Livre Docência</option>
 						</select>
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 					<div class="form-group col-lg-6">
-						<label for="selsituacaoAcademica">Situação acadêmica*</label> <select
-							class="form-control" id="selsituacaoAcademica">
-							<option selected="selected" disabled="disabled">Selecione...</option>
+						<label for="selsituacaoAcademica">Situação acadêmica*</label>
+						<select class="form-control" id="selsituacaoAcademica">
+							<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 							<option>cursando</option>
 							<option>concluído</option>
 							<option>incompleto</option>
 						</select>
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 					<div class="form-group col-lg-12">
-						<label for="selPaisFormacao">País*</label> <select
-							class="form-control" id="selPaisFormacao">
-							<option selected="selected" disabled="disabled">Selecione...</option>
+						<label for="selPaisFormacao">País*</label>
+						<select class="form-control" id="selPaisFormacao">
+							<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 							<option>Chile</option>
 							<option>Argentina</option>
 							<option>Colômbia</option>
 							<option>...</option>
 						</select>
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">voltar</button>
-				<button type="button" class="btn bg-blue">Adicionar</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="limpaModalFormacao()">voltar</button>
+				<button type="button" class="btn bg-blue" onclick="adicionarFormacao()">Adicionar</button>
 			</div>
 		</div>
 	</div>

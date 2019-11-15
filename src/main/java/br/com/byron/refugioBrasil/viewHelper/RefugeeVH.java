@@ -5,10 +5,6 @@ import java.util.Set;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import br.com.byron.refugioBrasil.domain.Document;
-import br.com.byron.refugioBrasil.domain.Language;
-import br.com.byron.refugioBrasil.domain.Necessity;
-import br.com.byron.refugioBrasil.domain.Profession;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +14,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RefugeeVH {
+public class RefugeeVH extends GenericVH{
 	
 	private String email;
 	
@@ -30,12 +26,12 @@ public class RefugeeVH {
 
 	private MultipartFile file;
 	
-	private Set<Profession> professions = new HashSet<>();
+	private Set<ProfessionVH> professions;
 	
-	private Set<Necessity> necessities = new HashSet<>();
+	private Set<NecessityVH> necessities = new HashSet<>();
 	
-	private Set<Language> languages = new HashSet<>();
+	private Set<LanguageVH> languages = new HashSet<>();
 	
-	private Set<Document> documents = new HashSet<>();
+	private Set<DocumentVH> documents = new HashSet<>();
 
 }
