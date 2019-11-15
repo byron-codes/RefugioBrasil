@@ -1,8 +1,8 @@
 package br.com.byron.refugioBrasil.domain;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -32,10 +32,10 @@ public class Person extends NamedEntity {
 	@Column(name = "gender")
 	private Gender gender;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Set<Document> documents = new HashSet<>();
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Document> documents = new ArrayList<>();
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Set<Phone> phones = new HashSet<>();
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Phone> phones = new ArrayList<>();
 
 }

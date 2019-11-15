@@ -37,18 +37,7 @@ function proximo(){
     	
     	//let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil"]
     	let campos = [];
-    	for(i in campos) {
-
-    		let campo = $(validacoes[campos[i]].campo)
-    		let funcoes = validacoes[campos[i]].validacoes 
-    		
-			limpaCampo($(campo));
-		    funcoes()
-		    
-		    if(!$(campo).hasClass("is-invalid") && $(campo).val() != null && $(campo).val() != ""){
-		        $(campo).addClass("is-valid");
-		    }
-    	}
+    	validaListaCampos(campos);
     	
     	if($("#identificacao").find(".is-invalid").length == 0){
     	
@@ -63,18 +52,7 @@ function proximo(){
 
     	//let campos = ["seltipoendereco", "txtcep", "txtestado", "txtcidade", "txtlogradouro", "txtnumero", "txtcomplemento"]
     	let campos = [];
-    	for(i in campos) {
-
-    		let campo = $(validacoes[campos[i]].campo)
-    		let funcoes = validacoes[campos[i]].validacoes 
-    		
-			limpaCampo($(campo));
-		    funcoes()
-		    
-		    if(!$(campo).hasClass("is-invalid") && $(campo).val() != null && $(campo).val() != ""){
-		        $(campo).addClass("is-valid");
-		    }
-    	}
+    	validaListaCampos(campos);
     	
     	if($("#camposEndereco").find(".is-invalid").length == 0){
     	
@@ -100,6 +78,7 @@ function proximo(){
         $("#title").text("Cadastro de Refugiado - Dependentes")
         
         $("#btnprox").addClass("d-none")
+        $("#btnsalvar").removeClass("d-none")
         
     }
 }
@@ -146,7 +125,12 @@ function voltar(){
     }
 }
 
+$("input[name='situacao']").click(function(){
+	$("#situacao").val($(this).val())
+})
 
-// $(function () {
-// $('select').selectpicker();
-// });
+$('.dropdown-menu a').click(function () {
+	limpaCampo($("#documentoDependente"))
+	$("#documentoDependente").val("")	
+	setMaskListItem(mascaras[$(this).html()])
+})

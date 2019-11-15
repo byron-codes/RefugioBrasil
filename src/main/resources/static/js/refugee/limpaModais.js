@@ -2,11 +2,14 @@ function limpaModalExperiencia(){
 	
 	let campos = ["txtcargo", "txtempresa", "txtdataInicioExperiencia", "txtdataFimExperiencia", "selPaisExperiencia"];
 	
-	for(i in campos) {
-    	let campo = $(validacoes[campos[i]].campo)
-    	limpaCampo($(campo));
-    	$(campo).val("")
-    }
+	limpaDadosErrosCampos(campos)
 	
-	$("#selPaisExperiencia").val("0")
+}
+
+function limpaModalFormacao(){
+	
+	let campos = ["txtcurso", "txtinstituicao", "txtdataInicioFormacao", "txtdataFimFormacao", "selgrauAcademico", "selsituacaoAcademica", "selPaisFormacao"];
+	
+	limpaDadosErrosCampos(campos)
+	
 }

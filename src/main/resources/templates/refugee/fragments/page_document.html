@@ -26,13 +26,15 @@
 				<option value="CARTEIRADETRABALHO">Carteira de Trabalho</option>
 				<option value="OUTRO">Outro</option>
 			</select>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
 		</div>
 		<div class="form-group col-lg-6">
 			<label for="txtnumerodoc"> Número</label>
 			<div class="input-group">
 				<input type="text" class="form-control uppercase" id="txtnumerodoc" placeholder="xxx.xxx.xxx-xx">
 				<div class="input-group-append">
-					<button class="btn bg-green" type="button" onclick="adicionarDoc()">
+					<button class="btn bg-green" type="button" onclick="adicionarDocumento()">
 						<i class="fas fa-plus m-0"></i>
 					</button>
 				</div>

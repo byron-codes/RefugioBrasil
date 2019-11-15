@@ -11,7 +11,8 @@ let validacoes = {
 			tamanho($(validacoes.txtprotocolo.campo), 17, 17)
 
 			setMaskListItem(mascaras.txtprotocolo)
-		}
+		},
+		tipo : "text"
 	},
 	txtrne : {
 		campo : "#txtrne",
@@ -26,7 +27,8 @@ let validacoes = {
 			tamanho($(validacoes.txtrne.campo), 8, 8)
 
 			setMaskListItem(mascaras.txtrne)
-		}
+		},
+		tipo : "text"
 	},
 	txtnumerodoc : {
 		campo : "#txtnumerodoc",
@@ -38,6 +40,7 @@ let validacoes = {
 
 			if (campoSelecionado == "CPF") {
 
+				notNull($(validacoes.txtnumerodoc.campo))
 				tamanho($(validacoes.txtnumerodoc.campo), 11, 11)
 				validarCpf($(validacoes.txtnumerodoc.campo))
 
@@ -45,42 +48,55 @@ let validacoes = {
 
 			} else if (campoSelecionado == "RG") {
 
+				notNull($(validacoes.txtnumerodoc.campo))
 				tamanho($(validacoes.txtnumerodoc.campo), 5, 15)
 
 				setMaskListItem(mascaras[campoSelecionado])
 
 			} else if (campoSelecionado == "PASSAPORTE") {
 
+				notNull($(validacoes.txtnumerodoc.campo))
 				tamanho($(validacoes.txtnumerodoc.campo), 8, 8)
 
 				setMaskListItem(mascaras[campoSelecionado])
 
 			} else if (campoSelecionado == "PIS") {
 
+				notNull($(validacoes.txtnumerodoc.campo))
 				tamanho($(validacoes.txtnumerodoc.campo), 11, 11)
 
 				setMaskListItem(mascaras[campoSelecionado])
 
 			} else if (campoSelecionado == "CARTEIRADETRABALHO") {
 
+				notNull($(validacoes.txtnumerodoc.campo))
 				tamanho($(validacoes.txtnumerodoc.campo), 13, 13)
 
 				setMaskListItem(mascaras[campoSelecionado])
 
 			} else if (campoSelecionado == "CNH") {
 
+				notNull($(validacoes.txtnumerodoc.campo))
 				tamanho($(validacoes.txtnumerodoc.campo), 11, 11)
 
 				setMaskListItem(mascaras[campoSelecionado])
 
 			} else if (campoSelecionado == "OUTRO") {
 
+				notNull($(validacoes.txtnumerodoc.campo))
 				tamanho($(validacoes.txtnumerodoc.campo), 5, 25)
 
 				setMaskListItem(mascaras[campoSelecionado])
 
 			}
-		}
+		},
+		tipo : "text"
+	},
+	seldoc : {
+		campo : "#seldoc",
+		validacoes : function() {
+		},
+		tipo : "select"
 	},
 	txtnome : {
 		campo : "#txtnome",
@@ -88,44 +104,51 @@ let validacoes = {
 			notNull($(validacoes.txtnome.campo))
 			tamanho($(validacoes.txtnome.campo), 5, 100)
 			regexLetras($(validacoes.txtnome.campo))
-		}
+		},
+		tipo : "text"
 	},
 	selsexo : {
 		campo : "#selsexo",
 		validacoes : function() {
 			comboBox($(validacoes.selsexo.campo))
-		}
+		},
+		tipo : "select"
 	},
 	txtdataNascimento : {
 		campo : "#txtdataNascimento",
 		validacoes : function() {
 			data($(validacoes.txtdataNascimento.campo))
-		}
+		},
+		tipo : "text"
 	},
 	txtdataChegada : {
 		campo : "#txtdataChegada",
 		validacoes : function() {
 			data($(validacoes.txtdataChegada.campo))
-		}
+		},
+		tipo : "text"
 	},
 	txtEmail : {
 		campo : "#txtEmail",
 		validacoes : function() {
 			notNull($(validacoes.txtEmail.campo))
 			email($(validacoes.txtEmail.campo))
-		}
+		},
+		tipo : "text"
 	},
 	selestadocivil : {
 		campo : "#selestadocivil",
 		validacoes : function() {
 			comboBox($(validacoes.selestadocivil.campo))
-		}
+		},
+		tipo : "select"
 	},
 	seltipoendereco : {
 		campo : "#seltipoendereco",
 		validacoes : function() {
 			comboBox($(validacoes.seltipoendereco.campo))
-		}
+		},
+		tipo : "select"
 	},
 	txtcep : {
 		campo : "#txtcep",
@@ -138,7 +161,8 @@ let validacoes = {
 
 			setMaskListItem(mascaras.txtcep)
 
-		}
+		},
+		tipo : "text"
 	},
 	txtestado : {
 		campo : "#txtestado",
@@ -146,7 +170,8 @@ let validacoes = {
 			notNull($(validacoes.txtestado.campo))
 			tamanho($(validacoes.txtestado.campo), 4, 20)
 			regexLetras($(validacoes.txtestado.campo))
-		}
+		},
+		tipo : "text"
 	},
 	txtcidade : {
 		campo : "#txtcidade",
@@ -154,7 +179,8 @@ let validacoes = {
 			notNull($(validacoes.txtcidade.campo))
 			tamanho($(validacoes.txtcidade.campo), 3, 50)
 			regexLetras($(validacoes.txtcidade.campo))
-		}
+		},
+		tipo : "text"
 	},
 	txtlogradouro : {
 		campo : "#txtlogradouro",
@@ -162,70 +188,246 @@ let validacoes = {
 			notNull($(validacoes.txtlogradouro.campo))
 			tamanho($(validacoes.txtlogradouro.campo), 3, 100)
 			regexLetras($(validacoes.txtlogradouro.campo))
-		}
+		},
+		tipo : "text"
 	},
 	txtnumero : {
 		campo : "#txtnumero",
 		validacoes : function() {
 			notNull($(validacoes.txtnumero.campo))
 			numerosPositivos($(validacoes.txtnumero.campo))
-		}
+		},
+		tipo : "text"
 	},
 	txtcomplemento : {
 		campo : "#txtcomplemento",
 		validacoes : function() {
 			tamanho($(validacoes.txtcomplemento.campo), 0, 100)
-		}
+		},
+		tipo : "text"
 	},
 	txtNumeroTel : {
 		campo : "#txtNumeroTel",
 		validacoes : function() {
-			if($("#selOperadora").val() != 0 && $("#selOperadora").val() != "0" && $("#selOperadora").val() != null && $("#selOperadora").val() != ""){
-				
+			if ($("#selOperadora").val() != 0
+					&& $("#selOperadora").val() != "0"
+					&& $("#selOperadora").val() != null
+					&& $("#selOperadora").val() != "") {
+
 				$(validacoes.txtNumeroTel.campo).unmask()
-			
+
 				notNull($(validacoes.txtNumeroTel.campo))
 				tamanho($(validacoes.txtNumeroTel.campo), 10, 11)
-			
+
 				setMaskListItem(mascaras.txtNumeroTel)
-				
+
 			}
-			
-		}
+
+		},
+		tipo : "text"
 	},
 	txtcargo : {
 		campo : "#txtcargo",
 		validacoes : function() {
 			notNull($(validacoes.txtcargo.campo))
 			tamanho($(validacoes.txtcargo.campo), 5, 100)
-		}
+			regexLetras($(validacoes.txtcargo.campo))
+		},
+		tipo : "text"
 	},
 	txtempresa : {
 		campo : "#txtempresa",
 		validacoes : function() {
 			notNull($(validacoes.txtempresa.campo))
 			tamanho($(validacoes.txtempresa.campo), 5, 100)
-		}
+		},
+		tipo : "text"
 	},
 	txtdataInicioExperiencia : {
 		campo : "#txtdataInicioExperiencia",
 		validacoes : function() {
 			data($(validacoes.txtdataInicioExperiencia.campo))
-			dataInicioFim($(validacoes.txtdataInicioExperiencia.campo), $(validacoes.txtdataFimExperiencia.campo))
-		}
+			dataInicioFim($(validacoes.txtdataInicioExperiencia.campo),
+					$(validacoes.txtdataFimExperiencia.campo))
+		},
+		tipo : "text"
 	},
 	txtdataFimExperiencia : {
 		campo : "#txtdataFimExperiencia",
 		validacoes : function() {
 			data($(validacoes.txtdataFimExperiencia.campo), 5, 100)
-			dataInicioFim($(validacoes.txtdataInicioExperiencia.campo), $(validacoes.txtdataFimExperiencia.campo))
-		}
+			dataInicioFim($(validacoes.txtdataInicioExperiencia.campo),
+					$(validacoes.txtdataFimExperiencia.campo))
+		},
+		tipo : "text"
 	},
 	selPaisExperiencia : {
 		campo : "#selPaisExperiencia",
 		validacoes : function() {
 			comboBox($(validacoes.selPaisExperiencia.campo))
-		}
+		},
+		tipo : "select"
+	},
+	txtcurso : {
+		campo : "#txtcurso",
+		validacoes : function() {
+			notNull($(validacoes.txtcurso.campo))
+			tamanho($(validacoes.txtcurso.campo), 5, 100)
+			regexLetras($(validacoes.txtcurso.campo))
+		},
+		tipo : "text"
+	},
+	txtinstituicao : {
+		campo : "#txtinstituicao",
+		validacoes : function() {
+			notNull($(validacoes.txtinstituicao.campo))
+			tamanho($(validacoes.txtinstituicao.campo), 5, 100)
+			regexLetras($(validacoes.txtinstituicao.campo))
+		},
+		tipo : "text"
+	},
+	txtdataInicioFormacao : {
+		campo : "#txtdataInicioFormacao",
+		validacoes : function() {
+			data($(validacoes.txtdataInicioFormacao.campo))
+			dataInicioFim($(validacoes.txtdataInicioFormacao.campo),
+					$(validacoes.txtdataFimFormacao.campo))
+		},
+		tipo : "text"
+	},
+	txtdataFimFormacao : {
+		campo : "#txtdataFimFormacao",
+		validacoes : function() {
+			data($(validacoes.txtdataFimFormacao.campo), 5, 100)
+			dataInicioFim($(validacoes.txtdataInicioFormacao.campo),
+					$(validacoes.txtdataFimFormacao.campo))
+		},
+		tipo : "text"
+	},
+	selgrauAcademico : {
+		campo : "#selgrauAcademico",
+		validacoes : function() {
+			comboBox($(validacoes.selgrauAcademico.campo))
+		},
+		tipo : "select"
+	},
+	selsituacaoAcademica : {
+		campo : "#selsituacaoAcademica",
+		validacoes : function() {
+			comboBox($(validacoes.selsituacaoAcademica.campo))
+		},
+		tipo : "select"
+	},
+	selPaisFormacao : {
+		campo : "#selPaisFormacao",
+		validacoes : function() {
+			comboBox($(validacoes.selPaisFormacao.campo))
+		},
+		tipo : "select"
+	},
+	sellingua : {
+		campo : "#sellingua",
+		validacoes : function() {
+		},
+		tipo : "select"
+	},
+	selnivel : {
+		campo : "#selnivel",
+		validacoes : function() {
+		},
+		tipo : "select"
+	},
+	obs : {
+		campo : "#obs",
+		validacoes : function() {
+			tamanho($(validacoes.obs.campo), 5, 100)
+		},
+		tipo : "text"
+	},
+	txtnomeDependente : {
+		campo : "#txtnomeDependente",
+		validacoes : function() {
+			notNull($(validacoes.txtnomeDependente.campo))
+			tamanho($(validacoes.txtnomeDependente.campo), 5, 100)
+			regexLetras($(validacoes.txtnomeDependente.campo))
+		},
+		tipo : "text"
+	},
+	selsexoDependente : {
+		campo : "#selsexoDependente",
+		validacoes : function() {
+			comboBox($(validacoes.selsexoDependente.campo))
+		},
+		tipo : "select"
+	},
+	txtdataNascimentoDependente : {
+		campo : "#txtdataNascimentoDependente",
+		validacoes : function() {
+			data($(validacoes.txtdataNascimentoDependente.campo))
+		},
+		tipo : "text"
+	},
+	txtdataChegadaDependente : {
+		campo : "#txtdataChegadaDependente",
+		validacoes : function() {
+			data($(validacoes.txtdataChegadaDependente.campo))
+		},
+		tipo : "text"
+	},
+	selParentesco : {
+		campo : "#selParentesco",
+		validacoes : function() {
+			comboBox($(validacoes.selParentesco.campo))
+		},
+		tipo : "select"
+	},
+	selPaisDependente : {
+		campo : "#selPaisDependente",
+		validacoes : function() {
+			comboBox($(validacoes.selPaisDependente.campo))
+		},
+		tipo : "select"
+	},
+	documentoDependente : {
+		campo : "#documentoDependente",
+		validacoes : function() {
+
+			let campoSelecionado = $("#tipoDocumentoDependente").html()
+
+			$(validacoes.documentoDependente.campo).unmask()
+
+			if (campoSelecionado == "Protocolo") {
+
+				notNull($(validacoes.documentoDependente.campo))
+				tamanho($(validacoes.documentoDependente.campo), 17, 17)
+
+				setMaskListItem(mascaras[campoSelecionado])
+
+			} else if (campoSelecionado == "RNM") {
+
+				notNull($(validacoes.documentoDependente.campo))
+				tamanho($(validacoes.documentoDependente.campo), 8, 8)
+
+				setMaskListItem(mascaras[campoSelecionado])
+
+			}
+
+		},
+		tipo : "select"
+	},
+	txtcpfDependente : {
+		campo : "#txtcpfDependente",
+		validacoes : function() {
+
+			$(validacoes.txtcpfDependente.campo).unmask()
+
+			notNull($(validacoes.txtcpfDependente.campo))
+			tamanho($(validacoes.txtcpfDependente.campo), 11, 11)
+			validarCpf($(validacoes.txtcpfDependente.campo))
+
+			setMaskListItem(mascaras.txtcpfDependente)
+		},
+		tipo : "text"
 	},
 }
 
@@ -270,8 +472,20 @@ let mascaras = {
 		campo : "#txtcep",
 		mascara : "00000-000"
 	},
-	txtNumeroTel: {
+	txtNumeroTel : {
 		campo : "#txtNumeroTel",
 		mascara : "telefone"
+	},
+	txtcpfDependente : {
+		campo : "#txtcpfDependente",
+		mascara : "000.000.000-00"
+	},
+	Protocolo : {
+		campo : "#documentoDependente",
+		mascara : "00000.000000/0000-00"
+	},
+	RNM : {
+		campo : "#documentoDependente",
+		mascara : "S000000-A"
 	}
 }

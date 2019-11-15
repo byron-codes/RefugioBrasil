@@ -13,7 +13,7 @@ function tamanho(e, min , max){
                 $(e).addClass("is-invalid");
 
             if(min != max){
-                $(e).parent().find(".invalid-feedback").append(`<span class="error">Por favor insira um valor entre ${min} e ${max}</span>`);
+                $(e).parent().find(".invalid-feedback").append(`<span class="error">Por favor insira entre ${min} e ${max} caracteres</span>`);
             }else{
                 $(e).parent().find(".invalid-feedback").append(`<span class="error">Por favor insira ${min} caracteres</span>`);
             }
@@ -24,6 +24,14 @@ function tamanho(e, min , max){
 
 function comboBox(e){
 	if($(e).val() == 0 || $(e).val() == "0" || $(e).val() == null || $(e).val() == ""){
+        if(!$(e).hasClass("is-invalid"))
+            $(e).addClass("is-invalid");
+        $(e).parent().find(".invalid-feedback").append(`<span class="error">Por favor selecione uma opção</span>`);
+    }
+}
+
+function radio(e){
+	if($(e).val() == null || $(e).val() == ""){
         if(!$(e).hasClass("is-invalid"))
             $(e).addClass("is-invalid");
         $(e).parent().find(".invalid-feedback").append(`<span class="error">Por favor selecione uma opção</span>`);

@@ -6,8 +6,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
-import br.com.byron.refugioBrasil.enums.Category;
-import br.com.byron.refugioBrasil.enums.Urgency;
+import br.com.byron.refugioBrasil.enums.Situation;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,15 +20,20 @@ import lombok.Setter;
 @Table(name = "_necessity")
 public class Necessity extends DomainEntity {
 	
-	@Column(name = "description", length = 150, nullable = false)
+	@Column(name = "description", length = 150)
 	private String description;
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name = "urgency", nullable = false)
-	private Urgency urgency;
+	@Column(name = "food")
+	private boolean food;
+	
+	@Column(name = "home")
+	private boolean home;
+	
+	@Column(name = "medicine")
+	private boolean medicine;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "category", nullable = false)
-	private Category category;
+	@Column(name = "situation")
+	private Situation situation;
 
 }

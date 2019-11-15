@@ -29,6 +29,33 @@ function limpaCampo(e){
     $(e).parent().find(".invalid-feedback").children().remove();
 }
 
+function limpaDadosErrosCampos(lista){
+	for(i in lista) {
+    	let campo = $(validacoes[lista[i]].campo)
+    	limpaCampo($(campo));
+    	if(validacoes[lista[i]].tipo == "text") {
+    		$(campo).val("")
+    	} else if(validacoes[lista[i]].tipo == "select") {
+    		$(campo).val("0")
+    	}
+    }
+}
+
+function validaListaCampos(campos){
+	for(i in campos) {
+
+		let campo = $(validacoes[campos[i]].campo)
+		let funcoes = validacoes[campos[i]].validacoes 
+		
+		limpaCampo($(campo));
+	    funcoes()
+	    
+	    if(!$(campo).hasClass("is-invalid") && $(campo).val() != null && $(campo).val() != ""){
+	        $(campo).addClass("is-valid");
+	    }
+	}
+}
+
 function getDate(plus = 0){
 	let d = new Date();
 	d.setDate(d.getDate() + plus);
