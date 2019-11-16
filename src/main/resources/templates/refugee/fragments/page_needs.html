@@ -2,15 +2,18 @@
 	<div class="form-row d-flex justify-content-center">
 		<p class="font-weight-bold">Selecione as necessidades:</p>
 		<div class="form-group ml-3">
-			<input name="necessity.food" type="checkbox" id="Alimentos" />
+			<input type="hidden" id="alimentosValue" name="necessity.food" value="false">
+			<input type="checkbox" id="Alimentos" onchange="$('#alimentosValue').val($(this).prop('checked'))"/>
 			<label for="Alimentos" style="display: inline;">Alimentos</label>
 		</div>
 		<div class="form-group ml-3">
-			<input name="necessity.home" type="checkbox" id="moradia" />
+			<input type="hidden" id="moradiaValue" name="necessity.home" value="false">
+			<input type="checkbox" id="moradia" onchange="$('#moradiaValue').val($(this).prop('checked'))"/>
 			<label for="moradia" style="display: inline;">Moradia(aluguel)</label>
 		</div>
 		<div class="form-group ml-3">
-			<input name="necessity.medicine" type="checkbox" id="remedios" />
+			<input type="hidden" id="remediosValue" name="necessity.medicine" value="false">
+			<input type="checkbox" id="remedios" onchange="$('#remediosValue').val($(this).prop('checked'))"/>
 			<label for="remedios" style="display: inline;">Remédios</label>
 		</div>
 	</div>

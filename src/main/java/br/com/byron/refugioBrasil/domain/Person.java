@@ -35,9 +35,6 @@ public class Person extends DomainEntity {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Document> documents = new ArrayList<>();
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Phone> phones = new ArrayList<>();
-	
 	@Column(name = "name", length = 100)
 	private String name;
 
