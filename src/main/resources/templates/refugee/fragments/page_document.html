@@ -2,13 +2,15 @@
 	<div id="documentosMinimo" class="form-row mt-3">
 		<div class="form-group col-lg-6">
 			<label for="txtprotocolo">Protocolo</label>
-			<input type="text" value="11111111111111111" class="form-control uppercase" id="txtprotocolo" placeholder="XXXXX.XXXXXX/XXXX-XX">
+			<input name="documents[0].number" type="text" value="11111111111111111" class="form-control uppercase" id="txtprotocolo" placeholder="XXXXX.XXXXXX/XXXX-XX">
+			<input name="documents[0].type" type="hidden" value="PROTOCOLO">
 			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 			<div class="valid-feedback"></div>
 		</div>
 		<div class="form-group col-lg-6">
 			<label for="txtrne">RNE/RNM</label>
-			<input type="text" class="form-control uppercase" id="txtrne" placeholder="XXXXXXX-X">
+			<input name="documents[1].number" type="text" class="form-control uppercase" id="txtrne" placeholder="XXXXXXX-X">
+			<input name="documents[1].type" type="hidden" value="RNM">
 			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 			<div class="valid-feedback"></div>
 		</div>

@@ -34,8 +34,5 @@ public class Person extends NamedEntity {
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Document> documents = new ArrayList<>();
-	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Phone> phones = new ArrayList<>();
 
 }

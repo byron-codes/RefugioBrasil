@@ -43,18 +43,36 @@
 						<label for="selPaisFormacaoP">Pa√≠s*</label>
 						<select class="form-control" id="selPaisExperiencia">
 							<option value="0" selected="selected" disabled="disabled">Selecione...</option>
-							<option>Chile</option>
-							<option>Argentina</option>
-							<option>Col√¥mbia</option>
+							<option value="111">Chile</option>
+							<option value="222">Argentina</option>
+							<option value="333">Col√¥mbia</option>
 							<option>...</option>
 						</select>
 						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 						<div class="valid-feedback"></div>
 					</div>
 				</div>
+				<div class="form-row">
+					<div class="form-group col-lg-12">
+						<label for="obs">Observa√ß√µes:</label>
+						<textarea class="form-control" id="obsProfissao" rows="3" style="width: 100%; resize: none;"></textarea>
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-lg-4">
+						<input name="atual" type="checkbox" id="profissaoAtual">
+						<label for="atual" style="display: inline;">Profiss„o atual</label>
+					</div>
+					<div class="form-group col-lg-8">
+						<input name="indicacao" type="checkbox" id="profissaoIndicacao">	
+						<label for="indicacao" style="display: inline;">IndicaÁ„o da Ref˙gio Brasil</label>
+					</div>
+				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="limpaModalExperiencia()">voltar</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">voltar</button>
 				<button type="button" class="btn bg-blue" onclick="adicionarExperiencia()">Adicionar</button>
 			</div>
 		</div>

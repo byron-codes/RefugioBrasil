@@ -5,11 +5,15 @@ import java.time.LocalDate;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import br.com.byron.refugioBrasil.enums.AcademicLevel;
+import br.com.byron.refugioBrasil.enums.AcademicStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,29 +24,28 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_profession")
-public class Profession extends NamedEntity {
-
-	@Column(name = "description", length = 300)
-	private String description;
+@Table(name = "_academic")
+public class Academic extends DomainEntity {
 	
-	@Column(name = "workload")
-	private String workload;
+	@Column(name = "course", length = 100)
+	private String course;
 	
-	@Column(name = "company")
-	private String company;
+	@Column(name = "instituation", length = 100)
+	private String instituation;
 
 	@Column(name = "start_date")
 	private LocalDate startDate;
 
 	@Column(name = "end_date")
 	private LocalDate endDate;
-
-	@Column(name = "current", nullable = false)
-	private boolean current;
-
-	@Column(name = "recommendation", nullable = false)
-	private boolean recommendation;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "level", nullable = false)
+	private AcademicLevel level;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "situation", nullable = false)
+	private AcademicStatus situation;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "country")

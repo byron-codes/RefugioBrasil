@@ -128,6 +128,13 @@ let validacoes = {
 		},
 		tipo : "text"
 	},
+	selPaisOrigem : {
+		campo : "#selPaisOrigem",
+		validacoes : function() {
+			comboBox($(validacoes.selPaisOrigem.campo))
+		},
+		tipo : "select"
+	},
 	txtEmail : {
 		campo : "#txtEmail",
 		validacoes : function() {
@@ -206,6 +213,18 @@ let validacoes = {
 		},
 		tipo : "text"
 	},
+	selOperadora : {
+		campo : "#selOperadora",
+		validacoes : function() {
+		},
+		tipo : "select"
+	},
+	selTipoTelefone : {
+		campo : "#selTipoTelefone",
+		validacoes : function() {
+		},
+		tipo : "select"
+	},
 	txtNumeroTel : {
 		campo : "#txtNumeroTel",
 		validacoes : function() {
@@ -267,6 +286,13 @@ let validacoes = {
 			comboBox($(validacoes.selPaisExperiencia.campo))
 		},
 		tipo : "select"
+	},
+	obsProfissao : {
+		campo : "#obsProfissao",
+		validacoes : function() {
+			tamanho($(validacoes.obsProfissao.campo), 5, 300)
+		},
+		tipo : "text"
 	},
 	txtcurso : {
 		campo : "#txtcurso",
@@ -413,7 +439,7 @@ let validacoes = {
 			}
 
 		},
-		tipo : "select"
+		tipo : "text"
 	},
 	txtcpfDependente : {
 		campo : "#txtcpfDependente",
@@ -421,7 +447,6 @@ let validacoes = {
 
 			$(validacoes.txtcpfDependente.campo).unmask()
 
-			notNull($(validacoes.txtcpfDependente.campo))
 			tamanho($(validacoes.txtcpfDependente.campo), 11, 11)
 			validarCpf($(validacoes.txtcpfDependente.campo))
 

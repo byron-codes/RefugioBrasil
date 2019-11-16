@@ -51,10 +51,6 @@ public class Refugee extends Person {
 	private Country birthCountry;
 	
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "origin_country")
-	private Country originCountry;
-	
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "address")
 	private Address address;
 	
@@ -66,9 +62,15 @@ public class Refugee extends Person {
 	private List<Profession> professions = new ArrayList<Profession>();
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Necessity> necessities = new ArrayList<Necessity>();
+	private List<Language> languages = new ArrayList<Language>();
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Language> languages = new ArrayList<Language>();
+	private List<Academic> academic = new ArrayList<Academic>();
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Phone> phones = new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Dependent> dependent = new ArrayList<Dependent>();
 	
 }

@@ -14,9 +14,10 @@
 				<div class="form-group col-lg-6">
 					<label for="selsexoDependente">Sexo*</label>
 					<select class="form-control" id="selsexoDependente">
-						<option disabled="disabled" selected="selected">selecione...</option>
-						<option>Feminino</option>
-						<option>Masculino</option>
+						<option value="0" disabled="disabled" selected="selected">Selecione...</option>
+						<option value="FEMININO">Feminino</option>
+						<option value="MASCULINO">Masculino</option>
+						<option value="NAOBINARIO">Não binário</option>
 					</select>
 					<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 					<div class="valid-feedback"></div>
@@ -40,15 +41,15 @@
 				<div class="form-group col-lg-6">
 					<label for="selParentesco">Parentesco*</label>
 					<select class="form-control" id="selParentesco">
-						<option disabled="disabled" selected="selected">Selecione...</option>
-						<option>Pai</option>
-						<option>M�e</option>
-						<option>Filho(a)</option>
-						<option>Neto(a)</option>
-						<option>Sogro(a)</option>
-						<option>Cunhado(a)</option>
-						<option>Companheiro(a)</option>
-						<option>Outro(a)</option>
+						<option value="0" disabled="disabled" selected="selected">Selecione...</option>
+						<option value="PAI">Pai</option>
+						<option value="MAE">M�e</option>
+						<option value="FILHO">Filho(a)</option>
+						<option value="NETO">Neto(a)</option>
+						<option value="SOGRO">Sogro(a)</option>
+						<option value="CUNHADO">Cunhado(a)</option>
+						<option value="COMPANHEIRO">Companheiro(a)</option>
+						<option value="OUTRO">Outro(a)</option>
 					</select>
 					<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 					<div class="valid-feedback"></div>
@@ -56,10 +57,11 @@
 				<div class="form-group col-lg-6">
 					<label for="selPaisDependente">País*</label>
 					<select class="form-control" id="selPaisDependente">
-						<option disabled="disabled" selected="selected">Selecione...</option>
-						<option>Feminino</option>
-						<option>Masculino</option>
-						<option>Não binário</option>
+						<option value="0" selected="selected" disabled="disabled">Selecione...</option>
+						<option value="111">Chile</option>
+						<option value="222">Argentina</option>
+						<option value="333">Colômbia</option>
+						<option>...</option>
 					</select>
 					<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 					<div class="valid-feedback"></div>
@@ -69,7 +71,7 @@
 				<div class="col-lg-6 form-group">
 					<label for="documentoDependente">Documento</label>
 					<div class="input-group">
-						<input id="documentoDependente" type="text" class="form-control uppercase" aria-label="Text input with dropdown button">
+						<input id="documentoDependente" placeholder="XXXXXXX-X" type="text" class="form-control uppercase" aria-label="Text input with dropdown button">
 						<div class="input-group-append dropdown">
 							<button id="tipoDocumentoDependente" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RNM</button>
 							<div class="dropdown-menu">
@@ -92,5 +94,8 @@
 				<button id="btnadddependente" type="button" class="btn bg-green float-right" onclick="adicionarDependente()">adicionar</button>
 			</div>
 		</div>
+	</div>
+	<div class="form-row ml-4 mr-4">
+		<div id="novosDependentes" class="form-group card-columns"></div>
 	</div>
 </div>
