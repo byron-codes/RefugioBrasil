@@ -40,7 +40,7 @@ public class Refugee extends Person {
 	private MaritalStatus maritalStatus;
 	
 	@Column(name = "cpp")
-	private boolean cpp;
+	private Boolean cpp;
 	
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "necessity")

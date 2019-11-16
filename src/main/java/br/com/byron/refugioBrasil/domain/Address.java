@@ -24,7 +24,7 @@ public class Address extends DomainEntity {
 	private String street;
 
 	@Column(name = "number")
-	private int number;
+	private Integer number;
 
 	@Column(name = "complement", length = 25)
 	private String complement;

@@ -24,10 +24,10 @@ public class Image extends File {
 	private String description;
 	
 	@Column(name = "heigth",  nullable = true)
-	private double heigth;
+	private Double heigth;
 	
 	@Column(name = "width",  nullable = true)
-	private double width;
+	private Double width;
 	
 	@Transient
 	private MultipartFile file;
