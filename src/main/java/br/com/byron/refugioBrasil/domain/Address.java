@@ -1,9 +1,14 @@
 package br.com.byron.refugioBrasil.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import br.com.byron.refugioBrasil.enums.HomeType;
@@ -32,13 +37,9 @@ public class Address extends DomainEntity {
 	@Column(name = "cep", length = 10, nullable = false)
 	private String cep;
 
-	//TODO: alterar mapeamento
-	@Column(name = "city", length = 50, nullable = false)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "city")
 	private City city;
-
-	//TODO: alterar mapeamento
-	@Column(name = "state", length = 25, nullable = false)
-	private State state;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "type", nullable = false)
