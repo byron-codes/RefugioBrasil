@@ -20,10 +20,12 @@ import lombok.Setter;
 @Entity
 @Table(name = "_language")
 @AttributeOverride(name = "name", column = @Column(name = "language"))
-public class Language extends NamedEntity {
+public class Language extends DomainEntity {
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "fluency",  nullable = false)
 	private Fluency fluency;
 
+	@Column(name = "name", length = 100)
+	private String name;
 }
