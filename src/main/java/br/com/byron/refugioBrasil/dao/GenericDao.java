@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,7 +18,6 @@ public class GenericDao<Entity extends DomainEntity> implements IGenericDao<Enti
 	public Entity save(Entity entity) {
 		entity.setCreationDate(LocalDateTime.now());
 		entity.setLastUpdate(LocalDateTime.now());
-		entity.setHash(UUID.randomUUID());
 		entity.setStatus(true);
 		return dao.saveAndFlush(entity);
 	}

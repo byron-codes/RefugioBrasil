@@ -1,7 +1,6 @@
 package br.com.byron.refugioBrasil;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -52,7 +51,7 @@ public class TestController {
 		refugee.setGender(Gender.NAOBINARIO);
 		refugee.setCreationDate(LocalDateTime.now());
 		refugee.setLastUpdate(LocalDateTime.now());
-		refugee.setHash(UUID.randomUUID());
+		//refugee.setHash(UUID.randomUUID());
 		refugee.setAddress(a);
 		return null;
 	}

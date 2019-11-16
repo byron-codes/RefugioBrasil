@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public class File extends NamedEntity {
+public class File extends DomainEntity {
 
 	@Column(name = "origin_name", nullable = true, length = 50)
 	protected String originName;
@@ -23,5 +23,8 @@ public class File extends NamedEntity {
 
 	@Column(name = "type", nullable = false, length = 5)
 	protected String type;
+	
+	@Column(name = "name", length = 100)
+	private String name;
 
 }

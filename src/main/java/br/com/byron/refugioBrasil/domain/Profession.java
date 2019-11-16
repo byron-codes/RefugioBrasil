@@ -21,7 +21,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "_profession")
-public class Profession extends NamedEntity {
+public class Profession extends DomainEntity {
 
 	@Column(name = "description", length = 300)
 	private String description;
@@ -41,5 +41,8 @@ public class Profession extends NamedEntity {
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "country")
 	private Country country;
+	
+	@Column(name = "name", length = 100)
+	private String name;
 
 }

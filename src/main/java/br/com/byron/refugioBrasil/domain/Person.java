@@ -23,7 +23,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public class Person extends NamedEntity {
+public class Person extends DomainEntity {
 
 	@Column(name = "birth_date")
 	private LocalDate birthDate;
@@ -37,5 +37,8 @@ public class Person extends NamedEntity {
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Phone> phones = new ArrayList<>();
+	
+	@Column(name = "name", length = 100)
+	private String name;
 
 }
