@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,7 +19,7 @@ import br.com.byron.refugioBrasil.facade.Facade;
 import br.com.byron.refugioBrasil.strategy.document.CpfValidator;
 
 @Controller
-@RequestMapping("/teste")
+@RequestMapping("/refugee")
 public class TestController {
 
 	private final Facade<Refugee> facade;
@@ -34,17 +35,17 @@ public class TestController {
 		System.err.println(new CpfValidator().execute("489.644.328-43"));
 	}
 
-	@RequestMapping("/refugee")
+	@RequestMapping(path="/salvar" , method = RequestMethod.POST)
 	public ModelAndView testRefugee() {
 
 		Refugee refugee = new Refugee();
 		Address a = new Address();
 		a.setCep("000000");
-		a.setCity("AA");
+		//a.setCity("AA");
 		a.setHomeType(HomeType.PROPRIA);
-		a.setState("SP");
+		//a.setState("SP");
 		a.setCep("00000-000");
-		a.setCity("Poá");
+		//a.setCity("Poá");
 		a.setStreet("Stª Cruz");
 		refugee.setStatus(true);
 		refugee.setEmail("TESTE");

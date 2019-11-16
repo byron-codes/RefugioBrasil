@@ -8,7 +8,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import br.com.byron.refugioBrasil.dao.IGenericDao;
 import br.com.byron.refugioBrasil.domain.DomainEntity;
