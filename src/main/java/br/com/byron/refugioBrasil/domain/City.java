@@ -1,5 +1,8 @@
 package br.com.byron.refugioBrasil.domain;
 
-public class City extends NamedEntity{
+import javax.persistence.Column;
 
+public class City extends DomainEntity{
+	@Column(name = "name", length = 100)
+	private String name;
 }

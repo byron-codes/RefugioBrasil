@@ -15,9 +15,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "_country")
-public class Country extends NamedEntity {
-
-	@Column(name = "code", length = 3, nullable = false, unique = true)
-	private String code;
+public class Country extends DomainEntity {
+	
+	@Column(name = "name", length = 100)
+	private String name;
 
 }
