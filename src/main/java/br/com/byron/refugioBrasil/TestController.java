@@ -15,7 +15,6 @@ import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.enums.Gender;
 import br.com.byron.refugioBrasil.enums.HomeType;
 import br.com.byron.refugioBrasil.facade.Facade;
-import br.com.byron.refugioBrasil.strategy.document.CpfValidator;
 
 @Controller
 @RequestMapping("/refugee")
@@ -30,8 +29,8 @@ public class TestController {
 
 	@RequestMapping("/temp")
 	public void teste() {
-		System.err.println(new CpfValidator().execute("48964432843"));
-		System.err.println(new CpfValidator().execute("489.644.328-43"));
+//		System.err.println(new CpfValidator().execute("48964432843"));
+//		System.err.println(new CpfValidator().execute("489.644.328-43"));
 	}
 
 	@RequestMapping(path="/salvar" , method = RequestMethod.POST)

@@ -1,10 +1,16 @@
 package br.com.byron.refugioBrasil.strategy.document;
 
-public class CpfValidator implements IDocumentStrategy {
+import org.springframework.stereotype.Component;
+
+import br.com.byron.refugioBrasil.domain.Document;
+
+@Component
+public class CpfStrategy implements IDocumentStrategy {
 
 	@Override
-	public String execute(String cpf) {
+	public String execute(Document doc) {
 
+		String cpf = doc.getNumber();
 		cpf = cpf.replace(".", "");
 		cpf = cpf.replace("-", "");
 

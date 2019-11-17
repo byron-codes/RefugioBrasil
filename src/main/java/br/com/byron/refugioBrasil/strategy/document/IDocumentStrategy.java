@@ -1,7 +1,7 @@
 package br.com.byron.refugioBrasil.strategy.document;
 
-public interface IDocumentStrategy {
+import br.com.byron.refugioBrasil.domain.Document;
 
-	public String execute(String number);
-	
+public interface IDocumentStrategy {
+	public String execute(Document entity);
 }
