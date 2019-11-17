@@ -6,7 +6,7 @@ import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.strategy.refugee.IRefugeeStrategy;
 
 @Component
-public class NomeStrategy implements IRefugeeStrategy {
+public class NameStrategy implements IRefugeeStrategy {
 
 	@Override
 	public String execute(Refugee entity) {

@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import br.com.byron.refugioBrasil.enums.Kinship;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +29,7 @@ import lombok.Setter;
 public class Dependent extends Person {
 	
 	@Column(name = "arrival_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate arrivalDate;
 	
 	@Enumerated(EnumType.STRING)

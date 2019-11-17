@@ -11,6 +11,8 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +30,7 @@ public class Attendance extends DomainEntity {
 	private String description;
 	
 	@Column(name = "date", nullable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate date;
 	
 	@Column(name = "value")

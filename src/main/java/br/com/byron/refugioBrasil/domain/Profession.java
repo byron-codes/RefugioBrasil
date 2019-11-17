@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,9 +35,11 @@ public class Profession extends DomainEntity {
 	private String company;
 
 	@Column(name = "start_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate startDate;
 
 	@Column(name = "end_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate endDate;
 
 	@Column(name = "current", nullable = false)

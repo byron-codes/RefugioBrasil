@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import br.com.byron.refugioBrasil.enums.AcademicLevel;
 import br.com.byron.refugioBrasil.enums.AcademicStatus;
 import lombok.AllArgsConstructor;
@@ -34,9 +36,11 @@ public class Academic extends DomainEntity {
 	private String instituation;
 
 	@Column(name = "start_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate startDate;
 
 	@Column(name = "end_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate endDate;
 	
 	@Enumerated(EnumType.STRING)

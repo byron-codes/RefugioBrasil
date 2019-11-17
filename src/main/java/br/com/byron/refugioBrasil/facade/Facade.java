@@ -26,13 +26,13 @@ public class Facade<Entity extends DomainEntity> implements IFacade<Entity> {
 
 	@Override
 	public List<Entity> save(Entity entity) {
-		
+
 		StringBuilder sb = new StringBuilder();
-		sb.append(mapStrategies.get(entity.getClass().getSimpleName().toLowerCase()+"Strategy").execute(entity));
-		
+		sb.append(mapStrategies.get(entity.getClass().getSimpleName().toLowerCase() + "Strategy").execute(entity));
+
 		if (sb.length() == 0)
 			return Arrays.asList(dao.get(getDaoName(entity)).save(entity));
-		
+
 		System.out.println(sb);
 		return null;
 	}

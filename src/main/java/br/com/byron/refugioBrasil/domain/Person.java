@@ -12,6 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import br.com.byron.refugioBrasil.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,6 +28,7 @@ import lombok.Setter;
 public class Person extends DomainEntity {
 
 	@Column(name = "birth_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate birthDate;
 
 	@Enumerated(EnumType.STRING)

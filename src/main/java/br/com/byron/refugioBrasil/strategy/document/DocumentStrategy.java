@@ -1,6 +1,5 @@
 package br.com.byron.refugioBrasil.strategy.document;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ public class DocumentStrategy implements IRefugeeStrategy {
 	Map<String, IDocumentStrategy> validators;
 
 	@Autowired
-	public DocumentStrategy(HashMap<String, IDocumentStrategy> validators) {
+	public DocumentStrategy(Map<String, IDocumentStrategy> validators) {
 		this.validators =  validators;
 	}
 
