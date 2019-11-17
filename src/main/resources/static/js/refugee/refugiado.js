@@ -35,7 +35,7 @@ function proximo(){
 
     } else if(!$("#identificacao").hasClass("d-none")) {
     	
-    	let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil"]
+    	let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil", "selPaisOrigem"]
     	validaListaCampos(campos);
     	
     	if($("#identificacao").find(".is-invalid").length == 0){

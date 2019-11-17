@@ -65,16 +65,20 @@ a {
 	margin-bottom: 0.5rem;
 }
 
-.group-box-content{
+.group-box-content {
 	margin: 1rem;
 }
 
-.uppercase{
+.uppercase {
 	text-transform: uppercase;
 }
 
-select{
-    background-position: center right calc(1em + .1875rem) !important;
+select {
+	background-position: center right calc(1em + .1875rem) !important;
+}
+
+.pointer {
+	cursor: pointer;
 }
 
 /* .form-control:focus{

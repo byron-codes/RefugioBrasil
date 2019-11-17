@@ -22,7 +22,7 @@ function adicionarTelefone(){
 		
 		$("#novosTelefones").append(`
 			<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-	            <div class="m-3">${$("#selTipoTelefone").children("option:selected").html()} - ${num}</div>
+	            <div class="m-3">${$("#selTipoTelefone").children("option:selected").html()} - ${num}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
 	            <input type="hidden" name="phones[${quantidadeTelefone}].idd" value="${numSemMask.substring(0, 2)}">
 	            <input type="hidden" name="phones[${quantidadeTelefone}].number" value="${numSemMask.substring(2)}">
 	            <input type="hidden" name="phones[${quantidadeTelefone}].operators" value="${operadoras}">
@@ -48,7 +48,7 @@ function adicionarLingua() {
 		
 	    $("#linguas").append(
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-	            <div class="m-3">${$("#sellingua").children("option:selected").html()} - ${$("#selnivel").children("option:selected").html()}</div>
+	            <div class="m-3">${$("#sellingua").children("option:selected").html()} - ${$("#selnivel").children("option:selected").html()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
 	            <input type="hidden" name="languages[${quantidadeLinguas}].name" value="${$("#sellingua").val()}">
 	            <input type="hidden" name="languages[${quantidadeLinguas}].fluency" value="${$("#selnivel").val()}">
 	        </div>`
@@ -74,7 +74,7 @@ function adicionarExperiencia(){
 
 		$("#experiencia").append(
 		        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-			        <div class="m-3">${$("#txtcargo").val()} - ${$("#txtempresa").val()}</div>
+			        <div class="m-3">${$("#txtcargo").val()} - ${$("#txtempresa").val()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
 			        <input type="hidden" name="professions[${quantidadeExperiencia}].workload" value="${$("#txtcargo").val()}">
 			        <input type="hidden" name="professions[${quantidadeExperiencia}].company" value="${$("#txtempresa").val()}">
 			        <input type="hidden" name="professions[${quantidadeExperiencia}].description" value="${$("#obsProfissao").val()}">
@@ -106,7 +106,7 @@ function adicionarFormacao() {
 		
 		 $("#formacao").append(
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-		        <div class="m-3">${$("#txtcurso").val()} - ${$("#txtinstituicao").val()}</div>
+		        <div class="m-3">${$("#txtcurso").val()} - ${$("#txtinstituicao").val()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
 		        <input type="hidden" name="academic[${quantidadeFormacao}].course" value="${$("#txtcurso").val()}">
 		        <input type="hidden" name="academic[${quantidadeFormacao}].instituation" value="${$("#txtinstituicao").val()}">
 		        <input type="hidden" name="academic[${quantidadeFormacao}].startDate" value="${$("#txtdataInicioFormacao").val()}">
@@ -146,7 +146,7 @@ function adicionarDependente() {
 		
 		let htmlAdd = (
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-		        <div class="m-3">${$("#txtnomeDependente").val()} - ${$("#selParentesco").children("option:selected").html()}</div>
+		        <div class="m-3">${$("#txtnomeDependente").val()} - ${$("#selParentesco").children("option:selected").html()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
 		        <input type="hidden" name="dependent[${quantidadeFormacao}].name" value="${$("#txtnomeDependente").val()}">
 		        <input type="hidden" name="dependent[${quantidadeFormacao}].birthDate" value="${$("#txtdataNascimentoDependente").val()}">
 		        <input type="hidden" name="dependent[${quantidadeFormacao}].gender" value="${$("#selsexoDependente").val()}">
@@ -202,7 +202,7 @@ function adicionarDocumento(){
 		
 		$("#novosDocumentos").append(
 			`<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-				<div class="m-3">${$("#seldoc").children("option:selected").html()} - ${num}</div>
+				<div class="m-3">${$("#seldoc").children("option:selected").html()} - ${num}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
 				<input type="hidden" name="documents[${quantidadeDocumentos}].number" value="${numSemMask}">
 				<input type="hidden" name="documents[${quantidadeDocumentos}].type" value="${tipo}"> 
 			</div>`
