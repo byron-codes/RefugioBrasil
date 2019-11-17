@@ -39,10 +39,10 @@ public class Profession extends DomainEntity {
 	private LocalDate endDate;
 
 	@Column(name = "current", nullable = false)
-	private boolean current;
+	private Boolean current;
 
 	@Column(name = "recommendation", nullable = false)
-	private boolean recommendation;
+	private Boolean recommendation;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "country")
