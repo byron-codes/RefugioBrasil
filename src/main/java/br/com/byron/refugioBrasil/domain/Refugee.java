@@ -45,19 +45,19 @@ public class Refugee extends Person {
 	@Column(name = "cpp")
 	private Boolean cpp;
 
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "necessity")
 	private Necessity necessity;
 
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "birth_country")
 	private Country birthCountry;
 
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "address")
 	private Address address;
 
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "image")
 	private Image image;
 

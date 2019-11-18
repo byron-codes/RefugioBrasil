@@ -11,15 +11,29 @@ function consultarDocumento(e){
 		let flag;
 		let unico = true;
 		
-		if(!$("#txtprotocolo").hasClass("is-invalid")){
+		if(!$("#txtprotocolo").hasClass("is-invalid") && $("#txtprotocolo").val() != ""){
 			flag = true;
+			let number = $("#txtprotocolo").unmask();
+			$("#novosDocumentos").append(`
+				<input name="documents[0].type" type="hidden" value="PROTOCOLO">
+				<input name="documents[0].number" type="hidden" value="${number}">
+			`)
+			setMaskListItem(mascaras.txtprotocolo)
+			quantidadeDocumentos++;
 		} else {
 			$(validacoes.txtprotocolo.campo).unmask()
 			$(validacoes.txtprotocolo.campo).val("Campo não preenchido")
 		}
 		
-		if(!$("#txtrne").hasClass("is-invalid")){
+		if(!$("#txtrne").hasClass("is-invalid") && $("#txtrne").val() != ""){
 			flag = true;
+			let number = $("#txtrne").unmask();
+			$("#novosDocumentos").append(`
+				<input name="documents[0].type" type="hidden" value="RNE">
+				<input name="documents[0].number" type="hidden" value="${number}">
+			`)
+			setMaskListItem(mascaras.txtrne)
+			quantidadeDocumentos++;
 		} else {
 			$(validacoes.txtrne.campo).unmask()
 			$(validacoes.txtrne.campo).val("Campo não preenchido")

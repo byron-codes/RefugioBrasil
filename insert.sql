@@ -1,4 +1,4 @@
-INSERT INTO _country (id, name, creation_date, last_update, status, id) VALUES
+INSERT INTO _country (id, name, creation_date, last_update, status) VALUES
 (1,'Afeganistão',now(), now(), b'1'), 
 (2,'África do Sul',now(), now(), b'1'), 
 (3,'Albânia',now(), now(), b'1'), 
@@ -227,7 +227,7 @@ INSERT INTO _state(id, name, initals, creation_date, last_update, status) VALUES
   (26,  'Sergipe', 'SE', NOW(), NOW(), b'1'),
   (27,  'Tocantins', 'TO', NOW(), NOW(), b'1');
 
-INSERT INTO _city (id, name, state, creation_date, last_update, status, id) VALUES
+INSERT INTO _city (id, name, state, creation_date, last_update, status) VALUES
 (1,'Afonso Cláudio', 8, NOW(), NOW(), b'1'),
 (2,'Água Doce do Norte', 8, NOW(), NOW(), b'1'),
 (3,'Águia Branca', 8, NOW(), NOW(), b'1'),
@@ -1228,7 +1228,7 @@ INSERT INTO _city (id, name, state, creation_date, last_update, status, id) VALU
 (998,'Itaguari', 9, NOW(), NOW(), b'1'),
 (999,'Itaguaru', 9, NOW(), NOW(), b'1');
 
-INSERT INTO _cidade (id, nome, estado, data_criacao, ultima_atualizacao, habilitado, hash) VALUES
+INSERT INTO _city (id, name, state, creation_date, last_update, status) VALUES
 (1000,'Itajá', 9, NOW(), NOW(), b'1'),
 (1001,'Itapaci', 9, NOW(), NOW(), b'1'),
 (1002,'Itapirapuã', 9, NOW(), NOW(), b'1'),
@@ -2230,7 +2230,7 @@ INSERT INTO _cidade (id, nome, estado, data_criacao, ultima_atualizacao, habilit
 (1998,'Laranjal', 13, NOW(), NOW(), b'1'),
 (1999,'Lassance', 13, NOW(), NOW(), b'1');
 
-INSERT INTO _cidade (id, nome, estado, data_criacao, ultima_atualizacao, habilitado, hash) VALUES
+INSERT INTO _city (id, name, state, creation_date, last_update, status) VALUES
 (2000,'Lavras', 13, NOW(), NOW(), b'1'),
 (2001,'Leandro Ferreira', 13, NOW(), NOW(), b'1'),
 (2002,'Leme do Prado', 13, NOW(), NOW(), b'1'),
@@ -3232,7 +3232,7 @@ INSERT INTO _cidade (id, nome, estado, data_criacao, ultima_atualizacao, habilit
 (2998,'Marquinho', 16, NOW(), NOW(), b'1'),
 (2999,'Marumbi', 16, NOW(), NOW(), b'1');
 
-INSERT INTO _cidade (id, nome, estado, data_criacao, ultima_atualizacao, habilitado, hash) VALUES
+INSERT INTO _city (id, name, state, creation_date, last_update, status) VALUES
 (3000,'Matelândia', 16, NOW(), NOW(), b'1'),
 (3001,'Matinhos', 16, NOW(), NOW(), b'1'),
 (3002,'Mato Rico', 16, NOW(), NOW(), b'1'),
@@ -4234,7 +4234,7 @@ INSERT INTO _cidade (id, nome, estado, data_criacao, ultima_atualizacao, habilit
 (3998,'Ernestina', 21, NOW(), NOW(), b'1'),
 (3999,'Erval Grande', 21, NOW(), NOW(), b'1');
 
-INSERT INTO _cidade (id, nome, estado, data_criacao, ultima_atualizacao, habilitado, hash) VALUES
+INSERT INTO _city (id, name, state, creation_date, last_update, status) VALUES
 (4000,'Erval Seco', 21, NOW(), NOW(), b'1'),
 (4001,'Esmeralda', 21, NOW(), NOW(), b'1'),
 (4002,'Esperança do Sul', 21, NOW(), NOW(), b'1'),
@@ -5236,7 +5236,7 @@ INSERT INTO _cidade (id, nome, estado, data_criacao, ultima_atualizacao, habilit
 (4998,'José Bonifácio', 25, NOW(), NOW(), b'1'),
 (4999,'Júlio Mesquita', 25, NOW(), NOW(), b'1');
 
-INSERT INTO _cidade (id, nome, estado, data_criacao, ultima_atualizacao, habilitado, hash) VALUES
+INSERT INTO _city (id, name, state, creation_date, last_update, status) VALUES
 (5000,'Jumirim', 25, NOW(), NOW(), b'1'),
 (5001,'Jundiaí', 25, NOW(), NOW(), b'1'),
 (5002,'Junqueirópolis', 25, NOW(), NOW(), b'1'),

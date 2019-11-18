@@ -10,7 +10,7 @@ public class UpdateStrategy implements IRefugeeStrategy {
 	@Override
 	public String execute(Refugee entity) {
 		entity.setLastUpdate(LocalDateTime.now());
-		return null;
+		return "";
 	}
 
 }

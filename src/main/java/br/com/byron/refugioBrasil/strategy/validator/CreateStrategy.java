@@ -15,7 +15,7 @@ public class CreateStrategy implements IGenericStrategy {
 		entity.setCreationDate(LocalDateTime.now());
 		entity.setLastUpdate(LocalDateTime.now());
 		entity.setStatus(true);
-		return null;
+		return "";
 	}
 
 }

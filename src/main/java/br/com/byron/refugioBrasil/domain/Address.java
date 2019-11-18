@@ -36,7 +36,7 @@ public class Address extends DomainEntity {
 	@Column(name = "cep", length = 10, nullable = false)
 	private String cep;
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinColumn(name = "city")
 	private City city;
 

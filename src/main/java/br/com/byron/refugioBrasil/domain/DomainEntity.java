@@ -24,13 +24,13 @@ public abstract class DomainEntity implements IDomain {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "status", nullable = false)
+	@Column(name = "status")
 	private Boolean status;
 
-	@Column(name = "creation_date", nullable = false, updatable = false)
+	@Column(name = "creation_date", updatable = false)
 	private LocalDateTime creationDate;
 
-	@Column(name = "last_update", nullable = false)
+	@Column(name = "last_update")
 	private LocalDateTime lastUpdate;
 
 }

@@ -42,6 +42,7 @@ public class RefugeeStrategy implements IStrategy {
 		generics.get("createStrategy").execute(refugee.getNecessity());
 		generics.get("createStrategy").execute(refugee.getBirthCountry());
 		generics.get("createStrategy").execute(refugee.getAddress());
+		refugee.getAddress().getCity().setId(1L);
 		//generics.get("createStrategy").execute(refugee.getImage());
 		
 		for (Profession e : refugee.getProfessions()) {
@@ -63,6 +64,8 @@ public class RefugeeStrategy implements IStrategy {
 		for (Dependent e : refugee.getDependent()) {
 			generics.get("createStrategy").execute(e);
 		}
+		
+		generics.get("createStrategy").execute(refugee);
 
 		return errors.toString();
 	}

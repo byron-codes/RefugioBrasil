@@ -182,9 +182,9 @@ function adicionarDependente() {
 	}
 }
 
-let quantidadeDocumentos = 2;
+var quantidadeDocumentos = 0;
 function adicionarDocumento(){
-	
+
 	let campos = ["seldoc", "txtnumerodoc"]
 	
 	validaListaCampos(["txtnumerodoc"]);

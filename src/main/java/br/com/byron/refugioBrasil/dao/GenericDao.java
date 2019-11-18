@@ -16,9 +16,9 @@ public class GenericDao<Entity extends DomainEntity> implements IGenericDao<Enti
 
 	@Override
 	public Entity save(Entity entity) {
-		entity.setCreationDate(LocalDateTime.now());
-		entity.setLastUpdate(LocalDateTime.now());
-		entity.setStatus(true);
+//		entity.setCreationDate(LocalDateTime.now());
+//		entity.setLastUpdate(LocalDateTime.now());
+//		entity.setStatus(true);
 		return dao.saveAndFlush(entity);
 	}
 

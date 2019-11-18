@@ -10,7 +10,7 @@ public class NameStrategy implements IRefugeeStrategy {
 
 	@Override
 	public String execute(Refugee entity) {
-		return null;
+		return "";
 	}
 
 }
