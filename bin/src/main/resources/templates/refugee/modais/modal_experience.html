@@ -1,0 +1,80 @@
+<div class="modal fade" id="modalExperiencia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">ExperiÃªncia Profissional</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<label for="txtcargo">Cargo*</label>
+						<input type="text" class="form-control" id="txtcargo" placeholder="Psicologo">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<label for="txtempresa">Empresa*</label>
+						<input type="text" class="form-control" id="txtempresa" placeholder="Clinica Mogi">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="txtdataInicioExperiencia">Data de incio*</label>
+						<input type="date" class="form-control" id="txtdataInicioExperiencia" aria-describedby="">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="txtdataFimExperiencia">Data de fim*</label>
+						<input type="date" class="form-control" id="txtdataFimExperiencia" aria-describedby="">
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-lg-12">
+						<label for="selPaisFormacaoP">PaÃ­s*</label>
+						<select class="form-control" id="selPaisExperiencia">
+							<option value="0" selected="selected" disabled="disabled">Selecione...</option>
+							<option value="111">Chile</option>
+							<option value="222">Argentina</option>
+							<option value="333">ColÃ´mbia</option>
+							<option>...</option>
+						</select>
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-lg-12">
+						<label for="obs">ObservaÃ§Ãµes:</label>
+						<textarea class="form-control" id="obsProfissao" rows="3" style="width: 100%; resize: none;"></textarea>
+						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+						<div class="valid-feedback"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-lg-4">
+						<input name="atual" type="checkbox" id="profissaoAtual">
+						<label for="atual" style="display: inline;">Profissão atual</label>
+					</div>
+					<div class="form-group col-lg-8">
+						<input name="indicacao" type="checkbox" id="profissaoIndicacao">	
+						<label for="indicacao" style="display: inline;">Indicação da Refúgio Brasil</label>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">voltar</button>
+				<button type="button" class="btn bg-blue" onclick="adicionarExperiencia()">Adicionar</button>
+			</div>
+		</div>
+	</div>
+</div>

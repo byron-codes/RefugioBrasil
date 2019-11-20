@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html layout:decorate="~{refugee/RefugioBrasil}">
+<head>
+<title>Cadastro de Refugiado</title>
+<link th:href="@{/css/geral.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/card-info.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/radio.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/imageButton.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<th:block layout:fragment="content">
+		<form action="/refugee/salvar" method="POST" novalidate>
+			<div class="content m-5">
+				<div class="line-green">
+					<h3 id="title">Cadastro de Refugiado</h3>
+				</div>
+				<div id="containerRobot" class='row mt-3'>
+					<div class="col-3 col-sm-3 col-md-2 col-lg-1 col-xlg-1 ">
+						<img class="mx-auto d-block img-fluid" th:src="@{/img/robot.png}" style="max-height: 80px;">
+					</div>
+					<div class="col-7 col-sm-7 col-md-10 col-lg-8 col-xlg-10">
+						<div class="round talk-bubble tri-right left-top">
+							<div class="talktext">
+								<p id="dialogoRobot">Olá! antes de iniciar o cadastro verifique se esse usuário já foi cadastrado buscando seu n° de documento</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<th:block th:include="refugee/fragments/page_document"></th:block>
+
+				<th:block th:include="refugee/fragments/page_identification"></th:block>
+
+				<th:block th:include="refugee/fragments/page_address"></th:block>
+
+				<th:block th:include="refugee/fragments/page_experience"></th:block>
+
+				<th:block th:include="refugee/fragments/page_needs"></th:block>
+
+				<th:block th:include="refugee/fragments/page_dependent"></th:block>
+
+
+				<button type="button" class="btn btn-blue float-right" onclick="consultarDocumento(this)">
+					<i class="fas fa-search"></i>
+					buscar
+				</button>
+				<button id="btnprox" type="button" class="btn btn-blue float-right d-none" onclick="proximo()">Próximo</button>
+				<button id="btnsalvar" type="submit" class="btn btn-blue float-right d-none">Salvar</button>
+				<button id="btnvolta" type="button" class="btn btn-blue d-none" onclick="voltar()">Voltar</button>
+			</div>
+		</form>
+	</th:block>
+
+	<th:block layout:fragment="modais">
+		<th:block th:include="refugee/modais/modal_professional"></th:block>
+		<th:block th:include="refugee/modais/modal_experience"></th:block>
+	</th:block>
+
+	<th:block layout:fragment="script">
+		<script th:src="@{/js/refugee/addCards.js}"></script>
+		<script th:src="@{/js/refugee/documento.js}"></script>
+		<script th:src="@{/js/refugee/jsonGerais.js}"></script>
+		<script th:src="@{/js/refugee/limpaModais.js}"></script>
+		<script th:src="@{/js/refugee/refugiado.js}"></script>
+		<script th:src="@{/js/refugee/uploudImage.js}"></script>
+	</th:block>
+
+</body>
+</html>

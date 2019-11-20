@@ -1,0 +1,91 @@
+<div id="identificacao" class="d-none">
+	<div class="form-row mt-3">
+		<div class="form-group col-lg-12">
+			<div class="wrapper">
+				<button class="no-image" id="img-result"></button>
+			</div>
+			<div class="upload-result">
+				<button class="hide-button">Fechar</button>
+				<pre class="upload-result__content">
+                </pre>
+			</div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-lg-12">
+			<label for="txtnome">Nome*</label>
+			<input type="text" name="name" class="form-control" id="txtnome" placeholder="Maria José">
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-lg-6">
+			<label for="txtdataNascimento">Data de Nascimento*</label>
+			<input name="birthDate" type="date" class="form-control" id="txtdataNascimento" aria-describedby="campo para data de nascimento">
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+		<div class="form-group col-lg-6">
+			<label for="selsexo">Sexo*</label>
+			<select name="gender" class="form-control" id="selsexo">
+				<option value="0" disabled="disabled" selected="selected">Selecione...</option>
+				<option value="FEMININO">Feminino</option>
+				<option value="MASCULINO">Masculino</option>
+				<option value="NAOBINARIO">Não binário</option>
+			</select>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-lg-6">
+			<label for="txtdataNascimento">Data de Chegada*</label>
+			<input name="arrivalDate" type="date" class="form-control" id="txtdataChegada" aria-describedby="campo para data de nascimento">
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+		<div class="form-group col-lg-6">
+			<label for="selPaisOrigem">País*</label>
+			<input type="hidden" name="birthCountry.code" id="codPaisOrigem">
+			<input type="hidden" name="birthCountry.name" id="nomePaisOrigem">
+			<select class="form-control" id="selPaisOrigem">
+				<option value="0" selected="selected" disabled="disabled">Selecione...</option>
+				<option value="111">Chile</option>
+				<option value="222">Argentina</option>
+				<option value="333">Colômbia</option>
+				<option>...</option>
+			</select>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-lg-6">
+			<label for="txtnome">Email</label>
+			<input name="email" type="text" class="form-control" id="txtEmail" placeholder="Maria José">
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+		<div class="form-group col-lg-6">
+			<label for="selestadocivil">Estado Civil*</label>
+			<select name="maritalStatus" class="form-control" id="selestadocivil">
+				<option value="0" disabled="disabled" selected="selected">Selecione...</option>
+				<option value="CASADO">Casado</option>
+				<option value="SOLTEIRO">Solteiro</option>
+				<option value="VIUVO">Viúvo</option>
+				<option value="DIVORCIADO">Divorciado</option>
+				<option value="SEPARADO">Separado</option>
+			</select>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-lg-12">
+			<input type="hidden" id="cppValue" name="cpp" value="false">
+			<input type="checkbox" id="cpp" onchange="$('#cppValue').val($(this).prop('checked'))">
+			<label for="cpp" style="display: inline;">CPP</label>
+		</div>
+	</div>
+</div>
