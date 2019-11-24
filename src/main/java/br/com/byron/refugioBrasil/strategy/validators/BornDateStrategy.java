@@ -2,11 +2,14 @@ package br.com.byron.refugioBrasil.strategy.validators;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
 import br.com.byron.refugioBrasil.domain.Dependent;
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.strategy.dependent.IDependentStrategy;
 import br.com.byron.refugioBrasil.strategy.refugee.IRefugeeStrategy;
 
+@Component
 public class BornDateStrategy implements IRefugeeStrategy, IDependentStrategy {
 
 	@Override
@@ -23,12 +26,11 @@ public class BornDateStrategy implements IRefugeeStrategy, IDependentStrategy {
 		StringBuilder sb = new StringBuilder();
 
 		if (date.isBefore(LocalDate.now().minusYears(100))) {
-			//TODO
-			sb.append("");
+			sb.append("Data inválida");
 		}
 
 		if (date.isAfter(LocalDate.now())) {
-			sb.append("");
+			sb.append("Data inválida");
 		}
 		return sb.toString().trim() == "" ? "" : sb.toString();
 	}

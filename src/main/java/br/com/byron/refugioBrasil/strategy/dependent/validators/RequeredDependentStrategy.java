@@ -1,9 +1,12 @@
 package br.com.byron.refugioBrasil.strategy.dependent.validators;
 
+import org.springframework.stereotype.Component;
+
 import br.com.byron.refugioBrasil.domain.Dependent;
 import br.com.byron.refugioBrasil.strategy.dependent.IDependentStrategy;
 import br.com.byron.refugioBrasil.strategy.validators.ValidUtil;
 
+@Component
 public class RequeredDependentStrategy implements IDependentStrategy {
 
 	@Override
