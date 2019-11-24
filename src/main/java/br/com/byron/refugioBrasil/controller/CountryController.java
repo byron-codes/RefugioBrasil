@@ -1,4 +1,4 @@
-package br.com.byron.refugioBrasil;
+package br.com.byron.refugioBrasil.controller;
 
 import java.util.List;
 
