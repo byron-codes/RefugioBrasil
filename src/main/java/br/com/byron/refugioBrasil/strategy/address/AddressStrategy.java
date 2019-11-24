@@ -1,4 +1,4 @@
-package br.com.byron.refugioBrasil.strategy.adress;
+package br.com.byron.refugioBrasil.strategy.address;
 
 import java.util.Map;
 
@@ -25,7 +25,7 @@ public class AddressStrategy implements IRefugeeStrategy {
 		for (IAddressStrategy a : validators.values())
 			sb.append(a.execute(entity.getAddress()));
 
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

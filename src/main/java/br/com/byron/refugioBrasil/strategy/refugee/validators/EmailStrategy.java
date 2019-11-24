@@ -10,7 +10,7 @@ public class EmailStrategy implements IRefugeeStrategy{
 	public String execute(Refugee entity) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(ValidUtil.validEmail(entity.getEmail()));
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

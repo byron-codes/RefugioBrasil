@@ -16,7 +16,7 @@ public class RequeredDependentStrategy implements IDependentStrategy {
 		sb.append(ValidUtil.notNull(entity.getArrivalDate(), "Data de Nascimento"));
 		sb.append(ValidUtil.notNull(entity.getBirthCountry(), "País de Nascimento"));
 
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

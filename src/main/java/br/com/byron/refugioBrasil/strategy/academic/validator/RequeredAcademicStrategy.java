@@ -17,7 +17,7 @@ public class RequeredAcademicStrategy implements IAcademicStrategy{
 		sb.append(ValidUtil.notNull(entity.getCountry(), "País de formação"));
 		sb.append(ValidUtil.notNull(entity.getSituation(), "Situação da formação"));
 
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

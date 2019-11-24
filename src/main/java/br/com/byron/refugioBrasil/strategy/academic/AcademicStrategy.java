@@ -26,7 +26,7 @@ public class AcademicStrategy implements IRefugeeStrategy{
 			}
 		}
 			
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 	
 	

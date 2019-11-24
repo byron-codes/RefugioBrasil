@@ -30,7 +30,7 @@ public class BornDateStrategy implements IRefugeeStrategy, IDependentStrategy {
 		if (date.isAfter(LocalDate.now())) {
 			sb.append("");
 		}
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }
