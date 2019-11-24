@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!--integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"-->
+<script src="https://kit.fontawesome.com/330b105a07.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+<link th:href="@{/css/menulateral.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/checkBox.css}" rel="stylesheet" type="text/css" />
+
+<title>Refugio Brasil</title>
+</head>
+<body>
+	<nav id="slide-menu">
+		<ul>
+			<li>
+				<img class="mx-auto d-block img-fluid" th:src="@{/img/logo.png}">
+			</li>
+			<li class="Refugiados">
+				<i class="fas fa-user-plus"></i>
+				Novo Refugiado
+			</li>
+			<li class="Refugiados">
+				<i class="fas fa-users"></i>
+				Lista de Refugiados
+			</li>
+			<li class="Atendimentos">
+				<i class="fas fa-hands-helping"></i>
+				Atendimentos
+			</li>
+			<li class="Relatorios">
+				<i class="fas fa-chart-pie"></i>
+				Relatórios
+			</li>
+			<li class="logout">
+				<i class="fas fa-sign-out-alt"></i>
+				Sair
+			</li>
+		</ul>
+	</nav>
+	<div id="content">
+		<nav class="navbar navbar-expand-sm bg-green">
+			<div class="navbar-brand menu-trigger d-flex">
+				<i class="fas fa-bars" style="max-width: 75%; max-height: 75%; margin: auto;"></i>
+			</div>
+			<a class="ml-auto text-light" href="#"> Refugio Brasil </a>
+		</nav>
+		<div layout:fragment="content">
+			<div class="content m-5">
+				<h3>Hello :)</h3>
+			</div>
+		</div>
+	</div>
+
+	<th:block layout:fragment="modais">
+	</th:block>
+
+	<th:block layout:fragment="script">
+	</th:block>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<script th:src="@{/plugin/mask/jquery.mask.min.js}"></script>
+	<script th:src="@{/js/menulateral.js}"></script>
+	<script th:src="@{/js/util.js}"></script>
+	<script th:src="@{/js/validacao.js}"></script>
+</body>
+</html>

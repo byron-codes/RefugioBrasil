@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,700);
+
+body {
+	/*font: 18px/27px "Oxygen", sans-serif;*/
+	font: "Oxygen", sans-serif;
+}
+
+i {
+	margin-right: 5px;
+}
+
+h1, h2, h3 {
+	color: #357333;
+}
+
+a:hover {
+	color: #febd00;
+	text-decoration: none;
+}
+
+a {
+	color: white;
+}
+
+.bg-green {
+	background-color: #357333 !important;
+	color: #ffffff !important;
+}
+
+.bg-blue {
+	background-color: #23bbc5;
+	color: white;
+}
+
+.btn-blue {
+	background-color: #23bbc5;
+	color: white;
+}
+
+.btn-blue:hover {
+	background-color: #06a9b4;
+	color: white;
+}
+
+.line-green {
+	border-bottom: #047235 1px solid;
+}
+
+::selection {
+	background: #BADA55;
+	color: white;
+}
+
+.group-box {
+	background: #e6e6e6;
+	margin: 1.5rem;
+	border: solid 1px #4bbcc5;
+	padding-bottom: 1rem;
+}
+
+.group-box-header {
+	background: #4bbcc5;
+	color: white;
+	padding: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.group-box-content {
+	margin: 1rem;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+select {
+	background-position: center right calc(1em + .1875rem) !important;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+/* .form-control:focus{
+	-webkit-box-shadow: 3px 3px 3px 3px #97dbea !important;
+    box-shadow: 3px 3px 3px 3px #97dbea !important;
+    border-color: #23bbc5;
+} */
+
+/* .form-control:focus{ */
+/* 	-webkit-box-shadow: 3px 3px 3px 3px #97dbea !important; */
+/*     box-shadow: 3px 3px 3px 3px #cc0000 !important; */
+/*     border-color: #cc0000; */
+/* } */
