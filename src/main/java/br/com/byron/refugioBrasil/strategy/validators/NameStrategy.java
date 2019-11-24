@@ -25,7 +25,7 @@ public class NameStrategy implements IRefugeeStrategy, IDependentStrategy {
 		String nameAttribute = "Nome";
 		sb.append(ValidUtil.size(value, nameAttribute));
 		sb.append(ValidUtil.onlyWords(value, nameAttribute));
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

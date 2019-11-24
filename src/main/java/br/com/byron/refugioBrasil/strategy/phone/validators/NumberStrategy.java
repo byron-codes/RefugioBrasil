@@ -12,7 +12,7 @@ public class NumberStrategy implements IRefugeeStrategy{
 		StringBuilder sb = new StringBuilder();
 		for(Phone phone : entity.getPhones())
 			sb.append(ValidUtil.size(10, 11, phone.getNumber(), "Número"));
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

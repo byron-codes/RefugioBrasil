@@ -24,7 +24,7 @@ public class PhoneStrategy implements IRefugeeStrategy{
 			for(Phone phone : entity.getPhones())
 				sb.append(validator.execute(phone));
 		}
-		return null;
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

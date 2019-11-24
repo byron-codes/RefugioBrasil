@@ -26,7 +26,7 @@ public class DocumentStrategy implements IRefugeeStrategy {
 			String name = document.getType().toString().toLowerCase() + "Strategy";
 			sb.append(validators.get(name).execute(document));
 		}
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

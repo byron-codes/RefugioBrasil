@@ -31,7 +31,7 @@ public class Facade<Entity extends DomainEntity> implements IFacade<Entity> {
 		sb.append(mapStrategies.get(entity.getClass().getSimpleName().toLowerCase() + "Strategy").execute(entity));
 		if (sb.length() == 0)
 			return Arrays.asList(dao.get(getDaoName(entity)).save(entity));
-
+		System.err.println(sb);
 		return null;
 	}
 

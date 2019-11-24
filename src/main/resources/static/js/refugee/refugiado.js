@@ -28,6 +28,17 @@ $(document).ready(function(){
 	      return false;
 	    }
 	  });
+	 
+	 $(".docAtualizarMaster").each(function(){
+		 let numero = $(this).find(".numero").val()
+		 let tipo = $(this).find(".tipo").val()
+		 if(tipo != "PROTOCOLO" && tipo != "RNE"){
+			 var formatter = new StringMask(mascaras[tipo].mascara, { reverse: true });
+			 $(this).find(".docAtualizar").prepend(tipo + " - " + formatter.apply(numero)) 
+		 } else {
+			 $(this).remove()
+		 }
+	 })
 	
 })
 

@@ -16,7 +16,7 @@ public class RequeredPhoneStrategy implements IRefugeeStrategy{
 			sb.append(ValidUtil.notEmptyandNull(phone.getNumber(), "Número"));
 			sb.append(ValidUtil.notNull(phone.getType(), "Tipo do Telefone"));
 		}
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

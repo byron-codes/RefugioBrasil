@@ -25,7 +25,7 @@ public class DependentStrategy implements IRefugeeStrategy {
 				sb.append(valid.execute(dependent));
 			}
 		}
-		return sb.toString();
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

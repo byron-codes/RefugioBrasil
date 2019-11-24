@@ -1,4 +1,4 @@
-package br.com.byron.refugioBrasil.strategy.adress;
+package br.com.byron.refugioBrasil.strategy.address;
 
 import org.springframework.stereotype.Component;
 
