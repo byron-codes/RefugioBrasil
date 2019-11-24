@@ -82,8 +82,7 @@ function adicionarExperiencia(){
 			        <input type="hidden" name="professions[${quantidadeExperiencia}].recommendation" value="${$("#profissaoIndicacao").prop("checked")}">
 			        <input type="hidden" name="professions[${quantidadeExperiencia}].startDate" value="${$("#txtdataInicioExperiencia").val()}">
 			        <input type="hidden" name="professions[${quantidadeExperiencia}].endDate" value="${$("#txtdataFimExperiencia").val()}">
-			        <input type="hidden" name="professions[${quantidadeExperiencia}].country.name" value="${$("#selPaisExperiencia").children("option:selected").html()}">
-			        <input type="hidden" name="professions[${quantidadeExperiencia}].country.code" value="${$("#selPaisExperiencia").val()}">
+			        <input type="hidden" name="professions[${quantidadeExperiencia}].country.id" value="${$("#selPaisExperiencia").val()}">
 			    </div>`
 			)
 		
@@ -113,8 +112,7 @@ function adicionarFormacao() {
 		        <input type="hidden" name="academic[${quantidadeFormacao}].endDate" value="${$("#txtdataFimFormacao").val()}">
 		        <input type="hidden" name="academic[${quantidadeFormacao}].level" value="${$("#selgrauAcademico").val()}">
 		        <input type="hidden" name="academic[${quantidadeFormacao}].situation" value="${$("#selsituacaoAcademica").val()}">
-		        <input type="hidden" name="academic[${quantidadeFormacao}].country.name" value="${$("#selPaisFormacao").children("option:selected").html()}">
-		        <input type="hidden" name="academic[${quantidadeFormacao}].country.code" value="${$("#selPaisFormacao").val()}">
+		        <input type="hidden" name="academic[${quantidadeFormacao}].country.id" value="${$("#selPaisFormacao").val()}">
 		    </div>`
 		)
 		
@@ -152,8 +150,7 @@ function adicionarDependente() {
 		        <input type="hidden" name="dependent[${quantidadeFormacao}].gender" value="${$("#selsexoDependente").val()}">
 		        <input type="hidden" name="dependent[${quantidadeFormacao}].arrivalDate" value="${$("#txtdataChegadaDependente").val()}">
 		        <input type="hidden" name="dependent[${quantidadeFormacao}].kinship" value="${$("#selParentesco").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].birthCountry.name" value="${$("#selPaisDependente").children("option:selected").html()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].birthCountry.code" value="${$("#selPaisDependente").val()}">
+		        <input type="hidden" name="dependent[${quantidadeFormacao}].birthCountry.id" value="${$("#selPaisDependente").val()}">
 		        <input type="hidden" name="dependent[${quantidadeFormacao}].documents[0].number" value="${$("#documentoDependente").val().toUpperCase()}">
 		        <input type="hidden" name="dependent[${quantidadeFormacao}].documents[0].type" value="${$("#tipoDocumentoDependente").html().toUpperCase()}">`
 		)

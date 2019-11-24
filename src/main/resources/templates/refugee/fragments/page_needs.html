@@ -2,23 +2,23 @@
 	<div class="form-row d-flex justify-content-center">
 		<p class="font-weight-bold">Selecione as necessidades:</p>
 		<div class="form-group ml-3">
-			<input type="hidden" id="alimentosValue" name="necessity.food" value="false">
-			<input type="checkbox" id="Alimentos" onchange="$('#alimentosValue').val($(this).prop('checked'))"/>
+			<input type="hidden" id="alimentosValue" th:field="*{necessity.food}" value="false">
+			<input type="checkbox" id="Alimentos" th:checked="*{necessity.food}" onchange="$('#alimentosValue').val($(this).prop('checked'))"/>
 			<label for="Alimentos" style="display: inline;">Alimentos</label>
 		</div>
 		<div class="form-group ml-3">
-			<input type="hidden" id="moradiaValue" name="necessity.home" value="false">
-			<input type="checkbox" id="moradia" onchange="$('#moradiaValue').val($(this).prop('checked'))"/>
+			<input type="hidden" id="moradiaValue" th:field="*{necessity.home}" value="false">
+			<input type="checkbox" id="moradia" th:checked="*{necessity.home}" onchange="$('#moradiaValue').val($(this).prop('checked'))"/>
 			<label for="moradia" style="display: inline;">Moradia(aluguel)</label>
 		</div>
 		<div class="form-group ml-3">
-			<input type="hidden" id="remediosValue" name="necessity.medicine" value="false">
-			<input type="checkbox" id="remedios" onchange="$('#remediosValue').val($(this).prop('checked'))"/>
+			<input type="hidden" id="remediosValue" th:field="*{necessity.medicine}" value="false">
+			<input type="checkbox" id="remedios" th:checked="*{necessity.medicine}" onchange="$('#remediosValue').val($(this).prop('checked'))"/>
 			<label for="remedios" style="display: inline;">Remédios</label>
 		</div>
 	</div>
 	<div class="form-row d-flex justify-content-center">
-		<input name="necessity.situation" type="hidden" id="situacao" value="SOCORRO">
+		<input th:field="*{necessity.situation}" type="hidden" id="situacao" value="SOCORRO">
 		<span class="font-weight-bold">Selecione a situação:</span>
 		<div class="form-group ml-3">
 			<input value="SOCORRO" checked="checked" class="ml-3" name="situacao" type="radio" id="b" />
@@ -38,7 +38,7 @@
 	<div class="form-row d-flex justify-content-center">
 		<div class="col-lg-6">
 			<label for="obs">Observações:</label>
-			<textarea name="necessity.description" class="form-control" id="obs" rows="5" style="width: 100%; resize: none;"></textarea>
+			<textarea th:field="*{necessity.description}" class="form-control" id="obs" rows="5" style="width: 100%; resize: none;"></textarea>
 			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 			<div class="valid-feedback"></div>
 		</div>

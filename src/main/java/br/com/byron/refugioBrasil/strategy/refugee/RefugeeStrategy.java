@@ -35,6 +35,7 @@ public class RefugeeStrategy implements IStrategy {
 		for (IRefugeeStrategy strategy : validators.values())
 			errors.append(strategy.execute(refugee));
 
+		//TODO Fazer isso direito vinicius
 		for (Document e : refugee.getDocuments()) {
 			generics.get("createStrategy").execute(e);
 		}
@@ -42,7 +43,7 @@ public class RefugeeStrategy implements IStrategy {
 		generics.get("createStrategy").execute(refugee.getNecessity());
 		generics.get("createStrategy").execute(refugee.getBirthCountry());
 		generics.get("createStrategy").execute(refugee.getAddress());
-		refugee.getAddress().getCity().setId(1L);
+		//refugee.getAddress().getCity().setId(1L);
 		//generics.get("createStrategy").execute(refugee.getImage());
 		
 		for (Profession e : refugee.getProfessions()) {

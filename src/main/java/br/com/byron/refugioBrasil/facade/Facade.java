@@ -7,19 +7,19 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.byron.refugioBrasil.dao.IGenericDao;
+import br.com.byron.refugioBrasil.dao.IDao;
 import br.com.byron.refugioBrasil.domain.DomainEntity;
 import br.com.byron.refugioBrasil.strategy.IStrategy;
 
 @Component
 public class Facade<Entity extends DomainEntity> implements IFacade<Entity> {
 
-	private final Map<String, IGenericDao<Entity>> dao;
+	private final Map<String, IDao<Entity>> dao;
 
 	private final Map<String, IStrategy> mapStrategies;
 
 	@Autowired
-	public Facade(Map<String, IGenericDao<Entity>> dao, Map<String, IStrategy> mapStrategies) {
+	public Facade(Map<String, IDao<Entity>> dao, Map<String, IStrategy> mapStrategies) {
 		this.dao = dao;
 		this.mapStrategies = mapStrategies;
 	}
@@ -37,8 +37,8 @@ public class Facade<Entity extends DomainEntity> implements IFacade<Entity> {
 
 	@Override
 	public List<Entity> find(Entity entity) {
-		if (entity.getId() != null) {
-			return dao.get(getDaoName(entity)).findAll();
+		if (entity.getId() == null) {
+			return dao.get(getDaoName(entity)).findAll(entity);
 		} else {
 			return Arrays.asList(dao.get(getDaoName(entity)).find(entity));
 		}

@@ -81,6 +81,14 @@ select {
 	cursor: pointer;
 }
 
+#example_wrapper {
+	width: 100%;
+}
+
+.tel-row {
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}
 /* .form-control:focus{
 	-webkit-box-shadow: 3px 3px 3px 3px #97dbea !important;
     box-shadow: 3px 3px 3px 3px #97dbea !important;

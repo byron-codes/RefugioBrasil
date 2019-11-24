@@ -174,20 +174,16 @@ let validacoes = {
 	txtestado : {
 		campo : "#txtestado",
 		validacoes : function() {
-			notNull($(validacoes.txtestado.campo))
-			tamanho($(validacoes.txtestado.campo), 4, 20)
-			regexLetras($(validacoes.txtestado.campo))
+			comboBox($(validacoes.txtestado.campo))
 		},
-		tipo : "text"
+		tipo : "select"
 	},
 	txtcidade : {
 		campo : "#txtcidade",
 		validacoes : function() {
-			notNull($(validacoes.txtcidade.campo))
-			tamanho($(validacoes.txtcidade.campo), 3, 50)
-			regexLetras($(validacoes.txtcidade.campo))
+			comboBox($(validacoes.txtcidade.campo))
 		},
-		tipo : "text"
+		tipo : "select"
 	},
 	txtlogradouro : {
 		campo : "#txtlogradouro",

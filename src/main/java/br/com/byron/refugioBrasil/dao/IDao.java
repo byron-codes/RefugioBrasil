@@ -1,9 +1,22 @@
 package br.com.byron.refugioBrasil.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
 
 import br.com.byron.refugioBrasil.domain.DomainEntity;
 
-public interface IDao<Entity extends DomainEntity> extends JpaRepository<Entity, Long> {
+@Component
+public interface IDao<Entity extends DomainEntity> {
 
+	public Entity save(Entity entity);
+	
+	public Entity update(Entity entity);
+	
+	public Entity find(Entity entity);
+	
+	public List<Entity> findAll(Entity entity);
+	
+	public Entity delete(Entity entity);
+	
 }

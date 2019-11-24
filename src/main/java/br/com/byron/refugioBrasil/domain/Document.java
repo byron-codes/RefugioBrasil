@@ -20,7 +20,7 @@ import lombok.Setter;
 @Table(name = "_document")
 public class Document extends DomainEntity {
 
-	@Column(name = "number", length = 25, nullable = false, unique = true)
+	@Column(name = "number", length = 25, nullable = false)
 	private String number;
 
 	@Enumerated(EnumType.STRING)

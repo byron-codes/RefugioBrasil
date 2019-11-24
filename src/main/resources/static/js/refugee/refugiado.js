@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	
+	config();
+	
 	setAllMask(mascaras)
 	
 	for(i in validacoes) {
@@ -20,6 +22,13 @@ $(document).ready(function(){
 	$("#txtdataChegada").attr("min", getDate(-365  * 100));
 	$("#txtdataChegada").attr("max", getDate());
 	
+	 $(window).keydown(function(event){
+	    if((event.keyCode == 13)) {
+	      event.preventDefault();
+	      return false;
+	    }
+	  });
+	
 })
 
 function proximo(){
@@ -36,6 +45,7 @@ function proximo(){
     } else if(!$("#identificacao").hasClass("d-none")) {
     	
     	let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil", "selPaisOrigem"]
+    	//let campos = []
     	validaListaCampos(campos);
     	
     	if($("#identificacao").find(".is-invalid").length == 0){
@@ -126,11 +136,6 @@ function voltar(){
 
 $("input[name='situacao']").click(function(){
 	$("#situacao").val($(this).val())
-})
-
-$("#selPaisOrigem").change(function(){
-	$("#codPaisOrigem").val($(this).val())
-	$("#nomePaisOrigem").val($(this).children("option:selected").html())
 })
 
 $('.dropdown-menu a').click(function () {

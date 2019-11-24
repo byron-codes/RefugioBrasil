@@ -9,9 +9,10 @@
 </head>
 <body>
 	<th:block layout:fragment="content">
-		<form action="/refugee/salvar" method="POST" novalidate>
+		<form action="/refugee/salvar" method="POST" novalidate th:object="${refugee}">
 			<div class="content m-5">
 				<div class="line-green">
+					<input type="hidden" id="idRefugee" th:value="${refugee.id}">
 					<h3 id="title">Cadastro de Refugiado</h3>
 				</div>
 				<div id="containerRobot" class='row mt-3'>
@@ -62,6 +63,9 @@
 		<script th:src="@{/js/refugee/limpaModais.js}"></script>
 		<script th:src="@{/js/refugee/refugiado.js}"></script>
 		<script th:src="@{/js/refugee/uploudImage.js}"></script>
+		<script th:src="@{/js/refugee/initialConfig.js}"></script>
+		<script th:src="@{/js/address/cep.js}"></script>
+		<script th:src="@{/js/address/configAddress.js}"></script>
 	</th:block>
 
 </body>

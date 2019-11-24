@@ -20,7 +20,7 @@ public class State extends DomainEntity {
 	@Column(name = "name", length = 100)
 	private String name;
 
-	@Column(name = "initals", length = 100)
-	private String initals;
+	@Column(name = "initials", length = 100)
+	private String initials;
 	
 }

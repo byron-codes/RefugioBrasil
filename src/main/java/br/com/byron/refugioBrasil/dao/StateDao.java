@@ -6,31 +6,30 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import br.com.byron.refugioBrasil.domain.DomainEntity;
+import br.com.byron.refugioBrasil.domain.State;
 
-public class GenericDao<Entity extends DomainEntity> implements IGenericDao<Entity> {
+@Component
+public class StateDao implements IDao<State> {
 
 	@Autowired
-	IDao<Entity> dao;
-
+	IStateDao dao;
+	
 	@Override
-	public Entity save(Entity entity) {
-//		entity.setCreationDate(LocalDateTime.now());
-//		entity.setLastUpdate(LocalDateTime.now());
-//		entity.setStatus(true);
+	public State save(State entity) {
 		return dao.saveAndFlush(entity);
 	}
 
 	@Override
-	public Entity update(Entity entity) {
+	public State update(State entity) {
 		entity.setLastUpdate(LocalDateTime.now());
 		return dao.saveAndFlush(entity);
 	}
 
 	@Override
-	public Entity find(Entity entity) {
-		Optional<Entity> returnEntity = dao.findById(entity.getId());
+	public State find(State entity) {
+		Optional<State> returnEntity = dao.findById(entity.getId());
 		if(returnEntity != null && returnEntity.isPresent() && returnEntity.get().getStatus()) {
 			return returnEntity.get();
 		}
@@ -38,9 +37,9 @@ public class GenericDao<Entity extends DomainEntity> implements IGenericDao<Enti
 	}
 
 	@Override
-	public List<Entity> findAll() {
-		List<Entity> entities = new ArrayList<Entity>();
-		for (Entity entityA : dao.findAll()) {
+	public List<State> findAll(State entity) {
+		List<State> entities = new ArrayList<State>();
+		for (State entityA : dao.findAll()) {
 			if (entityA.getStatus()) {
 				entities.add(entityA);
 			}
@@ -49,9 +48,9 @@ public class GenericDao<Entity extends DomainEntity> implements IGenericDao<Enti
 	}
 
 	@Override
-	public Entity delete(Entity entity) {
+	public State delete(State entity) {
 		entity.setStatus(false);
 		return dao.saveAndFlush(entity);
 	}
-
+	
 }

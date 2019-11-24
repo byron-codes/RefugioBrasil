@@ -49,7 +49,7 @@ public class Refugee extends Person {
 	@JoinColumn(name = "necessity")
 	private Necessity necessity;
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	@JoinColumn(name = "birth_country")
 	private Country birthCountry;
 

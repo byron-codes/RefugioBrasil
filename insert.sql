@@ -198,7 +198,7 @@ INSERT INTO _country (id, name, creation_date, last_update, status) VALUES
 (197,'Zimbábue',now(), now(), b'1');
 
 /*Inserts de cidade e estados*/
-INSERT INTO _state(id, name, initals, creation_date, last_update, status) VALUES
+INSERT INTO _state(id, name, initials, creation_date, last_update, status) VALUES
   (1,  'Acre', 'AC', NOW(), NOW(), b'1'),
   (2,  'Alagoas', 'AL', NOW(), NOW(), b'1'),
   (3,  'Amapá', 'AP', NOW(), NOW(), b'1'),
