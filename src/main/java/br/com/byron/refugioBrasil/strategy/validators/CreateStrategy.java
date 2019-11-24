@@ -8,7 +8,7 @@ import br.com.byron.refugioBrasil.domain.DomainEntity;
 import br.com.byron.refugioBrasil.strategy.IGenericStrategy;
 
 @Component
-public class CreateStrategy implements IGenericStrategy {
+public class CreateStrategy implements IGenericStrategy<DomainEntity> {
 
 	@Override
 	public String execute(DomainEntity entity) {
