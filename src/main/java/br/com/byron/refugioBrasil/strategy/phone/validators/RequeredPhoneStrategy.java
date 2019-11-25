@@ -1,10 +1,13 @@
 package br.com.byron.refugioBrasil.strategy.phone.validators;
 
+import org.springframework.stereotype.Component;
+
 import br.com.byron.refugioBrasil.domain.Phone;
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.strategy.refugee.IRefugeeStrategy;
 import br.com.byron.refugioBrasil.strategy.validators.ValidUtil;
 
+@Component
 public class RequeredPhoneStrategy implements IRefugeeStrategy{
 
 	@Override
