@@ -21,7 +21,7 @@ public class DependentStrategy implements IRefugeeStrategy {
 	public String execute(Refugee entity) {
 		StringBuilder sb = new StringBuilder();
 		for(IDependentStrategy valid : validators.values()) {
-			for(Dependent dependent : entity.getDependent()) {
+			for(Dependent dependent : entity.getDependents()) {
 				sb.append(valid.execute(dependent));
 			}
 		}

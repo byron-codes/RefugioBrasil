@@ -68,12 +68,12 @@ public class Refugee extends Person {
 	private List<Language> languages = new ArrayList<Language>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Academic> academic = new ArrayList<Academic>();
+	private List<Academic> academics = new ArrayList<Academic>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Phone> phones = new ArrayList<>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Dependent> dependent = new ArrayList<Dependent>();
+	private List<Dependent> dependents = new ArrayList<Dependent>();
 
 }

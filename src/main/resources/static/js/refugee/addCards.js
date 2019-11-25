@@ -20,6 +20,7 @@ function adicionarTelefone(){
 		
 		setMaskListItem(mascaras.txtNumeroTel)
 		
+		//ok
 		$("#novosTelefones").append(`
 			<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 	            <div class="m-3">${$("#selTipoTelefone").children("option:selected").html()} - ${num}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
@@ -45,7 +46,7 @@ function adicionarLingua() {
 	comboBox($("#selnivel"))
 	
 	if($("#linguaDiv").find(".is-invalid").length == 0){
-		
+		//ok
 	    $("#linguas").append(
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 	            <div class="m-3">${$("#sellingua").children("option:selected").html()} - ${$("#selnivel").children("option:selected").html()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
@@ -71,7 +72,7 @@ function adicionarExperiencia(){
 	
 	if($("#modalExperiencia").find(".is-invalid").length == 0){
 		
-
+		//ok
 		$("#experiencia").append(
 		        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 			        <div class="m-3">${$("#txtcargo").val()} - ${$("#txtempresa").val()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
@@ -102,7 +103,7 @@ function adicionarFormacao() {
 	validaListaCampos(campos);
 	
 	if($("#modalFormacao").find(".is-invalid").length == 0){
-		
+		//ok
 		 $("#formacao").append(
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 		        <div class="m-3">${$("#txtcurso").val()} - ${$("#txtinstituicao").val()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
@@ -141,24 +142,24 @@ function adicionarDependente() {
 		
 		$("#documentoDependente").unmask();
 		$("#txtcpfDependente").unmask();
-		
+		//ok
 		let htmlAdd = (
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 		        <div class="m-3">${$("#txtnomeDependente").val()} - ${$("#selParentesco").children("option:selected").html()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].name" value="${$("#txtnomeDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].birthDate" value="${$("#txtdataNascimentoDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].gender" value="${$("#selsexoDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].arrivalDate" value="${$("#txtdataChegadaDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].kinship" value="${$("#selParentesco").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].birthCountry.id" value="${$("#selPaisDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].documents[0].number" value="${$("#documentoDependente").val().toUpperCase()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].documents[0].type" value="${$("#tipoDocumentoDependente").html().toUpperCase()}">`
+		        <input type="hidden" name="dependents[${quantidadeFormacao}].name" value="${$("#txtnomeDependente").val()}">
+		        <input type="hidden" name="dependents[${quantidadeFormacao}].birthDate" value="${$("#txtdataNascimentoDependente").val()}">
+		        <input type="hidden" name="dependents[${quantidadeFormacao}].gender" value="${$("#selsexoDependente").val()}">
+		        <input type="hidden" name="dependents[${quantidadeFormacao}].arrivalDate" value="${$("#txtdataChegadaDependente").val()}">
+		        <input type="hidden" name="dependents[${quantidadeFormacao}].kinship" value="${$("#selParentesco").val()}">
+		        <input type="hidden" name="dependents[${quantidadeFormacao}].birthCountry.id" value="${$("#selPaisDependente").val()}">
+		        <input type="hidden" name="dependents[${quantidadeFormacao}].documents[0].number" value="${$("#documentoDependente").val().toUpperCase()}">
+		        <input type="hidden" name="dependents[${quantidadeFormacao}].documents[0].type" value="${$("#tipoDocumentoDependente").html().toUpperCase()}">`
 		)
 		
 		if(flag){
 			htmlAdd += `
-				<input type="hidden" name="dependent[${quantidadeFormacao}].documents[1].number" value="${$("#txtcpfDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].documents[1].type" value="CPF">
+				<input type="hidden" name="dependents[${quantidadeFormacao}].documents[1].number" value="${$("#txtcpfDependente").val()}">
+		        <input type="hidden" name="dependenst[${quantidadeFormacao}].documents[1].type" value="CPF">
 			`
 		}
 		
@@ -196,7 +197,7 @@ function adicionarDocumento(){
 		let numSemMask = $("#txtnumerodoc").val();
 		
 		let tipo = $("#seldoc").val();
-		
+		//ok
 		$("#novosDocumentos").append(
 			`<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 				<div class="m-3">${$("#seldoc").children("option:selected").html()} - ${num}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
