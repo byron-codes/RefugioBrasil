@@ -51,8 +51,5 @@ public class Profession extends DomainEntity {
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "country")
 	private Country country;
-	
-	@Column(name = "name", length = 100)
-	private String name;
 
 }

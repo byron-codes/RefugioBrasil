@@ -55,9 +55,8 @@ function proximo(){
 
     } else if(!$("#identificacao").hasClass("d-none")) {
     	
-    	let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil", "selPaisOrigem"]
-    	//let campos = []
-    	validaListaCampos(campos);
+//    	let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil", "selPaisOrigem"]
+//    	validaListaCampos(campos);
     	
     	if($("#identificacao").find(".is-invalid").length == 0){
     	
@@ -70,8 +69,8 @@ function proximo(){
 
     } else if(!$("#endereco").hasClass("d-none")) {
 
-    	let campos = ["seltipoendereco", "txtcep", "txtestado", "txtcidade", "txtlogradouro", "txtnumero", "txtcomplemento"]
-    	validaListaCampos(campos);
+//    	let campos = ["seltipoendereco", "txtcep", "txtestado", "txtcidade", "txtlogradouro", "txtnumero", "txtcomplemento"]
+//    	validaListaCampos(campos);
     	
     	if($("#camposEndereco").find(".is-invalid").length == 0){
     	

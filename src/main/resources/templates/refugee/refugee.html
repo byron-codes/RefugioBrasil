@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html layout:decorate="~{refugee/RefugioBrasil}">
 <head>
+<meta charset="utf-8">
 <title>Cadastro de Refugiado</title>
 <link th:href="@{/css/geral.css}" rel="stylesheet" type="text/css" />
 <link th:href="@{/css/card-info.css}" rel="stylesheet" type="text/css" />
@@ -9,7 +10,7 @@
 </head>
 <body>
 	<th:block layout:fragment="content">
-		<form action="/refugee/salvar" method="POST" novalidate th:object="${refugee}">
+		<form action="/refugee/salvar" method="POST" novalidate th:object="${refugee}" enctype="multipart/form-data">
 			<div class="content m-5">
 				<div class="line-green">
 					<input type="hidden" id="idRefugee" th:value="${refugee.id}">
@@ -22,7 +23,7 @@
 					<div class="col-7 col-sm-7 col-md-10 col-lg-8 col-xlg-10">
 						<div class="round talk-bubble tri-right left-top">
 							<div class="talktext">
-								<p id="dialogoRobot">Olá! antes de iniciar o cadastro verifique se esse usuário já foi cadastrado buscando seu n° de documento</p>
+								<p id="dialogoRobot">Olá! Antes de iniciar o cadastro verifique se esse usuário já foi cadastrado buscando seu número de documento</p>
 							</div>
 						</div>
 					</div>

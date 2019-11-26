@@ -17,13 +17,13 @@ function initTable() {
 						</div>
 					`
 				}
-				telefones += "</td>"
+				telefones += "</td>";
 				$("#bodyTabela").append(`
 					<tr>
 						<td>${data[i].name}</td>
 						<td>${data[i].birthCountry.name}</td>
 						<td>${data[i].cpp ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>'}</td>
-						<td>${formatDateToBr(data[i].birthDate)}</td>
+						<td>${formatDateToBr(data[i].bornDate)}</td>
 						<td>${data[i].dependent.length}</td>
 						${telefones}
 						<td class="row"><div class="col-lg-6"><i onclick="window.location = '/refugee/' + ${data[i].id}" class="fas fa-user-edit pl-4"></i></div><div class="col-lg-6"><i class="fas fa-trash-alt" onclick="deletar('${data[i].id}')"></i></div></td>

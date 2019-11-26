@@ -14,8 +14,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 import br.com.byron.refugioBrasil.enums.MaritalStatus;
 import lombok.AllArgsConstructor;
@@ -75,5 +77,5 @@ public class Refugee extends Person {
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Dependent> dependent = new ArrayList<Dependent>();
-
+	
 }

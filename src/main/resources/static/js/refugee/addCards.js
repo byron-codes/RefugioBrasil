@@ -1,4 +1,38 @@
 let quantidadeTelefone = 0;
+let quantidadeLinguas = 0;
+let quantidadeExperiencia = 0;
+let quantidadeFormacao = 0;
+let quantidadeDependente = 0;
+let quantidadeDocumentos = 0;
+
+$(document).ready(function(){
+	
+	$("#novosTelefones").children().each(function(){
+		quantidadeTelefone++;
+	})
+	
+	$("#linguas").children().each(function(){
+		quantidadeLinguas++;
+	})
+	
+	$("#experiencia").children().each(function(){
+		quantidadeExperiencia++;
+	})
+	
+	$("#formacao").children().each(function(){
+		quantidadeFormacao++;
+	})
+	
+	$("#dependente").children().each(function(){
+		quantidadeDependente++
+	})
+	
+	$("#novosDocumentos").children().each(function(){
+		quantidadeDocumentos++
+	})
+	
+})
+
 function adicionarTelefone(){
 	let campos = ["selTipoTelefone", "selOperadora", "txtNumeroTel"];
 	
@@ -36,7 +70,6 @@ function adicionarTelefone(){
 	}
 }
 
-let quantidadeLinguas = 0;
 function adicionarLingua() {
 	
 	let campos = ["sellingua", "selnivel"]
@@ -63,7 +96,6 @@ function adicionarLingua() {
 	
 }
 
-let quantidadeExperiencia = 0;
 function adicionarExperiencia(){
 	let campos = ["txtcargo", "txtempresa", "txtdataInicioExperiencia", "txtdataFimExperiencia", "selPaisExperiencia", "obsProfissao"];
 	
@@ -95,7 +127,6 @@ function adicionarExperiencia(){
 	}
 }
 
-let quantidadeFormacao = 0;
 function adicionarFormacao() {
 	let campos = ["txtcurso", "txtinstituicao", "txtdataInicioFormacao", "txtdataFimFormacao", "selgrauAcademico", "selsituacaoAcademica", "selPaisFormacao"];
 	
@@ -126,7 +157,6 @@ function adicionarFormacao() {
 	}
 }
 
-let quantidadeDependente = 0;
 function adicionarDependente() {
 	let campos = ["txtnomeDependente", "selsexoDependente", "txtdataNascimentoDependente", "txtdataChegadaDependente", "selParentesco", "selPaisDependente", "documentoDependente"];
 	let flag = false;
@@ -145,20 +175,20 @@ function adicionarDependente() {
 		let htmlAdd = (
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 		        <div class="m-3">${$("#txtnomeDependente").val()} - ${$("#selParentesco").children("option:selected").html()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].name" value="${$("#txtnomeDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].birthDate" value="${$("#txtdataNascimentoDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].gender" value="${$("#selsexoDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].arrivalDate" value="${$("#txtdataChegadaDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].kinship" value="${$("#selParentesco").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].birthCountry.id" value="${$("#selPaisDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].documents[0].number" value="${$("#documentoDependente").val().toUpperCase()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].documents[0].type" value="${$("#tipoDocumentoDependente").html().toUpperCase()}">`
+		        <input type="hidden" name="dependent[${quantidadeDependente}].name" value="${$("#txtnomeDependente").val()}">
+		        <input type="hidden" name="dependent[${quantidadeDependente}].birthDate" value="${$("#txtdataNascimentoDependente").val()}">
+		        <input type="hidden" name="dependent[${quantidadeDependente}].gender" value="${$("#selsexoDependente").val()}">
+		        <input type="hidden" name="dependent[${quantidadeDependente}].arrivalDate" value="${$("#txtdataChegadaDependente").val()}">
+		        <input type="hidden" name="dependent[${quantidadeDependente}].kinship" value="${$("#selParentesco").val()}">
+		        <input type="hidden" name="dependent[${quantidadeDependente}].birthCountry.id" value="${$("#selPaisDependente").val()}">
+		        <input type="hidden" name="dependent[${quantidadeDependente}].documents[0].number" value="${$("#documentoDependente").val().toUpperCase()}">
+		        <input type="hidden" name="dependent[${quantidadeDependente}].documents[0].type" value="${$("#tipoDocumentoDependente").html().toUpperCase()}">`
 		)
 		
 		if(flag){
 			htmlAdd += `
-				<input type="hidden" name="dependent[${quantidadeFormacao}].documents[1].number" value="${$("#txtcpfDependente").val()}">
-		        <input type="hidden" name="dependent[${quantidadeFormacao}].documents[1].type" value="CPF">
+				<input type="hidden" name="dependent[${quantidadeDependente}].documents[1].number" value="${$("#txtcpfDependente").val()}">
+		        <input type="hidden" name="dependent[${quantidadeDependente}].documents[1].type" value="CPF">
 			`
 		}
 		
@@ -179,7 +209,6 @@ function adicionarDependente() {
 	}
 }
 
-var quantidadeDocumentos = 0;
 function adicionarDocumento(){
 
 	let campos = ["seldoc", "txtnumerodoc"]
