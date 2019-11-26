@@ -71,7 +71,7 @@ public class Refugee extends Person {
 	private List<Academic> academics = new ArrayList<Academic>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Phone> phones = new ArrayList<>();
+	private List<Phone> phones = new ArrayList<Phone>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Dependent> dependents = new ArrayList<Dependent>();
