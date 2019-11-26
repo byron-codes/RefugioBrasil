@@ -14,10 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.multipart.MultipartFile;
 
 import br.com.byron.refugioBrasil.enums.MaritalStatus;
 import lombok.AllArgsConstructor;
@@ -70,12 +68,12 @@ public class Refugee extends Person {
 	private List<Language> languages = new ArrayList<Language>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Academic> academic = new ArrayList<Academic>();
+	private List<Academic> academics = new ArrayList<Academic>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Phone> phones = new ArrayList<>();
+	private List<Phone> phones = new ArrayList<Phone>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Dependent> dependent = new ArrayList<Dependent>();
-	
+	private List<Dependent> dependents = new ArrayList<Dependent>();
+
 }

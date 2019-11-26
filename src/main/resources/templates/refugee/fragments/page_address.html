@@ -100,6 +100,17 @@
 				</div>
 			</div>
 		</div>
-		<div id="novosTelefones" class="form-group card-columns"></div>
+		<div id="novosTelefones" class="form-group card-columns">
+		
+		<div th:each="phone, list : ${refugee.phones}" class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+	            <div class="m-3" th:text="${phone.type} - ${phone.number}">
+	            	<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i>
+	            </div>
+	            <input type="hidden" name="phones[${list.index}].idd" value="${phone.idd}">
+	            <input type="hidden" name="phones[${list.index}].number" value="${phone.number}">
+	            <input type="hidden" name="phones[${list.index}].operators" value="${phone.operators}">
+	            <input type="hidden" name="phones[${list.index}].type" value="${phone.type}">
+	        </div>
+		</div>
 	</div>
 </div>

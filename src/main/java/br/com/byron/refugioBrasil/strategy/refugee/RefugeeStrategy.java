@@ -55,7 +55,7 @@ public class RefugeeStrategy implements IStrategy {
 			generics.get("createStrategy").execute(e);
 		}
 		
-		for (Academic e : refugee.getAcademic()) {
+		for (Academic e : refugee.getAcademics()) {
 			generics.get("createStrategy").execute(e);
 		}
 		
@@ -63,7 +63,7 @@ public class RefugeeStrategy implements IStrategy {
 			generics.get("createStrategy").execute(e);
 		}
 		
-		for (Dependent e : refugee.getDependent()) {
+		for (Dependent e : refugee.getDependents()) {
 			generics.get("createStrategy").execute(e);
 		}
 		

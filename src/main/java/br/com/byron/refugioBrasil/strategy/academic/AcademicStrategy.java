@@ -21,7 +21,7 @@ public class AcademicStrategy implements IRefugeeStrategy {
 	public String execute(Refugee entity) {
 		StringBuilder sb = new StringBuilder();
 		for (IAcademicStrategy academicStrategy : validators.values()) {
-			for (Academic academic : entity.getAcademic()) {
+			for (Academic academic : entity.getAcademics()) {
 				sb.append(academicStrategy.execute(academic));
 			}
 		}

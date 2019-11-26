@@ -54,6 +54,7 @@ function adicionarTelefone(){
 		
 		setMaskListItem(mascaras.txtNumeroTel)
 		
+		//ok
 		$("#novosTelefones").append(`
 			<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 	            <div class="m-3">${$("#selTipoTelefone").children("option:selected").html()} - ${num}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
@@ -78,7 +79,7 @@ function adicionarLingua() {
 	comboBox($("#selnivel"))
 	
 	if($("#linguaDiv").find(".is-invalid").length == 0){
-		
+		//ok
 	    $("#linguas").append(
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 	            <div class="m-3">${$("#sellingua").children("option:selected").html()} - ${$("#selnivel").children("option:selected").html()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
@@ -103,7 +104,7 @@ function adicionarExperiencia(){
 	
 	if($("#modalExperiencia").find(".is-invalid").length == 0){
 		
-
+		//ok
 		$("#experiencia").append(
 		        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 			        <div class="m-3">${$("#txtcargo").val()} - ${$("#txtempresa").val()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
@@ -133,7 +134,7 @@ function adicionarFormacao() {
 	validaListaCampos(campos);
 	
 	if($("#modalFormacao").find(".is-invalid").length == 0){
-		
+		//ok
 		 $("#formacao").append(
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 		        <div class="m-3">${$("#txtcurso").val()} - ${$("#txtinstituicao").val()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
@@ -171,7 +172,7 @@ function adicionarDependente() {
 		
 		$("#documentoDependente").unmask();
 		$("#txtcpfDependente").unmask();
-		
+		//ok
 		let htmlAdd = (
 	        `<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 		        <div class="m-3">${$("#txtnomeDependente").val()} - ${$("#selParentesco").children("option:selected").html()}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
@@ -225,7 +226,7 @@ function adicionarDocumento(){
 		let numSemMask = $("#txtnumerodoc").val();
 		
 		let tipo = $("#seldoc").val();
-		
+		//ok
 		$("#novosDocumentos").append(
 			`<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 				<div class="m-3">${$("#seldoc").children("option:selected").html()} - ${num}<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i></div>
