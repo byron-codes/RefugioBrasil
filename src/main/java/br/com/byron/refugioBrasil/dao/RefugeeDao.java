@@ -1,11 +1,7 @@
 package br.com.byron.refugioBrasil.dao;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,7 +40,15 @@ public class RefugeeDao implements IDao<Refugee> {
 
 	@Override
 	public Refugee find(Refugee entity) {
-		Optional<Refugee> returnEntity = dao.findById(entity.getId());
+		Optional<Refugee> returnEntity = null;
+		if (entity.getDocuments().size() > 0) {
+			if (entity.getDocuments().get(0).getNumber() != null && entity.getDocuments().get(0).getNumber() != "") {
+				returnEntity = dao.getUniqueRefugee(entity.getDocuments().get(0).getNumber());
+			}
+		} else {
+			returnEntity = dao.findById(entity.getId());
+		}
+
 		if (returnEntity != null && returnEntity.isPresent() && returnEntity.get().getStatus()) {
 			return returnEntity.get();
 		}

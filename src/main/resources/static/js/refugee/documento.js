@@ -25,12 +25,13 @@ function consultarDocumento(e){
 			$(validacoes.txtprotocolo.campo).val("Campo não preenchido")
 		}
 		
+		let numberProtocolo;
 		if(!$("#txtrne").hasClass("is-invalid") && $("#txtrne").val() != ""){
 			flag = true;
-			let number = $("#txtrne").unmask();
+			numberProtocolo = $("#txtrne").unmask();
 			$("#novosDocumentos").append(`
 				<input name="documents[0].type" type="hidden" value="RNE">
-				<input name="documents[0].number" type="hidden" value="${number.val()}">
+				<input name="documents[0].number" type="hidden" value="${numberProtocolo.val()}">
 			`)
 			setMaskListItem(mascaras.txtrne)
 			quantidadeDocumentos++;
@@ -39,7 +40,12 @@ function consultarDocumento(e){
 			$(validacoes.txtrne.campo).val("Campo não preenchido")
 		}
 		
-		
+		$.ajax({
+			url: URI + "/refugee/unique/" + numberProtocolo,
+			success: function(data){
+				console.log(data)
+			}
+		})
 		
 		if(flag){
 			
