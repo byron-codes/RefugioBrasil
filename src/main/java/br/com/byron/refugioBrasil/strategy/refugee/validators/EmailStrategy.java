@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.strategy.refugee.IRefugeeStrategy;
-import br.com.byron.refugioBrasil.strategy.validators.ValidUtil;
 
 @Component
 public class EmailStrategy implements IRefugeeStrategy {
