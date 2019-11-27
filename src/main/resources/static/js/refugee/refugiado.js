@@ -1,7 +1,14 @@
 $(document).ready(function(){
 	
-	if(window.location.href.split("/")[window.location.href.split("/").length - 1] == "/salvar"){
-		
+	let separado = window.location.href.split("/")
+	
+	if(separado[separado.length - 1] == "salvar"){
+		Swal.fire({
+            title: 'Houveram erros ao salvar o refugiado tente novamente',
+            type: 'error',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ok',
+          })
 	}
 	
 	config();

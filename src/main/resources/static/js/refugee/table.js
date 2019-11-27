@@ -1,5 +1,17 @@
 $(document).ready(function() {
 	initTable()
+	
+	let msg = getParam('status')
+	
+	if(msg == "sucesso"){
+		Swal.fire({
+            title: 'Refugiado cadastrado com sucesso',
+            type: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ok',
+          })
+	}
+	
 })
 
 function initTable() {
