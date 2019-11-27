@@ -11,33 +11,38 @@
 			<div class="modal-body">
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="txtcargo">Cargo*</label> <input type="text" class="form-control" id="txtcargo" placeholder="Psicologo">
+						<label for="txtcargo">Cargo*</label>
+						<input type="text" class="form-control" id="txtcargo" placeholder="Psicologo">
 						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 						<div class="valid-feedback"></div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="txtempresa">Empresa*</label> <input type="text" class="form-control" id="txtempresa" placeholder="Clinica Mogi">
+						<label for="txtempresa">Empresa*</label>
+						<input type="text" class="form-control" id="txtempresa" placeholder="Clinica Mogi">
 						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 						<div class="valid-feedback"></div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="txtdataInicioExperiencia">Data de incio*</label> <input type="date" class="form-control" id="txtdataInicioExperiencia" aria-describedby="">
+						<label for="txtdataInicioExperiencia">Data de incio*</label>
+						<input type="date" class="form-control" id="txtdataInicioExperiencia" aria-describedby="">
 						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 						<div class="valid-feedback"></div>
 					</div>
 					<div class="form-group col-md-6">
-						<label for="txtdataFimExperiencia">Data de fim*</label> <input type="date" class="form-control" id="txtdataFimExperiencia" aria-describedby="">
+						<label for="txtdataFimExperiencia">Data de fim*</label>
+						<input type="date" class="form-control" id="txtdataFimExperiencia" aria-describedby="">
 						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 						<div class="valid-feedback"></div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-lg-12">
-						<label for="selPaisFormacaoP">País*</label> <select class="form-control" id="selPaisExperiencia">
+						<label for="selPaisFormacaoP">País*</label>
+						<select class="form-control" id="selPaisExperiencia">
 							<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 						</select>
 						<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
@@ -53,11 +58,13 @@
 					</div>
 				</div>
 				<div class="form-row">
-					<div class="form-group col-lg-4">
-						<input name="atual" type="checkbox" id="profissaoAtual"> <label for="atual" style="display: inline;">Profissão atual</label>
+					<div class="form-group col-lg-4 areacheck">
+						<input name="atual" type="checkbox" id="profissaoAtual">
+						<label class="filhocheck" for="atual" style="display: inline;">Profissão atual</label>
 					</div>
-					<div class="form-group col-lg-8">
-						<input name="indicacao" type="checkbox" id="profissaoIndicacao"> <label for="indicacao" style="display: inline;">Indicação da Refúgio Brasil</label>
+					<div class="form-group col-lg-8 areacheck">
+						<input name="indicacao" type="checkbox" id="profissaoIndicacao">
+						<label class="filhocheck" for="indicacao" style="display: inline;">Indicação da Refúgio Brasil</label>
 					</div>
 				</div>
 			</div>
@@ -65,6 +72,12 @@
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
 				<button type="button" class="btn bg-blue" onclick="adicionarExperiencia()">Adicionar</button>
 			</div>
+			<script type="text/javascript">
+			$(".filhocheck").on('click', function (e) {
+			    cb = $(e.target).parent().children(":checkbox");
+			    cb.attr("checked", !cb.attr("checked"));
+			});
+			</script>
 		</div>
 	</div>
 </div>

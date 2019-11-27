@@ -103,12 +103,13 @@
 		<div id="novosTelefones" class="form-group card-columns">
 			<div th:each="phone, list : ${refugee.phones}" class="telAtualizarMaster card text-white bg-secondary mb-3" style="max-width: 18rem;">
 				<div class="m-3 telAtualizar">
-					<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i>
+					<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().find('.status').val(false);$(this).parent().remove()"></i>
 				</div>
 				<input type="hidden" class="idd" th:name="phones[ + ${list.index} + ].idd" th:value="${phone.idd}">
 				<input type="hidden" class="number" th:name="phones[ + ${list.index} + ].number" th:value="${phone.number}">
 				<input type="hidden" class="" th:name="phones[ + ${list.index} + ].operators" th:value="${phone.operators}">
 				<input type="hidden" class="type" th:name="phones[ + ${list.index} + ].type" th:value="${phone.type}">
+				<input type="hidden" class="status" name="phones[+${list.index}+].status" th:value="${phone.status}">
 			</div>
 		</div>
 	</div>
