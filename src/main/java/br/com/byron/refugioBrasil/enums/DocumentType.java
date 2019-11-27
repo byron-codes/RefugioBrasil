@@ -3,7 +3,7 @@ package br.com.byron.refugioBrasil.enums;
 public enum DocumentType {
 
 	PROTOCOLO("Protocolo"), 
-	RNM("RNM"), 
+	RNM("RNM"),
 	CPF("CPF"), 
 	RG("RG"), 
 	PASSAPORTE("Passaporte"), 

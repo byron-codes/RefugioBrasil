@@ -16,7 +16,7 @@
 					<input type="hidden" id="idRefugee" th:value="${refugee.id}">
 					<h3 id="title">Cadastro de Refugiado</h3>
 				</div>
-				<div id="containerRobot" class='row mt-3'>
+				<div th:if="${refugee.id==null}" id="containerRobot" class='row mt-3'>
 					<div class="col-3 col-sm-3 col-md-2 col-lg-1 col-xlg-1 ">
 						<img class="mx-auto d-block img-fluid" th:src="@{/img/robot.png}" style="max-height: 80px;">
 					</div>
@@ -42,11 +42,11 @@
 				<th:block th:include="refugee/fragments/page_dependent"></th:block>
 
 
-				<button type="button" class="btn btn-blue float-right" onclick="consultarDocumento(this)">
+				<button th:if="${refugee.id==null}" type="button" class="btn btn-blue float-right" onclick="consultarDocumento(this)">
 					<i class="fas fa-search"></i>
 					buscar
 				</button>
-				<button id="btnprox" type="button" class="btn btn-blue float-right d-none" onclick="proximo()">Próximo</button>
+				<button id="btnprox" th:if="${refugee.id!=null}" type="button" class="btn btn-blue float-right d-none" onclick="proximo()">Próximo</button>
 				<button id="btnsalvar" type="submit" class="btn btn-blue float-right d-none">Salvar</button>
 				<button id="btnvolta" type="button" class="btn btn-blue d-none" onclick="voltar()">Voltar</button>
 			</div>

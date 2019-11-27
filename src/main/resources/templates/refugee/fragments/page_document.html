@@ -14,7 +14,7 @@
 			<div class="valid-feedback"></div>
 		</div>
 	</div>
-	<div id="documentosAdd" class="form-row d-none">
+	<div id="documentosAdd" class="form-row" th:classappend="${refugee.id==null}?d-none">
 		<div class="form-group col-lg-6">
 			<label for="seldoc">Tipo Documento</label>
 			<select class="form-control" id="seldoc">

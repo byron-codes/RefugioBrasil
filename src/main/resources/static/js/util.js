@@ -33,10 +33,14 @@ function limpaDadosErrosCampos(lista){
 	for(i in lista) {
     	let campo = $(validacoes[lista[i]].campo)
     	limpaCampo($(campo));
+    	
     	if(validacoes[lista[i]].tipo == "text") {
     		$(campo).val("")
     	} else if(validacoes[lista[i]].tipo == "select") {
     		$(campo).val("0")
+    	} else if(validacoes[lista[i]].tipo == "checkbox") {
+    		$(campo).val(false)
+    		$(campo).prop("checked",false)
     	}
     }
 }
