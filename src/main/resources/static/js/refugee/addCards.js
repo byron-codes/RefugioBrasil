@@ -15,7 +15,7 @@ $(document).ready(function(){
 		quantidadeLinguas++;
 	})
 	
-	$("#experiencia").children().each(function(){
+	$("#experienciaDeck").children().each(function(){
 		quantidadeExperiencia++;
 	})
 	

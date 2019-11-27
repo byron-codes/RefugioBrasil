@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+	$("#situacao").val("SOCORRO")
 	let separado = window.location.href.split("/")
 	
 	if(separado[separado.length - 1] == "salvar"){
