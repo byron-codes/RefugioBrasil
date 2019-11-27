@@ -40,7 +40,15 @@ public class RefugeeDao implements IDao<Refugee> {
 
 	@Override
 	public Refugee find(Refugee entity) {
-		Optional<Refugee> returnEntity = dao.findById(entity.getId());
+		Optional<Refugee> returnEntity = null;
+		if (entity.getDocuments().size() > 0) {
+			if (entity.getDocuments().get(0).getNumber() != null && entity.getDocuments().get(0).getNumber() != "") {
+				returnEntity = dao.getUniqueRefugee(entity.getDocuments().get(0).getNumber());
+			}
+		} else {
+			returnEntity = dao.findById(entity.getId());
+		}
+
 		if (returnEntity != null && returnEntity.isPresent() && returnEntity.get().getStatus()) {
 			return returnEntity.get();
 		}

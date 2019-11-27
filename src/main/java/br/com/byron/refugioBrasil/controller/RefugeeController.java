@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.byron.refugioBrasil.domain.Document;
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.facade.Facade;
 
@@ -50,6 +51,23 @@ public class RefugeeController {
 			return mv;
 		} catch (Exception e) {
 			return new ModelAndView("redirect:/404");
+		}
+	}
+
+	@GetMapping("/unique/{documento}")
+	public @ResponseBody Refugee getUnicoRefugiado(@PathVariable("documento") String documento) {
+		if(documento == null || documento == "" || documento == "null") {
+			return null;
+		}
+		try {
+			Refugee refugee = new Refugee();
+			Document doc = new Document();
+			doc.setNumber(documento);
+			refugee.getDocuments().add(doc);
+			refugee = facade.find(refugee).get(0);
+			return refugee;
+		} catch (Exception e) {
+			return null;
 		}
 	}
 
