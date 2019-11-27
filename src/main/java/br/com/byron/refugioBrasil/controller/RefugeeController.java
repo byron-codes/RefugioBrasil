@@ -55,18 +55,17 @@ public class RefugeeController {
 	}
 
 	@GetMapping("/unique/{documento}")
-	public @ResponseBody Boolean getUnicoRefugiado(@PathVariable("documento") String documento) {
+	public @ResponseBody Refugee getUnicoRefugiado(@PathVariable("documento") String documento) {
+		if(documento == null || documento == "" || documento == "null") {
+			return null;
+		}
 		try {
 			Refugee refugee = new Refugee();
 			Document doc = new Document();
 			doc.setNumber(documento);
 			refugee.getDocuments().add(doc);
 			refugee = facade.find(refugee).get(0);
-			if (refugee == null) {
-				return true;
-			} else {
-				return false;
-			}
+			return refugee;
 		} catch (Exception e) {
 			return null;
 		}
