@@ -106,7 +106,7 @@
 				<input type="hidden" th:name="dependents[ + ${list.index} + ].birthCountry.id" th:value="${dependent.birthCountry.id}">
 				<input type="hidden" th:name="dependents[ + ${list.index} + ].documents[0].number" th:value="${dependent.documents[0].number}">
 				<input type="hidden" th:name="dependents[ + ${list.index} + ].documents[0].type" th:value="${dependent.documen[0].type}">
-				<input type="hidden" name="dependents[+${list.index}+].documents[0].status" th:value="${dependent.documen[0].status}" class="status">
+				<input type="hidden" th:name="dependents[+${list.index}+].status" th:value="${dependent.status}" class="status">
 
 				<input th:if="${dependent.documen[1].number != null}" type="hidden" th:name="dependents[ + ${list.index} + ].documents[1].number" th:value="${dependent.documen[1].number}">
 				<input th:if="${dependent.documen[1].type != null}" type="hidden" th:name="dependents[ + ${list.index} + ].documents[1].type" th:value="${dependent.documen[1].type}">

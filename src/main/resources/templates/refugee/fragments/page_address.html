@@ -109,7 +109,7 @@
 				<input type="hidden" class="number" th:name="phones[ + ${list.index} + ].number" th:value="${phone.number}">
 				<input type="hidden" class="" th:name="phones[ + ${list.index} + ].operators" th:value="${phone.operators}">
 				<input type="hidden" class="type" th:name="phones[ + ${list.index} + ].type" th:value="${phone.type}">
-				<input type="hidden" class="status" name="phones[+${list.index}+].status" th:value="${phone.status}">
+				<input type="hidden" class="status" th:name="phones[+${list.index}+].status" th:value="${phone.status}">
 			</div>
 		</div>
 	</div>

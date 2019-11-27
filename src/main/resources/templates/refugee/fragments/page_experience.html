@@ -35,12 +35,12 @@
 		</div>
 		<div id="linguas" class="form-group col-lg-12 card-deck">
 			<div th:each="language, list : ${refugee.languages}" class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-				<div class="m-3" th:text="${language.name} - ${languege.fluency}">
+				<div class="m-3" th:text="${language.name} + ' - ' + ${language.fluency}">
 					<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().find('.status').val(false);$(this).parent().remove()"></i>
 				</div>
 				<input type="hidden" th:name="languages[ + ${list.index} + ].name" th:value="${language.nome}">
 				<input type="hidden" th:name="languages[ + ${list.index} + ].fluency" th:value="${language.fluency}">
-				<input type="hidden" name="languages[+${list.index}+].status" th:value="${language.status}">
+				<input type="hidden" th:name="languages[+${list.index}+].status" th:value="${language.status}">
 			</div>
 		</div>
 	</div>
@@ -62,7 +62,7 @@
 	<div class="form-row">
 		<div id="formacao" class="form-group col-lg-6">
 			<div th:each="academic, list : ${academics}" class="card text-white bg-secondary mb-3">
-				<div class="m-3" th:text="${academic.course} - ${academic.instituation}">
+				<div class="m-3" th:text="${academic.course} + ' - ' + ${academic.instituation}">
 					<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().find('.status').val(false);$(this).parent().remove()"></i>
 				</div>
 				<input type="hidden" th:name="academics[ + ${list.index} + ].course" th:value="${academic.course}">
@@ -72,7 +72,7 @@
 				<input type="hidden" th:name="academics[ + ${list.index} + ].level" th:value="${academic.level}">
 				<input type="hidden" th:name="academics[ + ${list.index} + ].situation" th:value="${academic.situation}">
 				<input type="hidden" th:name="academics[ + ${list.index} + ].country.id" th:value="${academic.id}">
-				<input type="hidden" name="academics[+${list.index}+].country.status" th:value="${academic.status}" class="status">
+				<input type="hidden" th:name="academics[+${list.index}+].country.status" th:value="${academic.status}" class="status">
 
 			</div>
 		</div>
@@ -90,7 +90,7 @@
 				<input type="hidden" th:name="professions[ + ${list.index} + ].endDate" th:value="${profess.endDate}">
 				<input type="hidden" th:name="professions[ + ${list.index} + ].current" th:value="${profess.current}">
 				<input type="hidden" th:name="professions[ + ${list.index} + ].country.id" th:value="${profess.country.id}">
-				<input type="hidden" name="professions[+${list.index}+].country.status" th:value="${profess.status}" class="status">
+				<input type="hidden" th:name="professions[+${list.index}+].country.status" th:value="${profess.status}" class="status">
 			</div>
 		</div>
 	</div>
