@@ -56,11 +56,14 @@ public class RefugeeController {
 
 	@GetMapping("/unique/{documento}")
 	public @ResponseBody Refugee getUnicoRefugiado(@PathVariable("documento") String documento) {
+		
 		if(documento == null || documento == "" || documento == "null") {
 			return null;
 		}
+		
 		try {
 			Refugee refugee = new Refugee();
+			refugee.setId(0L);
 			Document doc = new Document();
 			doc.setNumber(documento);
 			refugee.getDocuments().add(doc);
@@ -69,6 +72,7 @@ public class RefugeeController {
 		} catch (Exception e) {
 			return null;
 		}
+		
 	}
 
 	@PostMapping("/salvar")

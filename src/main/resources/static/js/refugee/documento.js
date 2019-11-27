@@ -42,11 +42,12 @@ function consultarDocumento(e){
 		
 		let unico = true;
 		let id = null;
-		
+		debugger
 		$.ajax({
 			url: URI + "/refugee/unique/" + numberProtocolo,
 			success: function(data){
-				if(data == null){
+				debugger
+				if(data == "" || data == null){
 					unico = true;
 				} else {
 					unico = false;
@@ -62,7 +63,8 @@ function consultarDocumento(e){
 				$.ajax({
 					url: URI + "/refugee/unique/" + numberRne,
 					success: function(data){
-						if(data == null){
+						debugger
+						if(data == "" || data == null){
 							unico = true;
 						} else {
 							unico = false;
@@ -73,11 +75,11 @@ function consultarDocumento(e){
 						blockUI();
 					}
 				}).done(function(){
-					posInseridoDoc(flag, unico, id)
+					posInseridoDoc(flag, unico, id, e)
 					unBlockUI();
 				})
 			} else {
-				posInseridoDoc(flag, unico, id)
+				posInseridoDoc(flag, unico, id, e)
 			}
 		})
 		
@@ -85,7 +87,7 @@ function consultarDocumento(e){
 	
 }
 
-function posInseridoDoc(flag, unico, id = null){
+function posInseridoDoc(flag, unico, id = null, e){
 	if(flag){
 		
 		limpaCampo($("#txtprotocolo"))

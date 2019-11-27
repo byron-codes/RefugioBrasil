@@ -26,11 +26,11 @@ public class BornDateStrategy implements IRefugeeStrategy, IDependentStrategy {
 		StringBuilder sb = new StringBuilder();
 
 		if (date.isBefore(LocalDate.now().minusYears(100))) {
-			sb.append("Data inválida - B");
+			sb.append("Data de nascimento inválida");
 		}
 
 		if (date.isAfter(LocalDate.now())) {
-			sb.append("Data inválida - A");
+			sb.append("Data de nascimento inválida");
 		}
 		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
