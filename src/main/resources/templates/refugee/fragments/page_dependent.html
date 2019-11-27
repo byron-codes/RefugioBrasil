@@ -59,10 +59,6 @@
 					<label for="selPaisDependente">País*</label>
 					<select class="form-control" id="selPaisDependente">
 						<option value="0" selected="selected" disabled="disabled">Selecione...</option>
-						<option value="111">Chile</option>
-						<option value="222">Argentina</option>
-						<option value="333">ColÃ´mbia</option>
-						<option>...</option>
 					</select>
 					<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 					<div class="valid-feedback"></div>
@@ -102,18 +98,18 @@
 				<div class="m-3" th:text="${dependent.name} + ' - ' + ${dependent.kinship}">
 					<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().find('.status').val(false);$(this).parent().remove()"></i>
 				</div>
-				<input type="hidden" name="dependents[${list.index}].name" th:value="${dependent.name}">
-				<input type="hidden" name="dependents[${list.index}].birthDate" th:value="${dependent.birthDate}">
-				<input type="hidden" name="dependents[${list.index}].gender" th:value="${dependent.gender}">
-				<input type="hidden" name="dependents[${list.index}].arrivalDate" th:value="${dependent.arrivalDate}">
-				<input type="hidden" name="dependents[${list.index}].kinship" th:value="${dependent.kinship}">
-				<input type="hidden" name="dependents[${list.index}].birthCountry.id" th:value="${dependent.birthCountry.id}">
-				<input type="hidden" name="dependents[${list.index}].documents[0].number" th:value="${dependent.documents[0].number}">
-				<input type="hidden" name="dependents[${list.index}].documents[0].type" th:value="${dependent.documen[0].type}">
-				<input type="hidden" name="dependents[${list.index}].documents[0].status" th:value="${dependent.documen[0].status}" class="status">
+				<input type="hidden" th:name="dependents[ + ${list.index} + ].name" th:value="${dependent.name}">
+				<input type="hidden" th:name="dependents[ + ${list.index} + ].birthDate" th:value="${dependent.birthDate}">
+				<input type="hidden" th:name="dependents[ + ${list.index} + ].gender" th:value="${dependent.gender}">
+				<input type="hidden" th:name="dependents[ + ${list.index} + ].arrivalDate" th:value="${dependent.arrivalDate}">
+				<input type="hidden" th:name="dependents[ + ${list.index} + ].kinship" th:value="${dependent.kinship}">
+				<input type="hidden" th:name="dependents[ + ${list.index} + ].birthCountry.id" th:value="${dependent.birthCountry.id}">
+				<input type="hidden" th:name="dependents[ + ${list.index} + ].documents[0].number" th:value="${dependent.documents[0].number}">
+				<input type="hidden" th:name="dependents[ + ${list.index} + ].documents[0].type" th:value="${dependent.documen[0].type}">
+				<input type="hidden" name="dependents[+${list.index}+].documents[0].status" th:value="${dependent.documen[0].status}" class="status">
 
-				<input th:if="${dependent.documen[1].number != null}" type="hidden" name="dependents[${list.index}].documents[1].number" th:value="${dependent.documen[1].number}">
-				<input th:if="${dependent.documen[1].type != null}" type="hidden" name="dependents[${list.index}].documents[1].type" th:value="${dependent.documen[1].type}">
+				<input th:if="${dependent.documen[1].number != null}" type="hidden" th:name="dependents[ + ${list.index} + ].documents[1].number" th:value="${dependent.documen[1].number}">
+				<input th:if="${dependent.documen[1].type != null}" type="hidden" th:name="dependents[ + ${list.index} + ].documents[1].type" th:value="${dependent.documen[1].type}">
 			</div>
 		</div>
 	</div>

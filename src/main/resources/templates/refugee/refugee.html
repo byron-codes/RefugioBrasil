@@ -10,7 +10,7 @@
 </head>
 <body>
 	<th:block layout:fragment="content">
-		<form action="/refugee/salvar" method="POST" novalidate th:object="${refugee}" enctype="multipart/form-data">
+		<form id="formRefugiado" action="/refugee/salvar" method="POST" novalidate th:object="${refugee}" enctype="multipart/form-data">
 			<div class="content m-5">
 				<div class="line-green">
 					<input type="hidden" id="idRefugee" th:value="${refugee.id}">

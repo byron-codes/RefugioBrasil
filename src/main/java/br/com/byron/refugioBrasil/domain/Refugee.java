@@ -57,9 +57,9 @@ public class Refugee extends Person {
 	@JoinColumn(name = "address")
 	private Address address;
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "image")
-	private Image image;
+//	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	@JoinColumn(name = "image")
+//	private Image image;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Profession> professions = new ArrayList<Profession>();

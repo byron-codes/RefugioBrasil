@@ -48,10 +48,9 @@
 				<div class="m-3 docAtualizar">
 					<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().find('.status').val(false);$(this).parent().remove()"></i>
 				</div>
-				<input type="hidden" class="numero" name="documents[${list.index}].number" th:value="${doc.number}">
-				<input type="hidden" class="tipo" name="documents[${list.index}].type" th:value="${doc.type}">
-				<input type="hidden" class="tipo" name="documents[${list.status}].type" th:value="${doc.status}">
-
+				<input type="hidden" class="numero" th:name="documents[ + ${list.index} + ].number" th:value="${doc.number}">
+				<input type="hidden" class="tipo" th:name="documents[ + ${list.index} + ].type" th:value="${doc.type}">
+				<input type="hidden" class="tipo" name="documents[+${list.status}+].type" th:value="${doc.status}">
 			</div>
 		</div>
 	</div>

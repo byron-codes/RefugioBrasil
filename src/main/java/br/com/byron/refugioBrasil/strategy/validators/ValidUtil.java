@@ -52,7 +52,7 @@ public class ValidUtil {
 	}
 
 	public static String onlyNumbers(String value, String nameField) {
-		return !value.matches("^([0-9])$") ? "O campo " + nameField + " deve conter apenas numeros" : "";
+		return !value.matches("[0-9]+") ? "O campo " + nameField + " deve conter apenas numeros" : "";
 	}
 
 	public static String onlyWords(String value, String nameField) {

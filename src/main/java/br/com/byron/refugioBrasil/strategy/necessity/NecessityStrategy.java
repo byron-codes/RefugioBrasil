@@ -13,9 +13,8 @@ public class NecessityStrategy implements IRefugeeStrategy {
 	public String execute(Refugee entity) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(ValidUtil.notEmptyandNull(entity.getNecessity().getSituation().getDescription(), "Situação inválida"));
-		sb.append(ValidUtil.notEmptyandNull(entity.getNecessity().getDescription(), "Observação inválida"));
-		sb.append(ValidUtil.size(entity.getNecessity().getDescription(), "Observação inválida"));
-		return null;
+		sb.append(ValidUtil.size(0, 100, entity.getNecessity().getDescription(), "Observação"));
+		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 
 }

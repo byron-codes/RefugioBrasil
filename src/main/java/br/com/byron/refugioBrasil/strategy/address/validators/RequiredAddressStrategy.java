@@ -14,7 +14,7 @@ public class RequiredAddressStrategy implements IAddressStrategy {
 		StringBuilder sb =  new StringBuilder();
 
 		sb.append(ValidUtil.notEmptyandNull(entity.getCep(), "Tipo moradia"));
-		sb.append(ValidUtil.notEmptyandNull(entity.getComplement(), "Complemento"));
+		sb.append(ValidUtil.size(0, 100, entity.getComplement(), "Complemento"));
 		sb.append(ValidUtil.notEmptyandNull(entity.getStreet(), "Logradouro"));
 		
 		sb.append(ValidUtil.notNull(entity.getHomeType(), "Tipo moradia"));
