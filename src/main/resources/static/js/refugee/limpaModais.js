@@ -6,8 +6,7 @@ $("#modalExperiencia").on('hidden.bs.modal', function () {
 })
 
 $("#modalFormacao").on('hidden.bs.modal', function () {
-	
-	let campos = ["txtcurso", "txtinstituicao", "txtdataInicioFormacao", "txtdataFimFormacao", "selgrauAcademico", "selsituacaoAcademica", "selPaisFormacao"];
+	let campos = ["txtcurso", "txtinstituicao", "txtdataInicioFormacao", "txtdataFimFormacao", "selgrauAcademico", "selsituacaoAcademica", "selPaisFormacao", "profissaoAtual", "profissaoIndicacao"];
 	
 	limpaDadosErrosCampos(campos)
 	

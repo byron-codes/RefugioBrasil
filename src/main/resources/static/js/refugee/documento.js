@@ -29,7 +29,7 @@ function consultarDocumento(e){
 			flag = true;
 			let number = $("#txtrne").unmask();
 			$("#novosDocumentos").append(`
-				<input name="documents[0].type" type="hidden" value="RNE">
+				<input name="documents[0].type" type="hidden" value="RNM">
 				<input name="documents[0].number" type="hidden" value="${number.val()}">
 			`)
 			setMaskListItem(mascaras.txtrne)

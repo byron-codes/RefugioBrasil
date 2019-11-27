@@ -450,6 +450,20 @@ let validacoes = {
 		},
 		tipo : "text"
 	},
+	profissaoAtual : {
+		campo : "#profissaoAtual",
+		validacoes : function() {
+			
+		},
+		tipo : "checkbox"
+	},
+	profissaoIndicacao : {
+		campo : "#profissaoIndicacao",
+		validacoes : function() {
+			
+		},
+		tipo : "checkbox"
+	},
 }
 
 let mascaras = {
