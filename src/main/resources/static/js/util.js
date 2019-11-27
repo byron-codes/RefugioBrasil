@@ -94,4 +94,11 @@ function formatDateToBr(date) {
     return [day, month, year].join('/');
 }
 
+function getParam(param){
+	let url_string = window.location.href
+	let url = new URL(url_string);
+	let c = url.searchParams.get(param);
+	return c;
+}
+
 //MASCARA PARA CAMPO COM MULTIVALOR

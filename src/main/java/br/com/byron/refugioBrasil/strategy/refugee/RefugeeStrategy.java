@@ -45,7 +45,7 @@ public class RefugeeStrategy implements IStrategy {
 		generics.get("createStrategy").execute(refugee.getNecessity());
 		generics.get("createStrategy").execute(refugee.getBirthCountry());
 		generics.get("createStrategy").execute(refugee.getAddress());
-		generics.get("createStrategy").execute(refugee.getImage());
+//		generics.get("createStrategy").execute(refugee.getImage());
 		
 		for (Profession e : refugee.getProfessions()) {
 			generics.get("createStrategy").execute(e);

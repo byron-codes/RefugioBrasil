@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+	if(window.location.href.split("/")[window.location.href.split("/").length - 1] == "/salvar"){
+		
+	}
+	
 	config();
 	
 	setAllMask(mascaras)
@@ -44,14 +48,20 @@ $(document).ready(function(){
 		 let numero = $(this).find(".idd").val() + $(this).find(".number").val();
 		 let tipo = $(this).find(".type").val().charAt(0).toUpperCase() + $(this).find(".type").val().slice(1).toLowerCase();
 		 let mask = "(00) 0000-0000";
-		 debugger
-		 if(numero.length == 11){
+		 if(numero.length == 11) {
 			 mask = "(00) 0 0000-0000"
 		 }
 		 let formatter = new StringMask(mask, { reverse: true });
 		 $(this).find(".telAtualizar").prepend(tipo + " - " + formatter.apply(numero));
 	 })
 	
+})
+
+$("#formRefugiado").submit(function(){
+	debugger
+	for(i in validacoes){
+		$(validacoes[i].campo).unmask();
+	}
 })
 
 function proximo(){

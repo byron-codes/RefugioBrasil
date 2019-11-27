@@ -34,9 +34,9 @@ public class RefugeeController {
 	}
 
 	@GetMapping("/new")
-	public ModelAndView novoRefugiado() {
+	public ModelAndView novoRefugiado(Refugee refugee) {
 		ModelAndView mv = new ModelAndView("/refugee/refugee");
-		mv.addObject("refugee", new Refugee());
+		mv.addObject("refugee", refugee);
 		return mv;
 	}
 
@@ -56,12 +56,11 @@ public class RefugeeController {
 
 	@PostMapping("/salvar")
 	public ModelAndView salvar(Refugee refugee) {
-		try {
-			facade.save(refugee);
+		List<Refugee> refugeeSaved = facade.save(refugee);
+		if (refugeeSaved != null)
 			return new ModelAndView("redirect:/refugee?status=sucesso");
-		} catch (Exception e) {
-			return new ModelAndView("redirect:/refugee?status=erro");
-		}
+		else
+			return novoRefugiado(refugee);
 	}
 
 	@GetMapping("/table")

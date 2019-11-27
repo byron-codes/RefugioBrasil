@@ -23,15 +23,15 @@ public class RefugeeDao implements IDao<Refugee> {
 	@Override
 	public Refugee save(Refugee entity) {
 		Refugee refugee = dao.saveAndFlush(entity);
-		byte[] data = Base64.getDecoder().decode(entity.getImage().getFile());
-
-		try {
-			OutputStream stream = new FileOutputStream("c:/refugioBrasil/" + refugee.getImage().getId() + ".jpg");
-			stream.write(data);
-			stream.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		byte[] data = Base64.getDecoder().decode(entity.getImage().getFile());
+//
+//		try {
+//			OutputStream stream = new FileOutputStream("c:/refugioBrasil/" + refugee.getImage().getId() + ".jpg");
+//			stream.write(data);
+//			stream.close();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
 		return refugee;
 	}

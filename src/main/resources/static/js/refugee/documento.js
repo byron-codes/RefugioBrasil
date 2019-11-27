@@ -16,7 +16,7 @@ function consultarDocumento(e){
 			let number = $("#txtprotocolo").unmask();
 			$("#novosDocumentos").append(`
 				<input name="documents[0].type" type="hidden" value="PROTOCOLO">
-				<input name="documents[0].number" type="hidden" value="${number}.val()">
+				<input name="documents[0].number" type="hidden" value="${number.val()}">
 			`)
 			setMaskListItem(mascaras.txtprotocolo)
 			quantidadeDocumentos++;
@@ -30,7 +30,7 @@ function consultarDocumento(e){
 			let number = $("#txtrne").unmask();
 			$("#novosDocumentos").append(`
 				<input name="documents[0].type" type="hidden" value="RNE">
-				<input name="documents[0].number" type="hidden" value="${number}.val()">
+				<input name="documents[0].number" type="hidden" value="${number.val()}">
 			`)
 			setMaskListItem(mascaras.txtrne)
 			quantidadeDocumentos++;
