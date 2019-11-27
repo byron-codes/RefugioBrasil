@@ -73,11 +73,11 @@ function consultarDocumento(e){
 						blockUI();
 					}
 				}).done(function(){
-					posInseridoDoc(flag, unico, id)
+					posInseridoDoc(flag, true, id)
 					unBlockUI();
 				})
 			} else {
-				posInseridoDoc(flag, unico, id)
+				posInseridoDoc(flag, true, id)
 			}
 		})
 		
@@ -98,7 +98,9 @@ function posInseridoDoc(flag, unico, id = null){
 	            confirmButtonColor: '#3085d6',
 	            confirmButtonText: 'vamos',
 	          }).then((result) => {
+	        	  debugger
 	            $(e).remove();
+	            $("#documentosAdd").removeClass("d-none");
 	            $("#documentosAdd").removeClass("d-none");
 	            // $("#btnvolta").removeClass("d-none");
 	            $("#btnprox").removeClass("d-none");
