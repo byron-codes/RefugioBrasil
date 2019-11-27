@@ -30,6 +30,6 @@ public class Image extends File {
 	private Double width;
 	
 	@Transient
-	private MultipartFile file;
+	private String file;
 	
 }

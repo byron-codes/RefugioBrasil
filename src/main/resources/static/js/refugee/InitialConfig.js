@@ -32,14 +32,18 @@ function config(){
 	}).done(function () {
 		unBlockUI();
 		
-		if($("#tempValCep").val() != undefined && $("#tempValCep").val() != null && $("#tempValCep").val() != "")
-			getAddress($("#tempValCep").val())
+		if($("#idRefugee").val() != undefined && $("#idRefugee").val() != null && $("#idRefugee").val() != ""){
+			
+			if($("#tempValCep").val() != undefined && $("#tempValCep").val() != null && $("#tempValCep").val() != "")
+				getAddress($("#tempValCep").val())
+			
+			let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil", "selPaisOrigem", "seltipoendereco", "txtcep", "txtestado", "txtcidade", "txtlogradouro", "txtnumero", "txtcomplemento"]
+			validaListaCampos(campos);
+			
+			let check = $("#situacao").val()
+			$("#situacao").parent().find(`input[value="${check}"]`).prop("checked", true)
 		
-		let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil", "selPaisOrigem", "seltipoendereco", "txtcep", "txtestado", "txtcidade", "txtlogradouro", "txtnumero", "txtcomplemento"]
-		validaListaCampos(campos);
-		
-		let check = $("#situacao").val()
-		$("#situacao").parent().find(`input[value="${check}"]`).prop("checked", true)
+		}
 		
 	})
 	

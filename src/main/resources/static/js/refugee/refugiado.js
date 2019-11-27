@@ -33,11 +33,23 @@ $(document).ready(function(){
 		 let numero = $(this).find(".numero").val()
 		 let tipo = $(this).find(".tipo").val()
 		 if(tipo != "PROTOCOLO" && tipo != "RNE"){
-			 var formatter = new StringMask(mascaras[tipo].mascara, { reverse: true });
+			 let formatter = new StringMask(mascaras[tipo].mascara, { reverse: true });
 			 $(this).find(".docAtualizar").prepend(tipo + " - " + formatter.apply(numero)) 
 		 } else {
 			 $(this).remove()
 		 }
+	 })
+	 
+	 $(".telAtualizarMaster").each(function(){
+		 let numero = $(this).find(".idd").val() + $(this).find(".number").val();
+		 let tipo = $(this).find(".type").val().charAt(0).toUpperCase() + $(this).find(".type").val().slice(1).toLowerCase();
+		 let mask = "(00) 0000-0000";
+		 debugger
+		 if(numero.length == 11){
+			 mask = "(00) 0 0000-0000"
+		 }
+		 let formatter = new StringMask(mask, { reverse: true });
+		 $(this).find(".telAtualizar").prepend(tipo + " - " + formatter.apply(numero));
 	 })
 	
 })
@@ -55,9 +67,8 @@ function proximo(){
 
     } else if(!$("#identificacao").hasClass("d-none")) {
     	
-    	let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil", "selPaisOrigem"]
-    	//let campos = []
-    	validaListaCampos(campos);
+//    	let campos = ["txtnome", "selsexo", "txtdataNascimento", "txtdataChegada", "txtEmail", "selestadocivil", "selPaisOrigem"]
+//    	validaListaCampos(campos);
     	
     	if($("#identificacao").find(".is-invalid").length == 0){
     	
@@ -70,8 +81,8 @@ function proximo(){
 
     } else if(!$("#endereco").hasClass("d-none")) {
 
-    	let campos = ["seltipoendereco", "txtcep", "txtestado", "txtcidade", "txtlogradouro", "txtnumero", "txtcomplemento"]
-    	validaListaCampos(campos);
+//    	let campos = ["seltipoendereco", "txtcep", "txtestado", "txtcidade", "txtlogradouro", "txtnumero", "txtcomplemento"]
+//    	validaListaCampos(campos);
     	
     	if($("#camposEndereco").find(".is-invalid").length == 0){
     	
