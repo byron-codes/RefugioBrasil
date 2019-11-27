@@ -43,13 +43,13 @@ public class Refugee extends Person {
 	private MaritalStatus maritalStatus;
 
 	@Column(name = "cpp")
-	private Boolean cpp;
+	private Boolean cpp = false;
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "necessity")
 	private Necessity necessity;
 
-	@OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
 	@JoinColumn(name = "birth_country")
 	private Country birthCountry;
 

@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.byron.refugioBrasil.domain.Academic;
+import br.com.byron.refugioBrasil.domain.Dependent;
 import br.com.byron.refugioBrasil.domain.Document;
+import br.com.byron.refugioBrasil.domain.Profession;
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.facade.Facade;
 

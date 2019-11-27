@@ -16,7 +16,7 @@ public class DocumentStrategy implements IRefugeeStrategy {
 
 	@Autowired
 	public DocumentStrategy(Map<String, IDocumentStrategy> validators) {
-		this.validators =  validators;
+		this.validators = validators;
 	}
 
 	@Override

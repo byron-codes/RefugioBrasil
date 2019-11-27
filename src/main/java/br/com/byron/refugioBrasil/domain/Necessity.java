@@ -24,13 +24,13 @@ public class Necessity extends DomainEntity {
 	private String description;
 	
 	@Column(name = "food")
-	private Boolean food;
+	private Boolean food = false;
 	
 	@Column(name = "home")
-	private Boolean home;
+	private Boolean home = false;
 	
 	@Column(name = "medicine")
-	private Boolean medicine;
+	private Boolean medicine = false;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "situation")

@@ -144,3 +144,44 @@ $("#seldoc").change(function(){
 	$("#txtnumerodoc").val("")	
 	setMaskListItem(mascaras[$(this).val()])
 })
+
+function insertRNMEdit(rnm){
+	$.ajax({
+		url: URI + "/refugee/unique/" + rnm,
+		beforeSend: function() {
+			blockUI();
+		},
+		success: function(data) {
+			if(data != "" && data != null){
+				Swal.fire({
+		            title: 'O dono desse documento já existe no sistema!',
+		            html: "Deseja alterar o registro?",
+		            type: 'warning',
+		            showCancelButton: true,
+		            cancelButtonColor: '#d33',
+		            confirmButtonColor: '#3085d6',
+		            confirmButtonText: 'Ir',
+		            cancelButtonText: 'Cancelar',
+		            reverseButtons: true,
+		          }).then((result) => {
+		            if (result.value) {
+		              window.location = URI + "/refugee/" + data.id
+		            }else{
+		                $("#txtrne").val("");
+		                limpaCampo($("#txtrne"))
+		            }
+		        })
+			} else {
+				$("#novosDocumentos").append(
+					`<div id="rnmNovoEdicao">
+						<input type="hidden" name="documents[${getQuantidadeDoc()}].number" value="${rnm}">
+						<input type="hidden" name="documents[${getQuantidadeDoc()}].type" value="RNM"> 
+					</div>`
+				)
+				somaDoc();
+			}
+		}
+	}).done(function(){
+		unBlockUI();
+	})
+}

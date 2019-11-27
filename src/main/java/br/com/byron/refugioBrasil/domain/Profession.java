@@ -48,7 +48,7 @@ public class Profession extends DomainEntity {
 	@Column(name = "recommendation", nullable = false)
 	private Boolean recommendation;
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
 	@JoinColumn(name = "country")
 	private Country country;
 

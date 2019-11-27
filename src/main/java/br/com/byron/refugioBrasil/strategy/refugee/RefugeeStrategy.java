@@ -1,5 +1,6 @@
 package br.com.byron.refugioBrasil.strategy.refugee;
 
+import java.lang.reflect.Field;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,51 +25,78 @@ public class RefugeeStrategy implements IStrategy {
 	private final Map<String, IGenericStrategy<DomainEntity>> generics;
 
 	@Autowired
-	public RefugeeStrategy(Map<String, IRefugeeStrategy> validators, Map<String, IGenericStrategy<DomainEntity>> generics) {
+	public RefugeeStrategy(Map<String, IRefugeeStrategy> validators,
+			Map<String, IGenericStrategy<DomainEntity>> generics) {
 		this.validators = validators;
 		this.generics = generics;
 	}
 
 	@Override
 	public String execute(IDomain entity) {
-		
+
 		StringBuilder errors = new StringBuilder();
 		Refugee refugee = (Refugee) entity;
-		
+
 		for (IRefugeeStrategy strategy : validators.values())
 			errors.append(strategy.execute(refugee));
 
 		for (Document e : refugee.getDocuments()) {
-			generics.get("createStrategy").execute(e);
+			if (e.getId() == null)
+				generics.get("createStrategy").execute(e);
+			else
+				generics.get("updateStrategy").execute(e);
 		}
+
+		if (refugee.getNecessity().getId() == null)
+			generics.get("createStrategy").execute(refugee.getNecessity());
+		else
+			generics.get("updateStrategy").execute(refugee.getNecessity());
 		
-		generics.get("createStrategy").execute(refugee.getNecessity());
-		generics.get("createStrategy").execute(refugee.getBirthCountry());
-		generics.get("createStrategy").execute(refugee.getAddress());
-//		generics.get("createStrategy").execute(refugee.getImage());
+		if (refugee.getAddress().getId() == null)
+			generics.get("createStrategy").execute(refugee.getAddress());
+		else
+			generics.get("updateStrategy").execute(refugee.getAddress());
 		
 		for (Profession e : refugee.getProfessions()) {
-			generics.get("createStrategy").execute(e);
+			if (e.getId() == null)
+				generics.get("createStrategy").execute(e);
+			else
+				generics.get("updateStrategy").execute(e);
 		}
-		
-		for (Language e : refugee.getLanguages()) {
-			generics.get("createStrategy").execute(e);
-		}
-		
-		for (Academic e : refugee.getAcademics()) {
-			generics.get("createStrategy").execute(e);
-		}
-		
-		for (Phone e : refugee.getPhones()) {
-			generics.get("createStrategy").execute(e);
-		}
-		
-		for (Dependent e : refugee.getDependents()) {
-			generics.get("createStrategy").execute(e);
-		}
-		
-		generics.get("createStrategy").execute(refugee);
 
+		for (Language e : refugee.getLanguages()) {
+			if (e.getId() == null)
+				generics.get("createStrategy").execute(e);
+			else
+				generics.get("updateStrategy").execute(e);
+		}
+
+		for (Academic e : refugee.getAcademics()) {
+			if (e.getId() == null)
+				generics.get("createStrategy").execute(e);
+			else
+				generics.get("updateStrategy").execute(e);
+		}
+
+		for (Phone e : refugee.getPhones()) {
+			if (e.getId() == null)
+				generics.get("createStrategy").execute(e);
+			else
+				generics.get("updateStrategy").execute(e);
+		}
+
+		for (Dependent e : refugee.getDependents()) {
+			if (e.getId() == null)
+				generics.get("createStrategy").execute(e);
+			else
+				generics.get("updateStrategy").execute(e);
+		}
+
+		if (refugee.getId() == null)
+			generics.get("createStrategy").execute(refugee);
+		else
+			generics.get("updateStrategy").execute(refugee);
+		
 		return errors.toString();
 	}
 

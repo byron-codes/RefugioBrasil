@@ -36,7 +36,7 @@ public class Dependent extends Person {
 	@Column(name = "kinship")
 	private Kinship kinship;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
 	@JoinColumn(name = "birth_country")
 	private Country birthCountry;
 

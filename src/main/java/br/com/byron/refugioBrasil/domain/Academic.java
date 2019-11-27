@@ -51,7 +51,7 @@ public class Academic extends DomainEntity {
 	@Column(name = "situation", nullable = false)
 	private AcademicStatus situation;
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
 	@JoinColumn(name = "country")
 	private Country country;
 

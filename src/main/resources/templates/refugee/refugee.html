@@ -13,10 +13,19 @@
 		<form id="formRefugiado" action="/refugee/salvar" method="POST" novalidate th:object="${refugee}" enctype="multipart/form-data">
 			<div class="content m-5">
 				<div class="line-green">
-					<input type="hidden" id="idRefugee" th:value="${refugee.id}">
+					<div th:if="${id != null}">
+						<input type="hidden" id="idRefugee" th:field="*{id}" th:value="${id}">
+						<input type="hidden" th:field="*{status}" th:value="${status}">
+
+						<input type="hidden" th:field="*{necessity.id}" th:value="*{necessity.id}">
+						<input type="hidden" th:field="*{necessity.status}" th:value="*{necessity.status}">
+
+						<input type="hidden" th:field="*{address.id}" th:value="*{address.id}">
+						<input type="hidden" th:field="*{address.status}" th:value="*{address.status}">
+					</div>
 					<h3 id="title">Cadastro de Refugiado</h3>
 				</div>
-				<div th:classappend="${refugee.id!=null}?d-none" id="containerRobot" class='row mt-3'>
+				<div th:classappend="${refugee.id != null} ? d-none" id="containerRobot" class='row mt-3'>
 					<div class="col-3 col-sm-3 col-md-2 col-lg-1 col-xlg-1 ">
 						<img class="mx-auto d-block img-fluid" th:src="@{/img/robot.png}" style="max-height: 80px;">
 					</div>
@@ -28,7 +37,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<th:block th:include="refugee/fragments/page_document"></th:block>
 
 				<th:block th:include="refugee/fragments/page_identification"></th:block>
@@ -64,7 +73,7 @@
 		<script th:src="@{/js/refugee/jsonGerais.js}"></script>
 		<script th:src="@{/js/refugee/limpaModais.js}"></script>
 		<script th:src="@{/js/refugee/refugiado.js}"></script>
-		<script th:src="@{/js/refugee/uploudImage.js}"></script>
+<!-- 		<script th:src="@{/js/refugee/uploudImage.js}"></script> -->
 		<script th:src="@{/js/refugee/initialConfig.js}"></script>
 		<script th:src="@{/js/address/cep.js}"></script>
 		<script th:src="@{/js/address/configAddress.js}"></script>

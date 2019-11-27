@@ -44,13 +44,16 @@
 			</div>
 		</div>
 		<div id="novosDocumentos" class="form-group card-columns">
-			<div th:each="doc, list : ${refugee.documents}" class="docAtualizarMaster card text-white bg-secondary mb-3" style="max-width: 18rem;">
-				<div class="m-3 docAtualizar">
-					<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().find('.status').val(false);$(this).parent().remove()"></i>
+			<div th:each="doc, list : ${refugee.documents}" th:classappend="${doc.status ? 'docAtualizarMaster card text-white bg-secondary mb-3' : ''}" style="max-width: 18rem;">
+				<div th:if="${doc.status}">
+					<div class="m-3 docAtualizar">
+						<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().parent().attr('class', 'docAtualizarMaster');$(this).parent().parent().parent().find('.status').val(false);$(this).parent().parent().remove()"></i>
+					</div>
 				</div>
+				<input type="hidden" th:name="documents[ + ${list.index} + ].id" th:value="${doc.id}">
 				<input type="hidden" class="numero" th:name="documents[ + ${list.index} + ].number" th:value="${doc.number}">
 				<input type="hidden" class="tipo" th:name="documents[ + ${list.index} + ].type" th:value="${doc.type}">
-				<input type="hidden" class="tipo" th:name="documents[+${list.status}+].type" th:value="${doc.status}">
+				<input type="hidden" class="status" th:name="documents[ + ${list.index} + ].status" th:value="${doc.status}">
 			</div>
 		</div>
 	</div>

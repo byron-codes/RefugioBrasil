@@ -13,8 +13,10 @@ public class NumberStrategy implements IRefugeeStrategy{
 	@Override
 	public String execute(Refugee entity) {
 		StringBuilder sb = new StringBuilder();
-		for(Phone phone : entity.getPhones())
-			sb.append(ValidUtil.size(10, 11, phone.getNumber(), "Número"));
+		for(Phone phone : entity.getPhones()) {
+			sb.append(ValidUtil.size(8, 9, phone.getNumber(), "Número"));
+			sb.append(ValidUtil.size(2, 2, phone.getIdd(), "DDD"));
+		}
 		return sb.toString().trim() == "" ? "" : sb.toString();
 	}
 

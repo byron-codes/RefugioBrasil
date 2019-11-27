@@ -71,7 +71,7 @@ public class RefugeeDao implements IDao<Refugee> {
 		Optional<Refugee> refugee = dao.findById(entity.getId());
 		if (refugee != null && refugee.isPresent()) {
 			refugee.get().setStatus(false);
-			return dao.saveAndFlush(entity);
+			return dao.saveAndFlush(refugee.get());
 		}
 		return null;
 	}
