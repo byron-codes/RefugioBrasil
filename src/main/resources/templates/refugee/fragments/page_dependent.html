@@ -98,20 +98,21 @@
 	</div>
 	<div class="form-row ml-4 mr-4">
 		<div id="novosDependentes" class="form-group card-columns">
-		<div th:each="${ dependent, list : dependents}" class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-		        <div class="m-3" th:text="${dependent.name} - ${dependent.kinship}">
-		        	<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i>
-		        </div>
-		        <input type="hidden" name="dependents[${list.index}].name" th:value="${dependent.name}">
-		        <input type="hidden" name="dependents[${list.index}].birthDate" th:value="${dependent.birthDate}">
-		        <input type="hidden" name="dependents[${list.index}].gender" th:value="${dependent.gender}">
-		        <input type="hidden" name="dependents[${list.index}].arrivalDate" th:value="${dependent.arrivalDate}">
-		        <input type="hidden" name="dependents[${list.index}].kinship" th:value="${dependent.kinship}">
-		        <input type="hidden" name="dependents[${list.index}].birthCountry.id" th:value="${dependent.birthCountry.id}">
-		        <input type="hidden" name="dependents[${list.index}].documents[0].number" th:value="${dependent.documents[0].number}">
-		        <input type="hidden" name="dependents[${list.index}].documents[0].type" th:value="${dependent.documen[0].type}">
-		        <input type="hidden" name="dependents[${list.index}].documents[1].number" th:value="${dependent.documen[1].number}">
-		        <input type="hidden" name="dependents[${list.index}].documents[1].type" th:value="${dependent.documen[1].type}">
+			<div th:each="dependent, list : ${dependents}" class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+				<div class="m-3" th:text="${dependent.name} + ' - ' + ${dependent.kinship}">
+					<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i>
+				</div>
+				<input type="hidden" name="dependents[${list.index}].name" th:value="${dependent.name}">
+				<input type="hidden" name="dependents[${list.index}].birthDate" th:value="${dependent.birthDate}">
+				<input type="hidden" name="dependents[${list.index}].gender" th:value="${dependent.gender}">
+				<input type="hidden" name="dependents[${list.index}].arrivalDate" th:value="${dependent.arrivalDate}">
+				<input type="hidden" name="dependents[${list.index}].kinship" th:value="${dependent.kinship}">
+				<input type="hidden" name="dependents[${list.index}].birthCountry.id" th:value="${dependent.birthCountry.id}">
+				<input type="hidden" name="dependents[${list.index}].documents[0].number" th:value="${dependent.documents[0].number}">
+				<input type="hidden" name="dependents[${list.index}].documents[0].type" th:value="${dependent.documen[0].type}">
+				<input th:if="${dependent.documen[1].number != null}" type="hidden" name="dependents[${list.index}].documents[1].number" th:value="${dependent.documen[1].number}">
+				<input th:if="${dependent.documen[1].type != null}" type="hidden" name="dependents[${list.index}].documents[1].type" th:value="${dependent.documen[1].type}">
+			</div>
 		</div>
 	</div>
 </div>

@@ -19,7 +19,7 @@
 			<div class="input-group">
 				<select class="form-control" id="selnivel">
 					<option value="0" selected="selected" disabled="disabled">Selecione...</option>
-					<option value="BASICO">Básico</option>
+					<option value="BASICO">Bï¿½sico</option>
 					<option value="INTERMEDIARIO">Intermediario</option>
 					<option value="AVANCADO">AvanÃ§ado</option>
 					<option value="FLUENTE">Fluente</option>
@@ -60,21 +60,23 @@
 	</div>
 	<div class="form-row">
 		<div id="formacao" class="form-group col-lg-6 card-deck">
-			<div class="m-3" th:each="academic, list : ${academics}" th:text="${academic.course} - ${academic.instituation}">
-				<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i>
-			</div>	
-			<input type="hidden" name="academics[${list.index}].course" th:value="${academic.course}">
-			<input type="hidden" name="academics[${list.index}].instituation" th:value="${academic.instituation}">
-			<input type="hidden" name="academics[${list.index}].startDate" th:value="${academic.startDate}">
-			<input type="hidden" name="academics[${list.index}].endDate" th:value="${academic.endDate}">
-			<input type="hidden" name="academics[${list.index}].level" th:value="${academic.level}">
-			<input type="hidden" name="academics[${list.index}].situation" th:value="${academic.situation}">
-			<input type="hidden" name="academics[${list.index}].country.id" th:value="${academic.id}">
+			<div th:each="academic, list : ${academics}" class="card text-white bg-secondary mb-3">
+				<div class="m-3" th:text="${academic.course} - ${academic.instituation}">
+					<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i>
+				</div>
+				<input type="hidden" name="academics[${list.index}].course" th:value="${academic.course}">
+				<input type="hidden" name="academics[${list.index}].instituation" th:value="${academic.instituation}">
+				<input type="hidden" name="academics[${list.index}].startDate" th:value="${academic.startDate}">
+				<input type="hidden" name="academics[${list.index}].endDate" th:value="${academic.endDate}">
+				<input type="hidden" name="academics[${list.index}].level" th:value="${academic.level}">
+				<input type="hidden" name="academics[${list.index}].situation" th:value="${academic.situation}">
+				<input type="hidden" name="academics[${list.index}].country.id" th:value="${academic.id}">
+			</div>
 		</div>
 	</div>
 	<div id="experiencia" class="form-group col-lg-6 card-deck">
 		<div th:each="profess, list : ${refugee.professions}" class="professionsAtualizarMaster card text-white bg-secondary mb-3" style="max-width: 18rem;">
-			<div class="m-3" th:text="${profess.workload}-${profess.company} ">
+			<div class="m-3" th:text="${profess.workload} + ' - ' + ${profess.company} ">
 				<i class="fas fa-times ml-3 text-dark pointer" onclick="$(this).parent().parent().remove()"></i>
 			</div>
 			<input type="hidden" name="professions[${list.index}].recommendation" th:value="${profess.recommendation}">
@@ -87,9 +89,4 @@
 			<input type="hidden" name="professions[${list.index}].country.id" th:value="${profess.country.id}">
 		</div>
 	</div>
-</div>
-<!-- formacao academica -->
-<!-- experiencia profissional -->
-<!-- idioma -->
-
 </div>

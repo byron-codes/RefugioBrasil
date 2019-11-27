@@ -33,11 +33,23 @@ $(document).ready(function(){
 		 let numero = $(this).find(".numero").val()
 		 let tipo = $(this).find(".tipo").val()
 		 if(tipo != "PROTOCOLO" && tipo != "RNE"){
-			 var formatter = new StringMask(mascaras[tipo].mascara, { reverse: true });
+			 let formatter = new StringMask(mascaras[tipo].mascara, { reverse: true });
 			 $(this).find(".docAtualizar").prepend(tipo + " - " + formatter.apply(numero)) 
 		 } else {
 			 $(this).remove()
 		 }
+	 })
+	 
+	 $(".telAtualizarMaster").each(function(){
+		 let numero = $(this).find(".idd").val() + $(this).find(".number").val();
+		 let tipo = $(this).find(".type").val().charAt(0).toUpperCase() + $(this).find(".type").val().slice(1).toLowerCase();
+		 let mask = "(00) 0000-0000";
+		 debugger
+		 if(numero.length == 11){
+			 mask = "(00) 0 0000-0000"
+		 }
+		 let formatter = new StringMask(mask, { reverse: true });
+		 $(this).find(".telAtualizar").prepend(tipo + " - " + formatter.apply(numero));
 	 })
 	
 })
