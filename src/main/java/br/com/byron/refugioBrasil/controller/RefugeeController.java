@@ -37,13 +37,13 @@ public class RefugeeController {
 
 	@GetMapping()
 	public ModelAndView listRefugiado() {
-		ModelAndView mv = new ModelAndView("/refugee/list");
+		ModelAndView mv = new ModelAndView("refugee/list");
 		return mv;
 	}
 
 	@GetMapping("/new")
 	public ModelAndView novoRefugiado(Refugee refugee) {
-		ModelAndView mv = new ModelAndView("/refugee/refugee");
+		ModelAndView mv = new ModelAndView("refugee/refugee");
 		mv.addObject("refugee", refugee);
 		return mv;
 	}
@@ -54,7 +54,7 @@ public class RefugeeController {
 			Refugee refugee = new Refugee();
 			refugee.setId(Long.parseLong(id));
 			refugee = facade.find(refugee).get(0);
-			ModelAndView mv = new ModelAndView("/refugee/refugee");
+			ModelAndView mv = new ModelAndView("refugee/refugee");
 			mv.addObject("refugee", refugee);
 			return mv;
 		} catch (Exception e) {
