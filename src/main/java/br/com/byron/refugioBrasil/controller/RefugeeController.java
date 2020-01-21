@@ -1,8 +1,16 @@
 package br.com.byron.refugioBrasil.controller;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.CacheControl;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,10 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.byron.refugioBrasil.domain.Academic;
-import br.com.byron.refugioBrasil.domain.Dependent;
 import br.com.byron.refugioBrasil.domain.Document;
-import br.com.byron.refugioBrasil.domain.Profession;
 import br.com.byron.refugioBrasil.domain.Refugee;
 import br.com.byron.refugioBrasil.facade.Facade;
 
@@ -78,7 +83,7 @@ public class RefugeeController {
 		
 	}
 
-	@PostMapping("/salvar")
+	@PostMapping("/save")
 	public ModelAndView salvar(Refugee refugee) {
 		List<Refugee> refugeeSaved = facade.save(refugee);
 		if (refugeeSaved != null)
@@ -101,6 +106,29 @@ public class RefugeeController {
 			return new ModelAndView("redirect:/refugee?status=excluido");
 		} catch (Exception e) {
 			return new ModelAndView("redirect:/refugee?status=erro");
+		}
+	}
+	
+	@GetMapping("{id}/image")
+	public ResponseEntity<byte[]> getImage(@PathVariable("id") String IdS) {
+		try {
+			Long id = Long.parseLong(IdS);
+			Refugee refugee = new Refugee();
+			refugee.setId(id);
+			refugee = facade.find(refugee).get(0);
+			
+			HttpHeaders headers = new HttpHeaders();
+			headers.setCacheControl(CacheControl.noCache().getHeaderValue());
+			headers.setContentType(MediaType.parseMediaType(refugee.getImage().getType()));
+			headers.setContentLength(refugee.getImage().getSize());
+			Path path = Paths.get(refugee.getImage().getPath());
+			ResponseEntity<byte[]> responseEntity = new ResponseEntity<>(Files.readAllBytes(path), headers,
+					HttpStatus.OK);
+			return responseEntity;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.notFound().build();
 		}
 	}
 

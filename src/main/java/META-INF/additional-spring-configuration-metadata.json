@@ -1,0 +1,9 @@
+{
+	"properties": [
+		{
+			"name": "image.storage.folder",
+			"type": "java.lang.String",
+			"description": "Folder used to store images."
+		}
+	]
+}

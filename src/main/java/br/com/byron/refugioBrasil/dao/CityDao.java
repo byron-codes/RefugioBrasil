@@ -15,19 +15,16 @@ public class CityDao implements IDao<City> {
 
 	@Override
 	public City save(City entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public City update(City entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public City find(City entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -41,7 +38,6 @@ public class CityDao implements IDao<City> {
 
 	@Override
 	public City delete(City entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

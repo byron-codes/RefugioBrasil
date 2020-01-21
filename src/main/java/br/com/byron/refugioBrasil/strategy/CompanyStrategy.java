@@ -21,8 +21,7 @@ public class CompanyStrategy implements IRefugeeStrategy {
 			sb.append(ValidUtil.notNull(p.getStartDate().toString(), "Data de início inválido"));
 			sb.append(ValidUtil.notNull(p.getEndDate().toString(), "Data de fim inválido"));
 			sb.append(ValidUtil.notNull(p.getCountry(), "O pais não pode ser nulo"));
-			sb.append(ValidUtil.notEmptyandNull(p.getDescription(), "Descrição inválida"));
-			sb.append(ValidUtil.size(p.getDescription(), "A descrição deve ter entre 5 e 100 inválido"));
+			sb.append(ValidUtil.size(p.getDescription(), "descrição"));
 		}
 		return sb.toString().trim() == "" ? "" : sb.toString();
 	}

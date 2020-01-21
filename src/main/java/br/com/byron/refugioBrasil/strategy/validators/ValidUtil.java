@@ -28,9 +28,9 @@ public class ValidUtil {
 	}
 
 	public static String size(int min, int max, String value, String nameField) {
-		if (value != null) {
+		if (value != null && !value.isEmpty()) {
 			if (value.trim().length() < min || value.trim().length() > max) {
-				return min != max ? "O campo " + nameField + " entre" + min + " e " + max + " caracteres"
+				return min != max ? "O campo " + nameField + " deve ter entre" + min + " e " + max + " caracteres"
 						: "O campo " + nameField + " deve ter " + min + "caracteres";
 			}
 		}

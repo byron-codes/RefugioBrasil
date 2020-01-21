@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <title>Cadastro de Refugiado</title>
-<link th:href="@{/css/geral.css}" rel="stylesheet" type="text/css" />
 <link th:href="@{/css/card-info.css}" rel="stylesheet" type="text/css" />
 <link th:href="@{/css/radio.css}" rel="stylesheet" type="text/css" />
 <link th:href="@{/css/imageButton.css}" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<th:block layout:fragment="content">
-		<form id="formRefugiado" action="/refugee/salvar" method="POST" novalidate th:object="${refugee}" enctype="multipart/form-data">
+		<form id="formRefugiado" action="/refugee/save" enctype="multipart/form-data" method="POST" novalidate th:object="${refugee}">
 			<div class="content m-5">
 				<div class="line-green">
 					<div th:if="${id != null}">
@@ -73,7 +72,7 @@
 		<script th:src="@{/js/refugee/jsonGerais.js}"></script>
 		<script th:src="@{/js/refugee/limpaModais.js}"></script>
 		<script th:src="@{/js/refugee/refugiado.js}"></script>
-<!-- 		<script th:src="@{/js/refugee/uploudImage.js}"></script> -->
+		<script th:src="@{/js/refugee/uploudImage.js}"></script>
 		<script th:src="@{/js/refugee/initialConfig.js}"></script>
 		<script th:src="@{/js/address/cep.js}"></script>
 		<script th:src="@{/js/address/configAddress.js}"></script>

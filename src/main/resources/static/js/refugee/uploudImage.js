@@ -21,8 +21,8 @@
             data: evt.target.result
           }]
         };
-        $("#fotoData").val(evt.target.result.split(',')[1])
-        //document.querySelector('.show-button').style.display = 'block';
+        document.querySelector('#fotoData').files = uploader.files 
+        document.querySelector('.show-button').style.display = 'block';
         document.querySelector('.upload-result__content').innerHTML = JSON.stringify(request, null, '  ');
       }
       reader.readAsDataURL(uploader.files[0]);

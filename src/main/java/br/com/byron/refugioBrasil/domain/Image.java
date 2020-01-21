@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,18 +18,18 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "_image")
-public class Image extends File {
-
-	@Column(name = "description",  nullable = true)
-	private String description;
+public class Image extends DomainEntity {
 	
-	@Column(name = "heigth",  nullable = true)
-	private Double heigth;
+	@Column(name = "path", nullable = false)
+	private String path;
 	
-	@Column(name = "width",  nullable = true)
-	private Double width;
+	@Column(name = "size", nullable = false)
+	private Long size;
+	
+	@Column(name = "type", nullable = false)
+	private String type;
 	
 	@Transient
-	private String file;
+	private MultipartFile file;
 	
 }

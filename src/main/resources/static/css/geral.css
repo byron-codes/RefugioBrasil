@@ -14,12 +14,12 @@ h1, h2, h3 {
 }
 
 a:hover {
-	color: #febd00;
-	text-decoration: none;
+	color: #febd00 !important;
+	text-decoration: none !important;
 }
 
 a {
-	color: white;
+	color: #357333 !important;
 }
 
 .bg-green {

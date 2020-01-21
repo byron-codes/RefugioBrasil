@@ -16,19 +16,16 @@ public class CountryDao implements IDao<Country> {
 	
 	@Override
 	public Country save(Country entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Country update(Country entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Country find(Country entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -45,7 +42,6 @@ public class CountryDao implements IDao<Country> {
 
 	@Override
 	public Country delete(Country entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

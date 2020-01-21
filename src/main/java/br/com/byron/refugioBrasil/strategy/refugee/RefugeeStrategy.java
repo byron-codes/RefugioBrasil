@@ -1,6 +1,5 @@
 package br.com.byron.refugioBrasil.strategy.refugee;
 
-import java.lang.reflect.Field;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +55,11 @@ public class RefugeeStrategy implements IStrategy {
 			generics.get("createStrategy").execute(refugee.getAddress());
 		else
 			generics.get("updateStrategy").execute(refugee.getAddress());
+		
+		if (refugee.getImage().getId() == null)
+			generics.get("createStrategy").execute(refugee.getImage());
+		else
+			generics.get("updateStrategy").execute(refugee.getImage());
 		
 		for (Profession e : refugee.getProfessions()) {
 			if (e.getId() == null)
