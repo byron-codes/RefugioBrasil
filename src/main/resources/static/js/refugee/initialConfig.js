@@ -18,9 +18,13 @@ function config(){
 		success: function(data){
 			for(i in data){
 				$("#selPaisOrigem").append(`<option value="${data[i].id}">${data[i].name}</option>`)
-				if(data[i].id == $("#tempValCountry").val()){
+				if(data[i].id == $("#tempValOriginCountry").val()){
 					$("#selPaisOrigem").val(data[i].id)
 				}
+				$("#selPaisNascimento").append(`<option value="${data[i].id}">${data[i].name}</option>`)
+                if(data[i].id == $("#tempValCountry").val()){
+                    $("#selPaisNascimento").val(data[i].id)
+                }
 				$("#selPaisDependente").append(`<option value="${data[i].id}">${data[i].name}</option>`)
 				$("#selPaisExperiencia").append(`<option value="${data[i].id}">${data[i].name}</option>`)
 				$("#selPaisFormacao").append(`<option value="${data[i].id}">${data[i].name}</option>`)

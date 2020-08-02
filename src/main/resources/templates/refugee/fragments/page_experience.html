@@ -104,4 +104,11 @@
 			</div>
 		</div>
 	</div>
+	<div class="form-row">
+		<div class="form-group col-lg-12 d-flex justify-content-end">
+			<input type="hidden" id="cppValue" th:field="*{cpp}" th:value="${cpp}">
+			<input type="checkbox" id="cpp" th:checked="*{cpp}" onchange="$('#cppValue').val($(this).prop('checked'))">
+			<label for="cpp" style="display: inline;">Realizou CPP</label>
+		</div>
+	</div>
 </div>

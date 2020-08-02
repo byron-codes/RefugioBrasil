@@ -53,6 +53,10 @@ public class Refugee extends Person {
 	@JoinColumn(name = "birth_country")
 	private Country birthCountry;
 
+	@OneToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+	@JoinColumn(name = "origin_country")
+	private Country originCountry;
+
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "address")
 	private Address address;

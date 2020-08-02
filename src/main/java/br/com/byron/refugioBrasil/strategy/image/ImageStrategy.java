@@ -16,9 +16,13 @@ public class ImageStrategy implements IRefugeeStrategy {
 	
 	@Override
 	public String execute(Refugee entity) {
-		entity.getImage().setPath(uploadImage.uploadStorageImage(entity.getImage().getFile()));
-		entity.getImage().setSize(entity.getImage().getFile().getSize());
-		entity.getImage().setType(entity.getImage().getFile().getContentType());
+		if(entity.getImage().getFile() != null && entity.getImage().getFile().getSize() > 0) {
+			entity.getImage().setPath(uploadImage.uploadStorageImage(entity.getImage().getFile()));
+			entity.getImage().setSize(entity.getImage().getFile().getSize());
+			entity.getImage().setType(entity.getImage().getFile().getContentType());
+		} else {
+			entity.setImage(null);
+		}
 		return "";
 	}
 

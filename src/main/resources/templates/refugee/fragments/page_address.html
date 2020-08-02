@@ -4,7 +4,7 @@
 		<div id="camposEndereco">
 			<div class="form-row mt-3">
 				<div class="form-group col-lg-6">
-					<label for="seltipoendereco">Tipo de moradia</label>
+					<label for="seltipoendereco">Tipo de moradia*</label>
 					<select th:field="*{address.homeType}" class="form-control" id="seltipoendereco">
 						<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 						<option value="PROPRIA">Própria</option>
@@ -16,7 +16,7 @@
 					<div class="valid-feedback"></div>
 				</div>
 				<div class="form-group col-lg-6">
-					<label for="txtcep">CEP</label>
+					<label for="txtcep">CEP*</label>
 					<input type="hidden" id="tempValCep" th:value="*{address.cep}">
 					<input th:field="*{address.cep}" type="text" class="form-control" id="txtcep" placeholder="XXXXX-XXX">
 					<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
@@ -25,7 +25,7 @@
 			</div>
 			<div class="form-row">
 				<div class="form-group col-lg-6">
-					<label for="txtestado">Estado</label>
+					<label for="txtestado">Estado*</label>
 					<select onchange="getCities($(this).val(), 0)" class="form-control" id="txtestado">
 						<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 					</select>
@@ -33,7 +33,7 @@
 					<div class="valid-feedback"></div>
 				</div>
 				<div class="form-group col-lg-6">
-					<label for="txtcidade">Cidade</label>
+					<label for="txtcidade">Cidade*</label>
 					<select name="address.city.id" class="form-control" id="txtcidade">
 						<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 					</select>
@@ -43,13 +43,13 @@
 			</div>
 			<div class="form-row">
 				<div class="form-group col-lg-6">
-					<label for="txtlogradouro">Logradouro</label>
+					<label for="txtlogradouro">Logradouro*</label>
 					<input th:field="*{address.street}" type="text" class="form-control" id="txtlogradouro" placeholder="Rua Tulipas">
 					<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 					<div class="valid-feedback"></div>
 				</div>
 				<div class="form-group col-lg-2">
-					<label for="txtnumero">Número</label>
+					<label for="txtnumero">Número*</label>
 					<input th:field="*{address.number}" type="number" class="form-control" id="txtnumero" placeholder="234">
 					<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 					<div class="valid-feedback"></div>

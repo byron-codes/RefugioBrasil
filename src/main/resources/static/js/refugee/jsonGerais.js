@@ -128,17 +128,23 @@ let validacoes = {
 		},
 		tipo : "text"
 	},
-	selPaisOrigem : {
-		campo : "#selPaisOrigem",
+	selPaisNascimento : {
+		campo : "#selPaisNascimento",
 		validacoes : function() {
-			comboBox($(validacoes.selPaisOrigem.campo))
+			comboBox($(validacoes.selPaisNascimento.campo))
 		},
 		tipo : "select"
 	},
+    selPaisOrigem : {
+        campo : "#selPaisOrigem",
+        validacoes : function() {
+            comboBox($(validacoes.selPaisOrigem.campo))
+        },
+        tipo : "select"
+    },
 	txtEmail : {
 		campo : "#txtEmail",
 		validacoes : function() {
-			notNull($(validacoes.txtEmail.campo))
 			email($(validacoes.txtEmail.campo))
 		},
 		tipo : "text"

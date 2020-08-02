@@ -55,7 +55,7 @@
 					buscar
 				</button>
 				<button id="btnprox" th:classappend="${refugee.id==null}?d-none" type="button" class="btn btn-blue float-right" onclick="proximo()">Próximo</button>
-				<button id="btnsalvar" type="submit" class="btn btn-blue float-right d-none">Salvar</button>
+				<button id="btnsalvar" type="submit" class="btn btn-blue float-right d-none" onclick="blockUI()">Salvar</button>
 				<button id="btnvolta" type="button" class="btn btn-blue d-none" onclick="voltar()">Voltar</button>
 			</div>
 		</form>

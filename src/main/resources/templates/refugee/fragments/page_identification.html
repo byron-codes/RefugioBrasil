@@ -2,7 +2,7 @@
 <div id="identificacao" class="d-none">
 	<div class="form-row mt-3">
 		<div class="form-group col-lg-12">
-			<div class="wrapper">
+			<div class="wrapper" style="margin-top: 100px;">
 				<button type="button" class="no-image" id="img-result"></button>
 			</div>
 			<div class="upload-result">
@@ -15,7 +15,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="form-row mt-3">
+	<div class="form-row">
 		<div class="form-group col-lg-12">
 <!-- 		<input type="file" name="imageFile"> -->
 			<label for="txtnome">Nome*</label>
@@ -32,6 +32,14 @@
 			<div class="valid-feedback"></div>
 		</div>
 		<div class="form-group col-lg-6">
+			<label for="txtdataNascimento">Data de Chegada*</label>
+			<input th:field="*{arrivalDate}" type="date" class="form-control" id="txtdataChegada" aria-describedby="campo para data de nascimento">
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-lg-4">
 			<label for="selsexo">Sexo*</label>
 			<select th:field="*{gender}" class="form-control" id="selsexo">
 				<option value="0" disabled="disabled" selected="selected">Selecione...</option>
@@ -42,20 +50,23 @@
 			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 			<div class="valid-feedback"></div>
 		</div>
-	</div>
-	<div class="form-row">
-		<div class="form-group col-lg-6">
-			<label for="txtdataNascimento">Data de Chegada*</label>
-			<input th:field="*{arrivalDate}" type="date" class="form-control" id="txtdataChegada" aria-describedby="campo para data de nascimento">
-			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
-			<div class="valid-feedback"></div>
-		</div>
-		<div class="form-group col-lg-6">
-			<label for="selPaisOrigem">País*</label>
+		<div class="form-group col-lg-4">
+			<label for="selPaisNascimento">País*</label>
 			<div th:if="${refugee.birthCountry != null}">
 				<input type="hidden" id="tempValCountry" th:value="*{birthCountry.id}">
 			</div>
-			<select th:field="*{birthCountry.id}" class="form-control" id="selPaisOrigem">
+			<select th:field="*{birthCountry.id}" class="form-control" id="selPaisNascimento">
+				<option value="0" selected="selected" disabled="disabled">Selecione...</option>
+			</select>
+			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
+			<div class="valid-feedback"></div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="selPaisOrigem">Origem*</label>
+			<div th:if="${refugee.originCountry != null}">
+				<input type="hidden" id="tempValOriginCountry" th:value="*{originCountry.id}">
+			</div>
+			<select th:field="*{originCountry.id}" class="form-control" id="selPaisOrigem">
 				<option value="0" selected="selected" disabled="disabled">Selecione...</option>
 			</select>
 			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
@@ -81,13 +92,6 @@
 			</select>
 			<div class="invalid-feedback invalid-feedback d-flex flex-column"></div>
 			<div class="valid-feedback"></div>
-		</div>
-	</div>
-	<div class="form-row">
-		<div class="form-group col-lg-12">
-			<input type="hidden" id="cppValue" th:field="*{cpp}" th:value="${cpp}">
-			<input type="checkbox" id="cpp" th:checked="*{cpp}" onchange="$('#cppValue').val($(this).prop('checked'))">
-			<label for="cpp" style="display: inline;">CPP</label>
 		</div>
 	</div>
 </div>

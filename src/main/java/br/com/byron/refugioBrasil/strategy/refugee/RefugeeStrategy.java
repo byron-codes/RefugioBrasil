@@ -55,11 +55,13 @@ public class RefugeeStrategy implements IStrategy {
 			generics.get("createStrategy").execute(refugee.getAddress());
 		else
 			generics.get("updateStrategy").execute(refugee.getAddress());
-		
-		if (refugee.getImage().getId() == null)
-			generics.get("createStrategy").execute(refugee.getImage());
-		else
-			generics.get("updateStrategy").execute(refugee.getImage());
+
+		if(refugee.getImage()!= null) {
+			if (refugee.getImage().getId() == null)
+				generics.get("createStrategy").execute(refugee.getImage());
+			else
+				generics.get("updateStrategy").execute(refugee.getImage());
+		}
 		
 		for (Profession e : refugee.getProfessions()) {
 			if (e.getId() == null)
